@@ -1,0 +1,19 @@
+.content-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-left: 260px;
+  padding-top: 110px;
+  background: radial-gradient(
+    ellipse at center,
+    #a8d5f0 0%,
+    #e8f4fd 50%,
+    #ffffff 100%
+  );
+}
+
+.content-heading {
+  color: #0d0d0d;
+  font-size: 24px;
+  font-weight: 500;
+}

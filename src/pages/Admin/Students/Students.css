@@ -1,0 +1,225 @@
+.students-content-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  margin-top: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.all-students {
+  width: 60%;
+  height: 550px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.add-student-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+}
+.student-list {
+  overflow-y: scroll;
+  height: 350px;
+}
+
+.student-list::-webkit-scrollbar {
+  width: 5px; /* Overall scrollbar area */
+}
+
+.student-list::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+  background: #007ea7;
+  /* border-radius: 5px; */
+  border: 1px solid transparent;
+  background-clip: content-box; /* Allows thumb to extend beyond track */
+}
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: transform 0.15s ease-in-out;
+  box-shadow: inset 1em 1em var(--checkbox-color);
+  transform-origin: center;
+  background-color: transparent;
+}
+
+.custom-checkbox:checked {
+  border-color: #0d0d0d;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1.7);
+  background-color: #0d0d0d;
+  mask: url('data:image/svg+xml,%3Csvg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M6.00039 10.7998L3.20039 7.9998L2.26672 8.93347L6.00039 12.6668L14.0004 4.6668L13.0667 3.73347L6.00039 10.7998Z"/%3E%3C/svg%3E')
+    no-repeat center;
+  mask-size: contain;
+}
+
+/* Optional focus styling */
+.custom-checkbox:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+.student-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.student-info-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-student-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+}
+
+.add-student-container:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.add-student-input {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #404040;
+}
+
+.add-student-input::placeholder {
+  color: #404040;
+}
+
+.add-student-button {
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.add-student-button:hover {
+  background-color: #e5e7eb;
+  transform: scale(1.1);
+}
+
+.add-student-button:active {
+  transform: scale(1.05);
+}
+
+.add-student-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-student-button:disabled:hover {
+  background: transparent;
+  transform: none;
+}
+
+.plus-icon {
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.add-student-button:hover .plus-icon {
+  color: #374151;
+  transform: rotate(90deg);
+}
+
+.add-student-button:disabled .plus-icon {
+  color: #9ca3af;
+  transform: none;
+}
+
+.student-search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.student-search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  line-height: 105%;
+  color: #555;
+  width: 100px;
+  height: 34px;
+}
+
+.student-search-icon {
+  margin-left: 12px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}

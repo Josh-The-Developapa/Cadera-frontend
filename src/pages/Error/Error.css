@@ -1,0 +1,39 @@
+.error-container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(60deg, #f8fdff 5%, #c0eafd 20%, #00a8e8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-modal {
+  height: 350px;
+  width: 330px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.error-icon {
+  height: 80px;
+  width: 80px;
+}
+
+.error-paragraph {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 149%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: #000000;
+}
