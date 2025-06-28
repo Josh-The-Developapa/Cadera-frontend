@@ -1,12 +1,61 @@
-# React + Vite
+# Cadera — Student Information System (SIS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cadera is a powerful and intuitive Student Information System designed to streamline student report management for schools. Built with scalability, efficiency, and ease-of-use in mind, Cadera helps administrators, teachers, and school staff handle academic data, student reports, and performance records with clarity and precision.
 
-Currently, two official plugins are available:
+## 🚀 Project Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ **In Development**
 
-## Expanding the ESLint configuration
+Cadera is actively being built and refined by a passionate team of developers aiming to revolutionize the way schools manage student data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 👨‍💻 Built By
+
+- **Joshua Mukisa** — Frontend Engineer
+- **Emmanuel Asiimwe** — Backend Developer & Database Strategist  
+- **Albert Jordan** — UI/UX Designer   
+
+## 🏫 What It Does
+
+Cadera allows schools to:
+- Register, update, and manage student profiles
+- Generate and manage academic reports
+- Track student performance across terms and years
+- Assign students to classes and subjects
+- Manage teachers and subject allocations
+- Export or print report cards and performance summaries
+- Maintain secure login and role-based access (admin, teacher, student)
+
+## ✨ Key Features
+
+- 📊 Dynamic Report Generation
+- 🏫 Class & Subject Management
+- 🔐 Role-Based Access Control
+- 📥 Exportable Report Cards (PDF, Excel)
+- 🔍 Search & Filter Functionality
+- 💻 Clean, Responsive UI
+
+## 🧱 Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS  
+- **Backend:** *(TBD)*  
+- **Database:** PostgreSQL
+- **Authentication:** *(TBD)*    
+- **Other Tools:** Git, GitHub, REST APIs, Postman, Figma (for UI design)
+
+## 📂 Project Structure (Coming Soon)
+
+Documentation for the folder structure and modules will be added as development progresses.
+
+## 📌 Getting Started
+
+To run Cadera locally:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/cadera.git
+2. Install dependencies:
+cd cadera
+npm install
+3. Start the development server and Run the app:
+npm run dev
