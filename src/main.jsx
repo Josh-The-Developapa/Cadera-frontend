@@ -35,6 +35,14 @@ const router = createBrowserRouter([
       // Add other pages that use NavMenu here
     ],
   },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/error',
+    element: <Error />,
+  },
 ]);
 // const router = createBrowserRouter([
 //   {

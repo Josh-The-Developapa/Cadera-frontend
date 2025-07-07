@@ -9,8 +9,8 @@
 }
 
 .all-students {
-  width: 60%;
-  height: 550px;
+  width: 65%;
+  height: 600px;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -18,7 +18,7 @@
   justify-content: flex-start;
   padding: 40px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 .add-student-div {
@@ -33,6 +33,7 @@
 .student-list {
   overflow-y: scroll;
   height: 350px;
+  /* background-color: green; */
 }
 
 .student-list::-webkit-scrollbar {

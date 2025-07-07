@@ -168,17 +168,16 @@ function Students() {
                 const originalIndex = students.findIndex(
                   (s) => s.id === student.id
                 );
-                const hue = hues[originalIndex];
-                const gradientStyle =
-                  hue !== undefined
-                    ? {
-                        background: `linear-gradient(to right, hsla(${hue}, 30%, 35%, 0.15), hsla(${hue}, 30%, 65%, 0.15))`,
-                        border:
-                          selectedIndex === originalIndex
-                            ? '2px solid #00b341'
-                            : '1px solid #d1d5db',
-                      }
-                    : {};
+                const backgroundColor = index % 2 === 0 ? '#FAFAFA' : '#F6FCFD';
+                const isSelected = selectedIndex === originalIndex;
+
+                const style = {
+                  background: backgroundColor,
+                  border: isSelected ? '2px solid' : '1px solid #d1d5db',
+                  borderImage: isSelected
+                    ? 'linear-gradient(to right, #007EA7, #00BF76) 1'
+                    : '',
+                };
 
                 return (
                   <div
@@ -188,11 +187,11 @@ function Students() {
                       setSelectedIndex(originalIndex);
                       setSelectedAll(false);
                     }}
-                    style={gradientStyle}
+                    style={style}
                   >
                     <input
                       type="checkbox"
-                      checked={selectedAll || selectedIndex === originalIndex}
+                      checked={selectedAll || isSelected}
                       readOnly
                       className="custom-checkbox"
                     />
@@ -222,7 +221,7 @@ function Students() {
 
           {/* RIGHT PANEL - Selected student profile */}
           <div>
-            <div className="bg-white rounded-xl shadow-md p-10 flex flex-col items-center h-[550px] w-[360px]">
+            <div className="bg-white rounded-xl shadow-md p-15 flex flex-col items-center h-[600px] min-w-[360px]">
               <img
                 src={StudentIcon}
                 alt="Student-Icon"

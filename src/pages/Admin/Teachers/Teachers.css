@@ -1,0 +1,133 @@
+.teachers-content-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  margin-top: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.all-teachers {
+  width: 65%;
+  height: 600px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.teacher-list {
+  overflow-y: scroll;
+  height: 390px;
+}
+
+.teacher-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.teacher-list::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+.teacher-list::-webkit-scrollbar-thumb {
+  background: #007ea7;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+.teacher-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.teacher-info-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: transform 0.15s ease-in-out;
+  box-shadow: inset 1em 1em var(--checkbox-color);
+  transform-origin: center;
+  background-color: transparent;
+}
+
+.custom-checkbox:checked {
+  border-color: #0d0d0d;
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1.7);
+  background-color: #0d0d0d;
+  mask: url('data:image/svg+xml,%3Csvg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M6.00039 10.7998L3.20039 7.9998L2.26672 8.93347L6.00039 12.6668L14.0004 4.6668L13.0667 3.73347L6.00039 10.7998Z"/%3E%3C/svg%3E')
+    no-repeat center;
+  mask-size: contain;
+}
+
+.custom-checkbox:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.teacher-search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.teacher-search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  line-height: 105%;
+  color: #555;
+  width: 100px;
+  height: 34px;
+}
+
+.teacher-search-icon {
+  margin-left: 12px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
