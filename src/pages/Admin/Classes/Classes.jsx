@@ -7,100 +7,22 @@ import MaleSVG from '../../../assets/male.svg';
 import FemaleSVG from '../../../assets/female.svg';
 import BothGendersSVG from '../../../assets/both-genders.svg';
 
-// MOCK DATA
-const mockClasses = [
-  {
-    id: 'C1',
-    name: 'P7P',
-    level: 'P7',
-    subjects: ['HIS', 'GEO', 'MAT', 'CHE', 'HIS', 'KIS', 'FRE', 'FRE'],
-    students: 76,
-    male: 35,
-    female: 41,
-    teachers: [
-      { name: 'Emmanuel Asiimwe', avatar: 'https://i.pravatar.cc/150?img=12' },
-      { name: 'Joshua Mukisa', avatar: 'https://i.pravatar.cc/150?img=14' },
-      { name: 'Kevin Porter', avatar: 'https://i.pravatar.cc/150?img=8' },
-      { name: 'Other1' },
-      { name: 'Other2' },
-    ],
-  },
-  {
-    id: 'C2',
-    name: 'S5S',
-    level: 'S5',
-    subjects: ['HIS', 'GEO', 'MAT', 'CHE', 'HIS', 'KIS', 'FRE', 'FRE'],
-    students: 76,
-    male: 35,
-    female: 41,
-    teachers: [
-      { name: 'Emmanuel Asiimwe', avatar: 'https://i.pravatar.cc/150?img=12' },
-      { name: 'Joshua Mukisa', avatar: 'https://i.pravatar.cc/150?img=14' },
-      { name: 'Kevin Porter', avatar: 'https://i.pravatar.cc/150?img=8' },
-      { name: 'Other1' },
-      { name: 'Other2' },
-    ],
-  },
-  {
-    id: 'C3',
-    name: 'P6P',
-    level: 'P6',
-    subjects: ['ENG', 'MAT', 'BIO', 'CHE'],
-    students: 60,
-    male: 28,
-    female: 32,
-    teachers: [
-      { name: 'Jane Doe', avatar: 'https://i.pravatar.cc/150?img=6' },
-      { name: 'John Smith', avatar: 'https://i.pravatar.cc/150?img=7' },
-    ],
-  },
-  {
-    id: 'C4',
-    name: 'P5S',
-    level: 'P5',
-    subjects: ['ENG', 'MAT', 'BIO', 'CHE'],
-    students: 60,
-    male: 28,
-    female: 32,
-    teachers: [
-      { name: 'Jane Doe', avatar: 'https://i.pravatar.cc/150?img=6' },
-      { name: 'John Smith', avatar: 'https://i.pravatar.cc/150?img=7' },
-    ],
-  },
-  {
-    id: 'C5',
-    name: 'P3P',
-    level: 'P3',
-    subjects: ['ENG', 'MAT', 'BIO', 'CHE'],
-    students: 60,
-    male: 28,
-    female: 32,
-    teachers: [
-      { name: 'Jane Doe', avatar: 'https://i.pravatar.cc/150?img=6' },
-      { name: 'John Smith', avatar: 'https://i.pravatar.cc/150?img=7' },
-    ],
-  },
-  {
-    id: 'C6',
-    name: 'P4N',
-    level: 'P4',
-    subjects: ['ENG', 'MAT', 'BIO', 'CHE'],
-    students: 60,
-    male: 28,
-    female: 32,
-    teachers: [
-      { name: 'Jane Doe', avatar: 'https://i.pravatar.cc/150?img=6' },
-      { name: 'John Smith', avatar: 'https://i.pravatar.cc/150?img=7' },
-    ],
-  },
-];
+// Import Mock Classes Data
+import mockClasses from './ClassesData.js';
+
+// Sort teachers alphabetically in every class
+mockClasses.forEach((cls) => {
+  cls.teachers.sort((a, b) => a.name.localeCompare(b.name));
+});
 
 function Classes() {
+  // State Management
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
   const [hues, setHues] = useState([]);
   const [subjectHues, setSubjectHues] = useState({});
 
+  // Generate random hues for class cards and subjects on component mount
   useEffect(() => {
     const generatedHues = mockClasses.map(() =>
       Math.floor(Math.random() * 361)
@@ -116,235 +38,262 @@ function Classes() {
     setSubjectHues(subjectHueMap);
   }, []);
 
+  // Filter classes based on search query
   const filteredClasses = mockClasses.filter((cls) =>
     cls.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Get currently selected class
   const selectedClass = mockClasses[selectedIndex];
+
+  // Handle class card selection
+  const handleClassSelection = (originalIndex) => {
+    setSelectedIndex(originalIndex);
+  };
+
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Generate gradient style for class cards
+  const getCardGradientStyle = (hue) => {
+    return hue !== undefined
+      ? {
+          background: `linear-gradient(to right, hsla(${hue}, 30%, 35%), hsla(${hue}, 30%, 65%))`,
+          borderRadius: '5px 5px 0 0',
+        }
+      : {};
+  };
+
+  // Generate gradient style for class banner
+  const getBannerGradientStyle = () => {
+    return {
+      background: `linear-gradient(to right, hsla(${hues[selectedIndex]}, 30%, 35%), hsla(${hues[selectedIndex]}, 30%, 65%))`,
+    };
+  };
+
+  // Generate style for subject tags
+  const getSubjectTagStyle = (subjHue) => {
+    return subjHue !== undefined
+      ? {
+          backgroundColor: `hsla(${subjHue}, 70%, 80%, 0.3)`,
+          color: `hsl(${subjHue}, 30%, 20%)`,
+        }
+      : {};
+  };
+
+  // Generate style for "others" avatar circle
+  const getOthersAvatarStyle = () => {
+    return {
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
+      background: `linear-gradient(135deg, hsla(${hues[selectedIndex]}, 40%, 50%, 0.8), hsla(${hues[selectedIndex]}, 40%, 65%, 0.8))`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: 'white',
+      fontSize: '18px',
+      fontWeight: '500',
+      marginBottom: '8px',
+      boxShadow: `0 2px 8px hsla(${hues[selectedIndex]}, 40%, 30%, 0.3)`,
+    };
+  };
+
+  // Generate style for "others" text
+  const getOthersTextStyle = () => {
+    return {
+      color: `hsl(${hues[selectedIndex]}, 30%, 40%)`,
+      fontWeight: '500',
+      fontSize: '12px',
+    };
+  };
+
+  // Render Create New Class Card
+  const renderCreateClassCard = () => (
+    <div className="create-class-card">
+      <Plus size={28} />
+      <p className="mt-2 text-sm font-medium">Create New Class</p>
+    </div>
+  );
+
+  // Render Class Cards
+  const renderClassCards = () => {
+    return filteredClasses.map((cls) => {
+      const originalIndex = mockClasses.findIndex((s) => s.id === cls.id);
+      const hue = hues[originalIndex];
+      const isSelected = selectedIndex === originalIndex;
+
+      return (
+        <div
+          key={cls.id}
+          className="class-card-holder"
+          style={{
+            backgroundColor: isSelected ? '#A6A6A6' : '#ffffff',
+          }}
+        >
+          <div
+            className="class-card"
+            style={getCardGradientStyle(hue)}
+            onClick={() => handleClassSelection(originalIndex)}
+          >
+            <MoreHorizontal size={20} className="class-card-menu" />
+            <div className="class-card-content">
+              <span className="class-level">{cls.level}</span>
+            </div>
+          </div>
+          <div className="class-card-footer">
+            <p
+              className="class-name"
+              style={{
+                color: isSelected ? '#F2F2F2' : '#000000',
+              }}
+            >
+              {cls.name}
+            </p>
+          </div>
+        </div>
+      );
+    });
+  };
+
+  // Render Teacher Avatars
+  const renderTeacherAvatars = () => {
+    const displayedTeachers = selectedClass.teachers.slice(0, 3);
+    const remainingTeachers = selectedClass.teachers.length - 3;
+
+    return (
+      <div className="teacher-avatars">
+        {displayedTeachers.map((teacher, idx) => (
+          <div key={idx} className="avatar-wrapper">
+            <img
+              src={teacher.avatar || 'https://i.pravatar.cc/150?img=1'}
+              alt={teacher.name}
+              className="teacher-avatar"
+            />
+            <p className="teacher-name">
+              {teacher.name.split(' ').map((word, i) => (
+                <React.Fragment key={i}>
+                  {word}
+                  <br />
+                </React.Fragment>
+              ))}
+            </p>
+          </div>
+        ))}
+
+        {remainingTeachers > 0 && (
+          <div className="avatar-wrapper others-avatar">
+            <div
+              className="others-avatar-circle"
+              style={getOthersAvatarStyle()}
+            >
+              +{remainingTeachers}
+            </div>
+            <p style={getOthersTextStyle()}>{remainingTeachers} Others</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  // Render Subject Tags
+  const renderSubjectTags = () => {
+    return selectedClass.subjects.map((subject, i) => {
+      const subjHue = subjectHues[selectedIndex]?.[i];
+
+      return (
+        <span
+          key={i}
+          className="subject-tag"
+          style={getSubjectTagStyle(subjHue)}
+        >
+          {subject}
+        </span>
+      );
+    });
+  };
+
+  // Render Student Count
+  const renderStudentCount = () => (
+    <div className="student-count-box">
+      <p className="student-count-label">Students</p>
+      <div className="student-count-stats">
+        <div className="student-stat">
+          <img src={MaleSVG} alt="Male" className="gender-icon" />
+          <span className="student-count-number">{selectedClass.male}</span>
+        </div>
+        <div className="student-stat">
+          <img src={FemaleSVG} alt="Female" className="gender-icon" />
+          <span className="student-count-number">{selectedClass.female}</span>
+        </div>
+        <div className="student-stat">
+          <img
+            src={BothGendersSVG}
+            alt="Total Students"
+            className="gender-icon"
+          />
+          <span className="student-count-number">{selectedClass.students}</span>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="body-container">
       <ContentBox contentHeading="Manage Classes">
         <div className="classes-content-container">
-          {/* LEFT PANEL */}
+          {/* LEFT PANEL - Classes List */}
           <div className="all-classes">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-700">
-                All Classes
-              </h2>
+            {/* Header with Search */}
+            <div className="classes-header">
+              <h2 className="classes-title">All Classes</h2>
               <div className="class-search-bar">
                 <input
                   type="text"
                   placeholder="Search"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleSearchChange}
+                  className="search-input"
                 />
-                <img
-                  src={SearchIcon}
-                  alt="Search"
-                  className="class-search-icon"
-                />
+                <img src={SearchIcon} alt="Search" className="search-icon" />
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-[15px] h-[60vh] overflow-y-auto pr-2">
-              {/* Create New Class Card */}
-              <div className="flex flex-col items-center justify-center bg-white border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50 hover:border-gray-400 cursor-pointer transition-colors w-[225px] h-[250px]">
-                <Plus size={28} />
-                <p className="mt-2 text-sm font-medium">Create New Class</p>
-              </div>
-
-              {/* Class Cards */}
-              {filteredClasses.map((cls) => {
-                const originalIndex = mockClasses.findIndex(
-                  (s) => s.id === cls.id
-                );
-                const hue = hues[originalIndex];
-                const gradientStyle =
-                  hue !== undefined
-                    ? {
-                        background: `linear-gradient(to right, hsla(${hue}, 30%, 35%), hsla(${hue}, 30%, 65%))`,
-                        borderRadius: '5px 5px 0 0',
-                      }
-                    : {};
-
-                return (
-                  <div
-                    className="class-card-holder w-[225px] rounded-[5px]"
-                    style={{
-                      backgroundColor:
-                        selectedIndex === originalIndex ? '#A6A6A6' : '#ffffff',
-                    }}
-                  >
-                    <div
-                      key={cls.id}
-                      className={`relative h-[80%] w-[100%] text-white p-4 flex flex-col justify-between cursor-pointer transition-all duration-300 rounded-[5px]`}
-                      style={gradientStyle}
-                      onClick={() => setSelectedIndex(originalIndex)}
-                    >
-                      <MoreHorizontal
-                        size={20}
-                        className="absolute top-3 right-3 text-white"
-                      />
-                      <div className="flex-grow flex items-center justify-center">
-                        <span className="text-5xl font-thin text-[60px]">
-                          {cls.level}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="text-center">
-                      <p
-                        className="font-normal"
-                        style={{
-                          marginTop: '10px',
-                          color:
-                            selectedIndex === originalIndex
-                              ? '#F2F2F2'
-                              : '#000000',
-                        }}
-                      >
-                        {cls.name}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Classes Grid */}
+            <div className="classes-grid">
+              {renderCreateClassCard()}
+              {renderClassCards()}
             </div>
           </div>
 
-          {/* RIGHT PANEL */}
+          {/* RIGHT PANEL - Class Details */}
           <div className="class-details-panel">
-            <div
-              className="class-banner"
-              style={{
-                background: `linear-gradient(to right, hsla(${hues[selectedIndex]}, 30%, 35%), hsla(${hues[selectedIndex]}, 30%, 65%))`,
-              }}
-            >
-              <h2 className="font-thin text-[55px]">{selectedClass.name}</h2>
+            {/* Class Banner */}
+            <div className="class-banner" style={getBannerGradientStyle()}>
+              <h2 className="class-banner-title">{selectedClass.name}</h2>
             </div>
+
+            {/* Class Information */}
             <div className="class-info-section">
-              // Replace the teacher-subsection div in your code with this:
+              {/* Teachers Section */}
               <div className="teacher-subsection">
-                <p className="text-[#404040]">Teachers</p>
-                <div className="teacher-avatars">
-                  {selectedClass.teachers.slice(0, 3).map((t, idx) => (
-                    <div key={idx} className="avatar-wrapper">
-                      <img
-                        src={t.avatar || 'https://i.pravatar.cc/150?img=1'}
-                        alt={t.name}
-                      />
-                      <p>
-                        {t.name.split(' ').map((word, i) => (
-                          <React.Fragment key={i}>
-                            {word}
-                            <br />
-                          </React.Fragment>
-                        ))}
-                      </p>
-                    </div>
-                  ))}
+                <p className="section-label">Teachers</p>
+                {renderTeacherAvatars()}
+              </div>
 
-                  {selectedClass.teachers.length > 3 && (
-                    <div
-                      className="avatar-wrapper"
-                      style={{ background: 'none' }}
-                    >
-                      <div
-                        className="others-avatar-circle"
-                        style={{
-                          width: '50px',
-                          height: '50px',
-                          borderRadius: '50%',
-                          background: `linear-gradient(135deg, hsla(${hues[selectedIndex]}, 40%, 50%, 0.8), hsla(${hues[selectedIndex]}, 40%, 65%, 0.8))`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: 'white',
-                          fontSize: '18px',
-                          fontWeight: '500',
-                          marginBottom: '8px',
-                          boxShadow: `0 2px 8px hsla(${hues[selectedIndex]}, 40%, 30%, 0.3)`,
-                        }}
-                      >
-                        +{selectedClass.teachers.length - 3}
-                      </div>
-                      <p
-                        style={{
-                          color: `hsl(${hues[selectedIndex]}, 30%, 40%)`,
-                          fontWeight: '500',
-                          fontSize: '12px',
-                        }}
-                      >
-                        {selectedClass.teachers.length - 3} Others
-                      </p>
-                    </div>
-                  )}
-                </div>
+              {/* Subjects Section */}
+              <div className="subjects-section">
+                <p className="section-label">Subjects</p>
+                <div className="subjects-container">{renderSubjectTags()}</div>
               </div>
-              <div className="subjects-list">
-                <p className="text-[#404040]">Subjects</p>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: '10px',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '80%',
-                    flexWrap: 'wrap',
-                  }}
-                >
-                  {selectedClass.subjects.map((subj, i) => {
-                    const subjHue = subjectHues[selectedIndex]?.[i];
-                    const style =
-                      subjHue !== undefined
-                        ? {
-                            backgroundColor: `hsla(${subjHue}, 70%, 80%, 0.3)`,
-                            color: `hsl(${subjHue}, 30%, 20%)`,
-                          }
-                        : {};
 
-                    return (
-                      <span key={i} className="subject-tag" style={style}>
-                        {subj}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-              {/* <div className="flex w-[100%] items-center justify-center"></div> */}
-              <div className="flex w-[100%] items-center justify-center">
-                <div className="student-count-box flex items-center gap-4 w-[180px]">
-                  <p className="text-[#404040]">Students</p>
-                  <div className="flex flex-row gap-[18px]">
-                    {' '}
-                    <div className="flex items-center gap-[1px]">
-                      <img src={MaleSVG} alt="Male" className="w-5 h-5" />
-                      <span className="text-[#A6A6A6]">
-                        {selectedClass.male}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-[1px]">
-                      <img src={FemaleSVG} alt="Female" className="w-5 h-5" />
-                      <span className="text-[#A6A6A6]">
-                        {selectedClass.female}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-[5px]">
-                      <img
-                        src={BothGendersSVG}
-                        alt="Total Students"
-                        className="w-5 h-5"
-                      />
-                      <span className="text-[#A6A6A6]">
-                        {selectedClass.students}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center items-center w-[100%]">
-                {' '}
+              {/* Students Section */}
+              <div className="students-section">{renderStudentCount()}</div>
+
+              {/* Edit Button */}
+              <div className="edit-section">
                 <button className="edit-class-btn">Edit Class</button>
               </div>
             </div>
