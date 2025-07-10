@@ -10,7 +10,7 @@
   padding-left: 40px;
   padding-right: 20px;
   z-index: 100;
-  background-color: #ffffffb3;
+  background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
