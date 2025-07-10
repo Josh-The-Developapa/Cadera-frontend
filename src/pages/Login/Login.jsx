@@ -1,12 +1,12 @@
 import React from 'react';
 import './Login.css';
 import { FiMail, FiLock } from 'react-icons/fi';
-import Header from '../../components/Header/Header';
+import LoggedOutHeader from '../../components/LoggedOutHeader/LoggedOutHeader';
 
 const Login = () => {
   return (
     <div className="login-container">
-      <Header />
+      <LoggedOutHeader />
       <div className="login-modal">
         <h1 className="login-heading">Welcome Back</h1>
         <div className="input-group">
