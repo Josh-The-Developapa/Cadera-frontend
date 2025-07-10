@@ -5,78 +5,8 @@ import TeacherIcon from '../../../assets/teacher.png';
 import { Trash2 } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
 
-const teachers = [
-  {
-    name: 'Kevin Kent Asiimwe',
-    id: 'B98A2D',
-    subjects: ['HIS', 'GEO', 'SST'],
-    classCount: 3,
-    assignedClasses: ['P7Y', 'S1S', 'S3S'],
-  },
-  {
-    name: 'Kevin Kent Musinguzi',
-    id: 'ADMH001',
-    subjects: ['HIS', 'GEO'],
-    classCount: 4,
-    assignedClasses: ['P7P', 'P7K', 'S1N', 'S2Q'],
-  },
-  {
-    name: 'Brenda Namatovu',
-    id: 'UGT7832',
-    subjects: ['ENG', 'LIT'],
-    classCount: 2,
-    assignedClasses: ['S2E', 'S3W'],
-  },
-  {
-    name: 'Ronald Kaggwa',
-    id: 'UGX1145',
-    subjects: ['MAT', 'PHY'],
-    classCount: 3,
-    assignedClasses: ['S1N', 'S2S', 'S4W'],
-  },
-  {
-    name: 'Sarah Akello',
-    id: 'KLA9217',
-    subjects: ['BIO', 'CHE'],
-    classCount: 3,
-    assignedClasses: ['S2N', 'S3E', 'S4E'],
-  },
-  {
-    name: 'Julius Okumu',
-    id: 'MBA6403',
-    subjects: ['AGR', 'SST'],
-    classCount: 2,
-    assignedClasses: ['P6A', 'P7N'],
-  },
-  {
-    name: 'Stella Namaganda',
-    id: 'ENT4598',
-    subjects: ['FRE', 'ENG'],
-    classCount: 1,
-    assignedClasses: ['S3N'],
-  },
-  {
-    name: 'Brian Ssentongo',
-    id: 'JIN2379',
-    subjects: ['ICT', 'PHY'],
-    classCount: 3,
-    assignedClasses: ['S2W', 'S3E', 'S4S'],
-  },
-  {
-    name: 'Joan Nabakka',
-    id: 'ARU1110',
-    subjects: ['MAT', 'ENG'],
-    classCount: 4,
-    assignedClasses: ['S1W', 'S2N', 'S3S', 'S4N'],
-  },
-  {
-    name: 'Moses Kintu',
-    id: 'KYE7420',
-    subjects: ['GEO', 'HIS'],
-    classCount: 2,
-    assignedClasses: ['S2E', 'S4W'],
-  },
-];
+// Mock data representing registered teachers
+import teachers from './TeachersData.js';
 
 function Teachers() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -230,17 +160,20 @@ function Teachers() {
           </div>
 
           <div>
-            <div className="bg-white rounded-xl shadow-md p-10 flex flex-col items-center h-[600px] w-[360px]">
+            <div
+              className="bg-white rounded-xl shadow-md p-10 flex flex-col items-center h-[75vh] w-[360px]"
+              style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
+            >
               <img
                 src={TeacherIcon}
                 alt="Teacher-Icon"
-                style={{ height: '150px', width: '150px' }}
+                style={{ height: '40%', width: 'auto' }}
               />
-              <h3 className="text-black font-semibold mb-1 text-xl">
+              <h3 className="text-black font-semibold text-xl mb-[10px]">
                 {selectedTeacher.name}
               </h3>
-              <p className="mb-4 text-gray-500">Teacher</p>
-              <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[20px]">
+              <p className=" text-gray-500 mb-0">Teacher</p>
+              <div className="flex flex-wrap justify-center gap-2 mb-[10%] w-[250px] mt-[10%]">
                 {selectedTeacher.subjects.map((subj, idx) => {
                   const subjHue = subjectHues[selectedIndex]?.[idx];
                   const style =

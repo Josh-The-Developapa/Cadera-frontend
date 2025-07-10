@@ -232,7 +232,7 @@ function Classes() {
           <img
             src={BothGendersSVG}
             alt="Total Students"
-            className="gender-icon"
+            className="gender-icon mr-[5px]"
           />
           <span className="student-count-number">{selectedClass.students}</span>
         </div>

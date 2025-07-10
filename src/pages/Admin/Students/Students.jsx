@@ -76,7 +76,7 @@ function Students() {
   // Render student list header
   const renderStudentListHeader = () => (
     <div className="flex flex-row justify-between items-center mb-4">
-      <h2 className="text-xl font-semibold">All Students</h2>
+      <h2 className="text-[18px] font-semibold">All Students</h2>
       <div className="student-search-bar">
         <input
           type="text"
@@ -188,7 +188,7 @@ function Students() {
       <img
         src={StudentIcon}
         alt="Student-Icon"
-        style={{ height: '150px', width: '150px' }}
+        style={{ height: '150px', width: '150px', margin: 0 }}
       />
       <h3
         className="text-black font-semibold mb-1"
@@ -255,7 +255,10 @@ function Students() {
   // Render right panel with selected student profile
   const renderRightPanel = () => (
     <div>
-      <div className="bg-white rounded-xl shadow-md p-15 flex flex-col items-center h-[600px] min-w-[360px]">
+      <div
+        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[75vh] min-w-[360px]"
+        style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
+      >
         {renderStudentProfileHeader()}
         {renderStudentSubjects()}
         <button className="bg-black text-white px-4 py-2 rounded-md mb-3 w-[180px]">
