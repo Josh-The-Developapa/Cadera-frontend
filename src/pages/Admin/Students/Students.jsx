@@ -76,13 +76,14 @@ function Students() {
   // Render student list header
   const renderStudentListHeader = () => (
     <div className="flex flex-row justify-between items-center mb-4">
-      <h2 className="text-[18px] font-semibold">All Students</h2>
+      <h2 className="text-[16px] font-semibold">All Students</h2>
       <div className="student-search-bar">
         <input
           type="text"
           placeholder="Search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          style={{ fontSize: '16px' }}
         />
         <img
           src={SearchIcon}
@@ -117,9 +118,9 @@ function Students() {
   // Render student list column headers
   const renderStudentListHeaders = () => (
     <div
-      className="student-info-container font-semibold cursor-pointer"
+      className="student-info-container font-semibold cursor-pointer text-[14px]"
       onClick={handleSelectAll}
-      style={{ background: 'rgba(0, 0, 0, 0.05)', width: '600px' }}
+      style={{ background: 'rgba(0, 0, 0, 0.05)', marginRight: '15px' }}
     >
       <input
         type="checkbox"
@@ -128,7 +129,7 @@ function Students() {
         className="custom-checkbox"
       />
       <div>Student Name</div>
-      <div>ID</div>
+      <div>Student ID</div>
       <div>Class</div>
     </div>
   );
@@ -160,13 +161,13 @@ function Students() {
           readOnly
           className="custom-checkbox"
         />
-        <span className="text-sm font-medium" style={{ color: '#404040' }}>
+        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
           {student.name}
         </span>
-        <span className="text-sm font-medium" style={{ color: '#404040' }}>
+        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
           {student.id}
         </span>
-        <span className="text-sm font-medium" style={{ color: '#404040' }}>
+        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
           {student.class}
         </span>
       </div>
@@ -188,11 +189,11 @@ function Students() {
       <img
         src={StudentIcon}
         alt="Student-Icon"
-        style={{ height: '150px', width: '150px', margin: 0 }}
+        style={{ height: '114px', width: '114px', margin: 0 }}
       />
       <h3
         className="text-black font-semibold mb-1"
-        style={{ color: '#262626', fontSize: '20px', fontWeight: 500 }}
+        style={{ color: '#262626', fontSize: '18px', fontWeight: 500 }}
       >
         {selectedStudent.name}
       </h3>
@@ -204,7 +205,7 @@ function Students() {
 
   // Render student subjects with colored tags
   const renderStudentSubjects = () => (
-    <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[20px]">
+    <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[17px]">
       {selectedStudent.subjects.map((subj, idx) => {
         const subjHue = subjectHues[selectedIndex]?.[idx];
         const style =
@@ -256,7 +257,7 @@ function Students() {
   const renderRightPanel = () => (
     <div>
       <div
-        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
+        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[484px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
         style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
       >
         {renderStudentProfileHeader()}

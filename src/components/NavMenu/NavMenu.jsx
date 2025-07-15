@@ -27,7 +27,7 @@ function NavMenu() {
           src={CaderaLogo}
           alt="Cadera-Logo"
           className="header-logo"
-          style={{ marginBottom: '50px' }}
+          style={{ marginBottom: '50px', width: 'auto', height: '20px' }}
         />
       </NavLink>
       <div className="nav-link-container">

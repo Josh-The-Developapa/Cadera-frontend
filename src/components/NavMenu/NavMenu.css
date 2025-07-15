@@ -1,7 +1,7 @@
 .nav-menu {
   position: absolute;
   height: 100%;
-  width: 220px;
+  width: 170px;
   left: 0;
   top: 0;
   background: rgba(255, 255, 255, 0.3);
@@ -11,18 +11,19 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 27px;
 }
 
 .nav-link-div {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
-  padding-left: 45px;
+  /* padding-left: 43px; */
   height: 30px;
+  /* background-color: green; */
 }
 .nav-link-div.active {
   border-right: #00bf76 3px solid;
@@ -47,7 +48,7 @@
   /* width: 100%; */
   margin-top: -20px;
   margin-bottom: 30px;
-  margin-right: 75px;
+  margin-right: 28px;
   padding-left: 20px;
   gap: 10px;
   border-left: #a6a6a6 2px solid;

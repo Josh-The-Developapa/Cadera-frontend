@@ -14,7 +14,7 @@
 
 .all-students {
   width: 701px;
-  max-height: 615px;
+  max-height: 484px;
   min-height: 450px;
   height: 70vh;
   background-color: #ffffff;
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px;
+  padding: 30px;
   padding-top: 20px;
   padding-bottom: 0px;
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1);
@@ -36,8 +36,10 @@
   background: #f5f5f5;
   border-radius: 5px;
   padding: 5px 10px;
-  width: fit-content;
+  /* width: fit-content; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 34px;
+  width: 115px;
 }
 
 .student-search-bar input {
@@ -47,7 +49,7 @@
   font-size: 17px;
   line-height: 105%;
   color: #555;
-  width: 100px;
+  width: 60px;
   height: 34px;
 }
 
@@ -65,7 +67,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   padding: 8px;
   background-color: #fafafa;
   border-radius: 5px;
@@ -74,6 +76,7 @@
   transition: all 0.3s ease;
   margin-bottom: 10px;
   box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
 }
 
 .add-student-container:hover {
@@ -88,6 +91,7 @@
   background: transparent;
   outline: none;
   color: #404040;
+  font-size: 14px;
 }
 
 .add-student-input::placeholder {
@@ -147,7 +151,6 @@
 .student-list {
   overflow-y: scroll;
   height: 350px;
-  padding-right: 15px;
 }
 
 /* Custom scrollbar styling */
@@ -175,6 +178,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 8px;
+  margin-right: 10px;
 }
 
 .student-info-label-container {

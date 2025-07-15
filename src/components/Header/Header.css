@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   top: 0;
-  left: 220px;
+  left: 170px;
   width: 100%;
-  height: 80px;
+  height: 71px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +24,7 @@
   width: 25px;
   margin-right: 0px;
 }
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -32,16 +33,20 @@
   padding: 5px 10px;
   width: fit-content;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* width: 187px; */
+  height: 34px;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 .search-bar input {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 105%;
   color: #555;
-  width: 200px;
+  width: 110px;
   height: 34px;
 }
 
@@ -56,6 +61,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 470px;
 }
