@@ -119,7 +119,7 @@ function Students() {
     <div
       className="student-info-container font-semibold cursor-pointer"
       onClick={handleSelectAll}
-      style={{ background: 'rgba(0, 0, 0, 0.05)' }}
+      style={{ background: 'rgba(0, 0, 0, 0.05)', width: '600px' }}
     >
       <input
         type="checkbox"
@@ -192,11 +192,11 @@ function Students() {
       />
       <h3
         className="text-black font-semibold mb-1"
-        style={{ color: '#262626', fontSize: '24px' }}
+        style={{ color: '#262626', fontSize: '20px', fontWeight: 500 }}
       >
         {selectedStudent.name}
       </h3>
-      <p className="mb-4" style={{ color: '#262626', fontSize: '16px' }}>
+      <p className="mb-4" style={{ color: '#262626', fontSize: '18px' }}>
         {selectedStudent.class}
       </p>
     </>
@@ -256,7 +256,7 @@ function Students() {
   const renderRightPanel = () => (
     <div>
       <div
-        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[75vh] min-w-[360px]"
+        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
         style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
       >
         {renderStudentProfileHeader()}

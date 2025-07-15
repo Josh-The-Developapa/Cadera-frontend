@@ -4,7 +4,7 @@ import './ContentBox.css';
 function ContentBox(props) {
   return (
     <div className="content-box">
-      <h1 className="content-heading">{props.contentHeading}</h1>
+      <p className="content-heading">{props.contentHeading}</p>
       {props.children}
     </div>
   );

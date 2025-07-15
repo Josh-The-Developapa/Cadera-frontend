@@ -1,3 +1,8 @@
+/* =============================================================================
+   MAIN LAYOUT STYLES
+   ============================================================================= */
+
+/* Main container for teachers content */
 .teachers-content-container {
   display: flex;
   flex-direction: row;
@@ -8,25 +13,34 @@
   gap: 20px;
 }
 
+/* =============================================================================
+   TEACHERS LIST SECTION
+   ============================================================================= */
+
+/* Left panel containing all teachers */
 .all-teachers {
-  width: 65%;
-  height: 75vh;
+  width: 701px;
+  max-height: 615px;
+  min-height: 450px;
+  height: 70vh;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 40px;
+  padding: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Scrollable container for teacher list */
 .teacher-list {
   overflow-y: scroll;
   height: 90%;
 }
 
+/* Custom scrollbar styling */
 .teacher-list::-webkit-scrollbar {
   width: 5px;
 }
@@ -42,6 +56,11 @@
   background-clip: content-box;
 }
 
+/* =============================================================================
+   TEACHER CARD STYLES
+   ============================================================================= */
+
+/* Individual teacher info container */
 .teacher-info-container {
   display: flex;
   flex-direction: row;
@@ -53,6 +72,7 @@
   margin-bottom: 8px;
 }
 
+/* Teacher info label container (for header row) */
 .teacher-info-label-container {
   display: flex;
   flex-direction: row;
@@ -60,6 +80,46 @@
   width: 100%;
 }
 
+/* =============================================================================
+   SEARCH BAR STYLES
+   ============================================================================= */
+
+/* Search bar container */
+.teacher-search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Search input field */
+.teacher-search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  line-height: 105%;
+  color: #555;
+  width: 100px;
+  height: 34px;
+}
+
+/* Search icon */
+.teacher-search-icon {
+  margin-left: 12px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+/* =============================================================================
+   CUSTOM CHECKBOX STYLES (Currently unused but preserved)
+   ============================================================================= */
+
+/* Custom checkbox base styling */
 .custom-checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -77,6 +137,7 @@
   transition: all 0.2s ease;
 }
 
+/* Custom checkbox checkmark */
 .custom-checkbox::before {
   content: '';
   width: 12px;
@@ -88,6 +149,7 @@
   background-color: transparent;
 }
 
+/* Custom checkbox checked state */
 .custom-checkbox:checked {
   border-color: #0d0d0d;
 }
@@ -100,35 +162,8 @@
   mask-size: contain;
 }
 
+/* Custom checkbox focus state */
 .custom-checkbox:focus {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
-}
-
-.teacher-search-bar {
-  display: flex;
-  align-items: center;
-  background: #f5f5f5;
-  border-radius: 5px;
-  padding: 5px 10px;
-  width: fit-content;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.teacher-search-bar input {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 17px;
-  line-height: 105%;
-  color: #555;
-  width: 100px;
-  height: 34px;
-}
-
-.teacher-search-icon {
-  margin-left: 12px;
-  cursor: pointer;
-  height: 18px;
-  width: 18px;
 }

@@ -5,7 +5,7 @@
 .classes-content-container {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 15px;
   gap: 20px;
 }
 
@@ -14,12 +14,17 @@
    ============================================ */
 
 .all-classes {
-  width: 65%;
+  width: 632px;
+  max-height: 615px;
+  min-height: 450px;
+  height: 73vh;
   background: white;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1);
-  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevents flex item from overflowing */
 }
 
 /* Header with Search */
@@ -27,13 +32,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* Prevents header from shrinking */
 }
 
 .classes-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #374151;
+  margin: 0;
 }
 
 /* Search Bar */
@@ -44,6 +51,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
 }
 
 .search-input {
@@ -51,6 +59,7 @@
   background: transparent;
   outline: none;
   font-size: 15px;
+  font-weight: 400;
   color: #555;
   width: 100px;
   height: 34px;
@@ -60,40 +69,44 @@
   margin-left: 8px;
   height: 16px;
   width: 16px;
+  color: #707070;
 }
 
-/* Classes Grid */
-.classes-grid {
+/* Classes Container - FLEXBOX LAYOUT */
+.classes-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  height: 90%;
+  gap: 16px;
   overflow-y: auto;
-  padding-right: 8px;
+  overflow-x: hidden;
+  flex: 1;
+  align-content: flex-start;
+  justify-content: flex-start;
+  padding-top: 10px;
 }
 
 /* Custom Scrollbar */
-.classes-grid::-webkit-scrollbar {
+.classes-container::-webkit-scrollbar {
   width: 5px;
 }
 
-.classes-grid::-webkit-scrollbar-track {
+.classes-container::-webkit-scrollbar-track {
   background: #e5e7eb;
   border-radius: 2px;
 }
 
-.classes-grid::-webkit-scrollbar-thumb {
+.classes-container::-webkit-scrollbar-thumb {
   background: #007ea7;
   border: 1px solid transparent;
   background-clip: content-box;
 }
 
 /* ============================================
-   CLASS CARDS
+   CLASS CARDS - RESPONSIVE DESIGN
    ============================================ */
 
 /* Create New Class Card */
-.create-class-card {
+.create-class-card-new {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,85 +117,114 @@
   color: #6b7280;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 225px;
-  height: 250px;
+  padding: 16px;
+  flex: 0 0 auto;
+  height: 170px;
+  width: 170px;
 }
 
-.create-class-card:hover {
+.create-class-card-new:hover {
   background: #f9fafb;
   border-color: #9ca3af;
 }
 
-/* Class Card Container */
-.class-card-holder {
-  width: 225px;
-  height: 250px;
-  border: 1px solid #bfbfbf;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.create-class-text {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
 }
 
-/* Class Card */
-.class-card {
-  position: relative;
-  height: 80%;
-  width: 100%;
-  color: white;
+/* Class Card - RESPONSIVE DESIGN */
+.class-card-new {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex: 0 0 auto;
+  height: 170px;
+  width: 170px;
+}
+
+.class-card-new:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.class-card-new.selected {
+  border-color: #007ea7;
+  background: #f0f9ff;
+}
+
+.class-card-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.class-menu-icon {
+  color: #9ca3af;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 5px;
 }
 
-.class-card:hover {
-  transform: scale(1.03);
+.class-card-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 12px;
 }
 
-.class-card-menu {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  color: white;
-}
-
-.class-card-content {
-  flex-grow: 1;
+.class-card-icon {
+  width: clamp(60px, 8vw, 80px);
+  height: clamp(60px, 8vw, 80px);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.class-level {
-  font-size: 60px;
-  font-weight: 100;
+.class-card-icon-img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
-.class-card-footer {
+.class-card-name {
   text-align: center;
-}
-
-.class-name {
-  font-weight: 400;
-  margin-top: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  flex-shrink: 0;
 }
 
 /* ============================================
-   RIGHT PANEL - CLASS DETAILS
+   RIGHT PANEL - CLASS DETAILS (UNCHANGED)
    ============================================ */
 
 .class-details-panel {
-  background: #f9fafb;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   min-width: 320px;
-  width: 32%;
+  width: 380px;
+  max-height: 615px;
+  min-height: 450px;
+  height: 73vh;
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -196,7 +238,8 @@
   justify-content: flex-end;
   align-items: flex-end;
   max-height: 120px;
-  height: 40%;
+  height: 17%;
+  max-height: 150px;
   padding-right: 15px;
 }
 
@@ -208,17 +251,19 @@
 /* Class Information Section */
 .class-info-section {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5px;
   /* background-color: green; */
-  padding-top: 20px;
 }
 
 .section-label {
   color: #404040;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* ============================================
@@ -230,8 +275,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 5px;
 }
 
 .teacher-avatars {
@@ -279,7 +322,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .subjects-container {
@@ -288,16 +331,18 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 280px;
   flex-wrap: wrap;
+  /* background-color: green; */
 }
 
 .subject-tag {
   padding: 6px 10px;
-  background: #e0e7ff;
-  border-radius: 6px;
-  font-size: 13px;
-  color: #1e3a8a;
+  background: #ffffff;
+  border: 0.5px solid #a6a6a6;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #737373;
   font-weight: 500;
 }
 
@@ -317,21 +362,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   background: #ffffff;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   font-size: 14px;
   color: #333;
   text-align: center;
-  width: 180px;
-  height: 80px;
+  width: 160px;
+  /* height: 75px; */
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
 .student-count-label {
   color: #404040;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -345,7 +393,6 @@
 .student-stat {
   display: flex;
   align-items: center;
-  /* gap: 5px; */
 }
 
 .gender-icon {
@@ -354,8 +401,10 @@
 }
 
 .student-count-number {
-  color: #a6a6a6;
-  font-weight: 500;
+  color: #0d0d0d;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
 }
 
 /* ============================================
@@ -378,7 +427,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s ease;
-  width: 180px;
+  width: 160px;
 }
 
 .edit-class-btn:hover {

@@ -32,6 +32,7 @@
   height: 20px;
   width: 20px;
   margin-right: 10px;
+  color: #737373;
 }
 
 .nav-link-text {
@@ -46,7 +47,7 @@
   /* width: 100%; */
   margin-top: -20px;
   margin-bottom: 30px;
-  margin-right: 80px;
+  margin-right: 75px;
   padding-left: 20px;
   gap: 10px;
   border-left: #a6a6a6 2px solid;

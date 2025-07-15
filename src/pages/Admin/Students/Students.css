@@ -13,8 +13,10 @@
 /* ==================== LEFT PANEL - ALL STUDENTS ==================== */
 
 .all-students {
-  width: 65%;
-  height: 75vh;
+  width: 701px;
+  max-height: 615px;
+  min-height: 450px;
+  height: 70vh;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
@@ -145,6 +147,7 @@
 .student-list {
   overflow-y: scroll;
   height: 350px;
+  padding-right: 15px;
 }
 
 /* Custom scrollbar styling */

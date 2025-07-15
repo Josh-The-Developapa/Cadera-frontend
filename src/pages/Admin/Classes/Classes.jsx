@@ -1,14 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import './Classes.css';
 import ContentBox from '../../../components/ContentBox/ContentBox';
-import SearchIcon from '../../../assets/search-1.svg';
-import { Plus, MoreHorizontal } from 'lucide-react';
-import MaleSVG from '../../../assets/male.svg';
-import FemaleSVG from '../../../assets/female.svg';
-import BothGendersSVG from '../../../assets/both-genders.svg';
+import rightPanelIcon from '../../../assets/classes-right-panel-icon.svg';
+import Asset1 from '../../../assets/SVGs/Asset 1.svg';
+import Asset2 from '../../../assets/SVGs/Asset 2.svg';
+import Asset3 from '../../../assets/SVGs/Asset 3.svg';
+import Asset4 from '../../../assets/SVGs/Asset 4.svg';
+import Asset5 from '../../../assets/SVGs/Asset 5.svg';
+import Asset6 from '../../../assets/SVGs/Asset 6.svg';
+import Asset7 from '../../../assets/SVGs/Asset 7.svg';
+import Asset8 from '../../../assets/SVGs/Asset 8.svg';
+import Asset9 from '../../../assets/SVGs/Asset 9.svg';
+import Asset10 from '../../../assets/SVGs/Asset 10.svg';
+import Asset11 from '../../../assets/SVGs/Asset 11.svg';
+import Asset12 from '../../../assets/SVGs/Asset 12.svg';
+import Asset13 from '../../../assets/SVGs/Asset 13.svg';
+import Asset14 from '../../../assets/SVGs/Asset 14.svg';
+import Asset15 from '../../../assets/SVGs/Asset 15.svg';
+import Asset16 from '../../../assets/SVGs/Asset 16.svg';
+import Asset17 from '../../../assets/SVGs/Asset 17.svg';
+import Asset18 from '../../../assets/SVGs/Asset 18.svg';
+import Asset19 from '../../../assets/SVGs/Asset 19.svg';
+import Asset20 from '../../../assets/SVGs/Asset 20.svg';
+import {
+  MoreHorizontal,
+  Monitor,
+  Plus,
+  Search as SearchIcon,
+} from 'lucide-react';
 
 // Import Mock Classes Data
 import mockClasses from './ClassesData.js';
+
+// Available icons for randomization
+const availableIcons = [
+  Asset1,
+  Asset2,
+  Asset3,
+  Asset4,
+  Asset5,
+  Asset6,
+  Asset7,
+  Asset8,
+  Asset9,
+  Asset10,
+  Asset11,
+  Asset12,
+  Asset13,
+  Asset14,
+  Asset15,
+  Asset16,
+  Asset17,
+  Asset18,
+  Asset19,
+  Asset20,
+];
 
 // Sort teachers alphabetically in every class
 mockClasses.forEach((cls) => {
@@ -21,13 +67,22 @@ function Classes() {
   const [searchQuery, setSearchQuery] = useState('');
   const [hues, setHues] = useState([]);
   const [subjectHues, setSubjectHues] = useState({});
+  const [classIcons, setClassIcons] = useState({});
 
-  // Generate random hues for class cards and subjects on component mount
+  // Generate random hues and icons for class cards on component mount
   useEffect(() => {
     const generatedHues = mockClasses.map(() =>
       Math.floor(Math.random() * 361)
     );
     setHues(generatedHues);
+
+    // Generate random icons for each class
+    const iconMap = {};
+    mockClasses.forEach((cls) => {
+      const randomIndex = Math.floor(Math.random() * availableIcons.length);
+      iconMap[cls.id] = availableIcons[randomIndex];
+    });
+    setClassIcons(iconMap);
 
     const subjectHueMap = {};
     mockClasses.forEach((cls, cIndex) => {
@@ -56,31 +111,24 @@ function Classes() {
     setSearchQuery(e.target.value);
   };
 
-  // Generate gradient style for class cards
-  const getCardGradientStyle = (hue) => {
+  // Generate hue-based color for icon background
+  const getIconBackgroundStyle = (hue) => {
     return hue !== undefined
       ? {
-          background: `linear-gradient(to right, hsla(${hue}, 30%, 35%), hsla(${hue}, 30%, 65%))`,
-          borderRadius: '5px 5px 0 0',
+          backgroundColor: `hsl(${hue}, 20%, 50%)`,
+          color: 'white',
         }
-      : {};
+      : {
+          backgroundColor: '#64748b',
+          color: 'white',
+        };
   };
 
   // Generate gradient style for class banner
   const getBannerGradientStyle = () => {
     return {
-      background: `linear-gradient(to right, hsla(${hues[selectedIndex]}, 30%, 35%), hsla(${hues[selectedIndex]}, 30%, 65%))`,
+      background: `hsla(${hues[selectedIndex]}, 20%, 50%)`,
     };
-  };
-
-  // Generate style for subject tags
-  const getSubjectTagStyle = (subjHue) => {
-    return subjHue !== undefined
-      ? {
-          backgroundColor: `hsla(${subjHue}, 70%, 80%, 0.3)`,
-          color: `hsl(${subjHue}, 30%, 20%)`,
-        }
-      : {};
   };
 
   // Generate style for "others" avatar circle
@@ -89,15 +137,14 @@ function Classes() {
       width: '40px',
       height: '40px',
       borderRadius: '50%',
-      background: `linear-gradient(135deg, hsla(${hues[selectedIndex]}, 40%, 50%, 0.8), hsla(${hues[selectedIndex]}, 40%, 65%, 0.8))`,
+      background: `hsl(${hues[selectedIndex]}, 20%, 50%)`,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       color: 'white',
       fontSize: '18px',
-      fontWeight: '500',
+      fontWeight: '300',
       marginBottom: '8px',
-      boxShadow: `0 2px 8px hsla(${hues[selectedIndex]}, 40%, 30%, 0.3)`,
     };
   };
 
@@ -112,9 +159,9 @@ function Classes() {
 
   // Render Create New Class Card
   const renderCreateClassCard = () => (
-    <div className="create-class-card">
-      <Plus size={28} />
-      <p className="mt-2 text-sm font-medium">Create New Class</p>
+    <div className="create-class-card-new">
+      <Plus size={24} />
+      <p className="create-class-text">Create New Class</p>
     </div>
   );
 
@@ -122,37 +169,32 @@ function Classes() {
   const renderClassCards = () => {
     return filteredClasses.map((cls) => {
       const originalIndex = mockClasses.findIndex((s) => s.id === cls.id);
-      const hue = hues[originalIndex];
       const isSelected = selectedIndex === originalIndex;
+      const IconComponent = classIcons[cls.id] || Monitor;
+      const classHue = hues[originalIndex];
 
       return (
         <div
           key={cls.id}
-          className="class-card-holder"
-          style={{
-            backgroundColor: isSelected ? '#A6A6A6' : '#ffffff',
-          }}
+          className={`class-card-new ${isSelected ? 'selected' : ''}`}
+          onClick={() => handleClassSelection(originalIndex)}
         >
-          <div
-            className="class-card"
-            style={getCardGradientStyle(hue)}
-            onClick={() => handleClassSelection(originalIndex)}
-          >
-            <MoreHorizontal size={20} className="class-card-menu" />
-            <div className="class-card-content">
-              <span className="class-level">{cls.level}</span>
+          <div className="class-card-header">
+            <MoreHorizontal size={16} className="class-menu-icon" />
+          </div>
+          <div className="class-card-icon-container">
+            <div
+              className="class-card-icon"
+              style={getIconBackgroundStyle(classHue)}
+            >
+              <img
+                src={IconComponent}
+                className="class-card-icon-img"
+                alt={cls.name}
+              />
             </div>
           </div>
-          <div className="class-card-footer">
-            <p
-              className="class-name"
-              style={{
-                color: isSelected ? '#F2F2F2' : '#000000',
-              }}
-            >
-              {cls.name}
-            </p>
-          </div>
+          <div className="class-card-name">{cls.name}</div>
         </div>
       );
     });
@@ -201,15 +243,9 @@ function Classes() {
   // Render Subject Tags
   const renderSubjectTags = () => {
     return selectedClass.subjects.map((subject, i) => {
-      const subjHue = subjectHues[selectedIndex]?.[i];
-
       return (
-        <span
-          key={i}
-          className="subject-tag"
-          style={getSubjectTagStyle(subjHue)}
-        >
-          {subject}
+        <span key={i} className="subject-tag">
+          {subject.name.slice(0, 3).toUpperCase()}
         </span>
       );
     });
@@ -219,24 +255,7 @@ function Classes() {
   const renderStudentCount = () => (
     <div className="student-count-box">
       <p className="student-count-label">Students</p>
-      <div className="student-count-stats">
-        <div className="student-stat">
-          <img src={MaleSVG} alt="Male" className="gender-icon" />
-          <span className="student-count-number">{selectedClass.male}</span>
-        </div>
-        <div className="student-stat">
-          <img src={FemaleSVG} alt="Female" className="gender-icon" />
-          <span className="student-count-number">{selectedClass.female}</span>
-        </div>
-        <div className="student-stat">
-          <img
-            src={BothGendersSVG}
-            alt="Total Students"
-            className="gender-icon mr-[5px]"
-          />
-          <span className="student-count-number">{selectedClass.students}</span>
-        </div>
-      </div>
+      <p className="student-count-number">{Number(selectedClass.students)}</p>
     </div>
   );
 
@@ -257,12 +276,12 @@ function Classes() {
                   onChange={handleSearchChange}
                   className="search-input"
                 />
-                <img src={SearchIcon} alt="Search" className="search-icon" />
+                <SearchIcon className="search-icon" />
               </div>
             </div>
 
-            {/* Classes Grid */}
-            <div className="classes-grid">
+            {/* Classes Container */}
+            <div className="classes-container">
               {renderCreateClassCard()}
               {renderClassCards()}
             </div>
@@ -272,6 +291,17 @@ function Classes() {
           <div className="class-details-panel">
             {/* Class Banner */}
             <div className="class-banner" style={getBannerGradientStyle()}>
+              <img
+                src={rightPanelIcon}
+                alt="RightPanelIcon"
+                style={{
+                  position: 'relative',
+                  height: '100%',
+                  width: '100%',
+                  top: 82,
+                  left: -130,
+                }}
+              />
               <h2 className="class-banner-title">{selectedClass.name}</h2>
             </div>
 
