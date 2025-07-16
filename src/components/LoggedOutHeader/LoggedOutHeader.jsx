@@ -4,15 +4,23 @@ import CaderaLogo from '../../assets/cadera-logo.png';
 import HelpIcon from '../../assets/help.svg';
 import SearchIcon from '../../assets/search-1.svg';
 
-function Header() {
+function LoggedOutHeader() {
   return (
-    <div className="header">
-      <div className="header-left">
-        <img src={CaderaLogo} alt="Cadera-Logo" className="header-logo" />
+    <div className="logged-out-header">
+      <div className="logged-out-header-left">
+        <img
+          src={CaderaLogo}
+          alt="Cadera-Logo"
+          className="logged-out-header-logo"
+        />
       </div>
-      <img src={HelpIcon} alt="Help-Icon" className="help-icon" />
+      <img
+        src={HelpIcon}
+        alt="Help-Icon"
+        className="logged-out-header-help-icon"
+      />
     </div>
   );
 }
 
-export default React.memo(Header);
+export default React.memo(LoggedOutHeader);

@@ -5,6 +5,59 @@ let ClassesData = [
     "level": "P7",
     "subjects": [
       {
+        "name": "Geography",
+        "weighting": [
+          {
+            "component": "Speaking",
+            "percentage": 45,
+            "color": "bg-teal-500"
+          },
+          {
+            "component": "Listening",
+            "percentage": 27,
+            "color": "bg-green-500"
+          },
+          {
+            "component": "Writing",
+            "percentage": 28,
+            "color": "bg-sky-500"
+          }
+        ],
+        "assessmentComponents": [
+          "Speaking",
+          "Listening",
+          "Writing",
+          "Reading",
+          "Grammar"
+        ],
+        "performance": {
+          "2024": {
+            "Term 1": [
+              {
+                "name": "Speaking",
+                "score": 23.7
+              },
+              {
+                "name": "Listening",
+                "score": 26.9
+              },
+              {
+                "name": "Writing",
+                "score": 21.0
+              },
+              {
+                "name": "Reading",
+                "score": 17.7
+              },
+              {
+                "name": "Grammar",
+                "score": 18.4
+              }
+            ]
+          }
+        }
+      },
+      {
         "name": "English",
         "weighting": [
           {
@@ -264,6 +317,7 @@ let ClassesData = [
       }
     ]
   },
+
   {
     "id": "C2",
     "name": "P7B",

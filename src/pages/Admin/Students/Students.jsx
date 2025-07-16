@@ -11,18 +11,14 @@ import students from './StudentsData.js';
 function Students() {
   // ==================== STATE MANAGEMENT ====================
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [hues, setHues] = useState([]);
   const [subjectHues, setSubjectHues] = useState({});
   const [selectedAll, setSelectedAll] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
   // ==================== EFFECTS ====================
-  // Generate random hues for students and their subjects on component mount
+  // Generate random hues for student subjects on component mount
   useEffect(() => {
-    const generatedHues = students.map(() => Math.floor(Math.random() * 361));
-    setHues(generatedHues);
-
     const subjectHueMap = {};
     students.forEach((student, sIndex) => {
       subjectHueMap[sIndex] = student.subjects.map(() =>
@@ -33,7 +29,6 @@ function Students() {
   }, []);
 
   // ==================== EVENT HANDLERS ====================
-  // Handle selecting all students
   const handleSelectAll = () => {
     if (students.length > 0) {
       setSelectedAll(true);
@@ -45,7 +40,6 @@ function Students() {
     }
   };
 
-  // Handle adding a new student
   const handleAddStudent = () => {
     if (inputValue.trim()) {
       console.log('Adding student:', inputValue);
@@ -53,12 +47,10 @@ function Students() {
     }
   };
 
-  // Handle enter key press in add student input
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') handleAddStudent();
   };
 
-  // Handle individual student selection
   const handleStudentSelect = (originalIndex) => {
     setSelectedIndex(originalIndex);
     setSelectedAll(false);
@@ -66,24 +58,21 @@ function Students() {
 
   // ==================== COMPUTED VALUES ====================
   const selectedStudent = students[selectedIndex];
-
-  // Filter students based on search query
   const filteredStudents = students.filter((student) =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // ==================== RENDER FUNCTIONS ====================
-  // Render student list header
-  const renderStudentListHeader = () => (
+  // Render student list header with search
+  const renderListHeader = () => (
     <div className="flex flex-row justify-between items-center mb-4">
-      <h2 className="text-[16px] font-semibold">All Students</h2>
+      <h2 className="text-[16px] font-[400]">All Students</h2>
       <div className="student-search-bar">
         <input
           type="text"
           placeholder="Search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          style={{ fontSize: '16px' }}
         />
         <img
           src={SearchIcon}
@@ -115,168 +104,135 @@ function Students() {
     </div>
   );
 
-  // Render student list column headers
-  const renderStudentListHeaders = () => (
-    <div
-      className="student-info-container font-semibold cursor-pointer text-[14px]"
-      onClick={handleSelectAll}
-      style={{ background: 'rgba(0, 0, 0, 0.05)', marginRight: '15px' }}
-    >
-      <input
-        type="checkbox"
-        checked={selectedAll}
-        readOnly
-        className="custom-checkbox"
-      />
-      <div>Student Name</div>
-      <div>Student ID</div>
-      <div>Class</div>
+  // Render the entire student table
+  const renderStudentTable = () => (
+    <div className="student-list">
+      <table className="student-table">
+        <thead>
+          <tr onClick={handleSelectAll}>
+            <th>
+              <input
+                type="checkbox"
+                checked={selectedAll}
+                readOnly
+                className="custom-checkbox"
+              />
+            </th>
+            <th>Student Name</th>
+            <th>Student ID</th>
+            <th>Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredStudents.map((student, index) => {
+            const originalIndex = students.findIndex(
+              (s) => s.id === student.id
+            );
+            const isSelected = selectedIndex == originalIndex;
+
+            const style = {
+              '--row-bg-color': index % 2 == 0 ? '#FAFAFA' : '#F6FCFD',
+              '--border-gradient': isSelected
+                ? 'linear-gradient(to right, #007EA7, #00BF76)'
+                : 'none',
+              '--row-border': isSelected ? '2px solid transparent' : 'none',
+            };
+
+            return (
+              <tr
+                key={originalIndex}
+                onClick={() => handleStudentSelect(originalIndex)}
+                style={style}
+              >
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={selectedAll || isSelected}
+                    readOnly
+                    className="custom-checkbox"
+                  />
+                </td>
+                <td>{student.name}</td>
+                <td>{student.id}</td>
+                <td>{student.class}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 
-  // Render individual student row
-  const renderStudentRow = (student, index) => {
-    const originalIndex = students.findIndex((s) => s.id === student.id);
-    const backgroundColor = index % 2 === 0 ? '#FAFAFA' : '#F6FCFD';
-    const isSelected = selectedIndex === originalIndex;
-
-    const style = {
-      background: backgroundColor,
-      border: isSelected ? '2px solid' : '1px solid #d1d5db',
-      borderImage: isSelected
-        ? 'linear-gradient(to right, #007EA7, #00BF76) 1'
-        : '',
-    };
+  // Render student profile details
+  const renderStudentProfile = () => {
+    if (!selectedStudent) return null; // Handle case where no student is selected
 
     return (
       <div
-        key={originalIndex}
-        className="student-info-container"
-        onClick={() => handleStudentSelect(originalIndex)}
-        style={style}
-      >
-        <input
-          type="checkbox"
-          checked={selectedAll || isSelected}
-          readOnly
-          className="custom-checkbox"
-        />
-        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
-          {student.name}
-        </span>
-        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
-          {student.id}
-        </span>
-        <span className="text-sm font-[400]" style={{ color: '#404040' }}>
-          {student.class}
-        </span>
-      </div>
-    );
-  };
-
-  // Render student list
-  const renderStudentList = () => (
-    <div className="space-y-2 student-list">
-      {filteredStudents.map((student, index) =>
-        renderStudentRow(student, index)
-      )}
-    </div>
-  );
-
-  // Render student profile avatar and basic info
-  const renderStudentProfileHeader = () => (
-    <>
-      <img
-        src={StudentIcon}
-        alt="Student-Icon"
-        style={{ height: '114px', width: '114px', margin: 0 }}
-      />
-      <h3
-        className="text-black font-semibold mb-1"
-        style={{ color: '#262626', fontSize: '18px', fontWeight: 500 }}
-      >
-        {selectedStudent.name}
-      </h3>
-      <p className="mb-4" style={{ color: '#262626', fontSize: '18px' }}>
-        {selectedStudent.class}
-      </p>
-    </>
-  );
-
-  // Render student subjects with colored tags
-  const renderStudentSubjects = () => (
-    <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[17px]">
-      {selectedStudent.subjects.map((subj, idx) => {
-        const subjHue = subjectHues[selectedIndex]?.[idx];
-        const style =
-          subjHue !== undefined
-            ? {
-                backgroundColor: `hsla(${subjHue}, 70%, 80%, 0.3)`,
-                color: `hsl(${subjHue}, 30%, 20%)`,
-                fontSize: '12px',
-              }
-            : {};
-
-        return (
-          <span
-            key={idx}
-            style={style}
-            className="text-sm px-3 py-1 rounded-[5px]"
-          >
-            {subj}
-          </span>
-        );
-      })}
-    </div>
-  );
-
-  // Render student profile footer with actions
-  const renderStudentProfileFooter = () => (
-    <div className="flex flex-row justify-between items-end w-full h-[200px]">
-      <p className="text-xs text-gray-400 mb-1">
-        Student ID: {selectedStudent.id} <br />
-        Profile Modified: 20/03/2025
-      </p>
-      <button className="text-red-500 mt-4">
-        <Trash2 />
-      </button>
-    </div>
-  );
-
-  // Render left panel with all students
-  const renderLeftPanel = () => (
-    <div className="all-students">
-      {renderStudentListHeader()}
-      {renderAddStudentSection()}
-      {renderStudentListHeaders()}
-      {renderStudentList()}
-    </div>
-  );
-
-  // Render right panel with selected student profile
-  const renderRightPanel = () => (
-    <div>
-      <div
-        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[484px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
+        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
         style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
       >
-        {renderStudentProfileHeader()}
-        {renderStudentSubjects()}
+        <img
+          src={StudentIcon}
+          alt="Student-Icon"
+          style={{ height: '114px', width: '114px', margin: 0 }}
+        />
+        <h3 className="profile-name">{selectedStudent.name}</h3>
+        <p className="profile-class">{selectedStudent.class}</p>
+
+        {/* Subjects */}
+        <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[17px]">
+          {selectedStudent.subjects.map((subj, idx) => {
+            const subjHue = subjectHues[selectedIndex]?.[idx];
+            const style =
+              subjHue !== undefined
+                ? {
+                    backgroundColor: `hsla(${subjHue}, 70%, 80%, 0.3)`,
+                    color: `hsl(${subjHue}, 30%, 20%)`,
+                    fontSize: '12px',
+                  }
+                : {};
+            return (
+              <span
+                key={idx}
+                style={style}
+                className="text-sm px-3 py-1 rounded-[5px]"
+              >
+                {subj}
+              </span>
+            );
+          })}
+        </div>
+
         <button className="bg-black text-white px-4 py-2 rounded-md mb-3 w-[180px]">
           Edit Profile
         </button>
-        {renderStudentProfileFooter()}
+
+        {/* Footer */}
+        <div className="flex flex-row justify-between items-end w-full h-[200px]">
+          <p className="text-xs text-gray-400 mb-1">
+            Student ID: {selectedStudent.id} <br />
+            Profile Modified: 16/07/2025
+          </p>
+          <button className="text-red-500 mt-4">
+            <Trash2 />
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // ==================== MAIN RENDER ====================
   return (
     <div className="body-container">
       <ContentBox contentHeading="Manage Students">
         <div className="students-content-container text-gray-800">
-          {renderLeftPanel()}
-          {renderRightPanel()}
+          <div className="all-students">
+            {renderListHeader()}
+            {renderAddStudentSection()}
+            {renderStudentTable()}
+          </div>
+          {renderStudentProfile()}
         </div>
       </ContentBox>
     </div>

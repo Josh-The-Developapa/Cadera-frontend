@@ -1,12 +1,12 @@
 import React from 'react';
 import './Error.css';
-import Header from '../../components/Header/Header';
+import LoggedOutHeader from '../../components/LoggedOutHeader/LoggedOutHeader';
 import ErrorIcon from '../../assets/error.png';
 
 function Error() {
   return (
     <div className="error-container">
-      <Header />
+      <LoggedOutHeader />
       <div className="error-modal">
         <img src={ErrorIcon} alt="Error-Icon" className="error-icon" />
         <h1 className="login-heading">Error</h1>

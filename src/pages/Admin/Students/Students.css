@@ -1,9 +1,7 @@
 /* ==================== MAIN LAYOUT STYLES ==================== */
-
 .students-content-container {
   display: flex;
   flex-direction: row;
-  margin: 0px;
   margin-top: 30px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -11,46 +9,38 @@
 }
 
 /* ==================== LEFT PANEL - ALL STUDENTS ==================== */
-
 .all-students {
   width: 701px;
-  max-height: 484px;
+  max-height: 615px;
   min-height: 450px;
   height: 70vh;
   background-color: #ffffff;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 30px;
-  padding-top: 20px;
-  padding-bottom: 0px;
+  padding: 30px 20px 20px 30px;
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ==================== SEARCH BAR STYLES ==================== */
-
 .student-search-bar {
   display: flex;
   align-items: center;
   background: #f5f5f5;
   border-radius: 5px;
   padding: 5px 10px;
-  /* width: fit-content; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  height: 34px;
-  width: 115px;
+  height: 40px;
+  width: 140px;
 }
 
 .student-search-bar input {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 17px;
-  line-height: 105%;
+  font-size: 16px;
   color: #555;
-  width: 60px;
-  height: 34px;
+  width: 80px;
 }
 
 .student-search-icon {
@@ -61,29 +51,17 @@
 }
 
 /* ==================== ADD STUDENT SECTION ==================== */
-
 .add-student-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  /* width: 100%; */
   padding: 8px;
   background-color: #fafafa;
   border-radius: 5px;
   border: 1px solid #e5e7eb;
-  overflow: hidden;
   transition: all 0.3s ease;
   margin-bottom: 10px;
   box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
-  margin-right: 15px;
 }
-
-.add-student-container:hover {
-  background-color: #f3f4f6;
-  border-color: #d1d5db;
-}
-
 .add-student-input {
   flex: 1;
   padding: 8px 16px;
@@ -93,11 +71,6 @@
   color: #404040;
   font-size: 14px;
 }
-
-.add-student-input::placeholder {
-  color: #404040;
-}
-
 .add-student-button {
   padding: 12px;
   background: transparent;
@@ -106,97 +79,80 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
   border-radius: 4px;
   margin-right: 4px;
 }
-
-.add-student-button:hover {
-  background-color: #e5e7eb;
-  transform: scale(1.1);
+.plus-icon {
+  color: #6b7280;
 }
-
-.add-student-button:active {
-  transform: scale(1.05);
-}
-
 .add-student-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  transform: none;
 }
 
-.add-student-button:disabled:hover {
-  background: transparent;
-  transform: none;
-}
-
-.plus-icon {
-  transition: all 0.3s ease;
-  color: #6b7280;
-}
-
-.add-student-button:hover .plus-icon {
-  color: #374151;
-  transform: rotate(90deg);
-}
-
-.add-student-button:disabled .plus-icon {
-  color: #9ca3af;
-  transform: none;
-}
-
-/* ==================== STUDENT LIST STYLES ==================== */
-
+/* ==================== STUDENT TABLE STYLES ==================== */
 .student-list {
-  overflow-y: scroll;
-  height: 350px;
+  overflow-y: auto;
+  height: 100%;
+  padding-right: 10px; /* Space for scrollbar */
 }
-
-/* Custom scrollbar styling */
-.student-list::-webkit-scrollbar {
-  width: 5px;
-}
-
-.student-list::-webkit-scrollbar-track {
-  background: #e5e7eb;
-  border-radius: 2px;
-}
-
-.student-list::-webkit-scrollbar-thumb {
-  background: #007ea7;
-  border: 1px solid transparent;
-  background-clip: content-box;
-}
-
-.student-info-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 8px;
-  margin-right: 10px;
-}
-
-.student-info-label-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.student-table {
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.student-table thead tr {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+.student-table th {
+  padding: 18px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+}
+.student-table th:first-child,
+.student-table td:first-child {
+  width: 1%; /* Shrink checkbox column */
+  padding-right: 0;
+}
+.student-table tbody tr {
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #404040;
+  font-weight: 400;
+  /* Dynamic background color from inline style */
+  background: var(--row-bg-color);
+  /* Gradient border effect */
+  border: var(--row-border);
+  background-clip: padding-box;
+  border-image: var(--border-gradient) 1;
+}
+.student-table td {
+  padding: 18px;
+}
+
+/* ==================== RIGHT PANEL - PROFILE STYLES ==================== */
+.profile-name {
+  color: #262626;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.profile-class {
+  color: #262626;
+  font-size: 18px;
+  margin-bottom: 1rem;
 }
 
 /* ==================== CUSTOM CHECKBOX STYLES ==================== */
-
 .custom-checkbox {
   appearance: none;
   -webkit-appearance: none;
   background-color: #fff;
   margin: 0;
-  font: inherit;
-  color: currentColor;
   width: 20px;
   height: 20px;
   border: 2px solid #000000;
@@ -204,47 +160,21 @@
   display: grid;
   place-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
-
 .custom-checkbox::before {
   content: '';
   width: 12px;
   height: 12px;
   transform: scale(0);
   transition: transform 0.15s ease-in-out;
-  box-shadow: inset 1em 1em var(--checkbox-color);
-  transform-origin: center;
-  background-color: transparent;
-}
-
-.custom-checkbox:checked {
-  border-color: #0d0d0d;
-}
-
-.custom-checkbox:checked::before {
-  transform: scale(1.7);
   background-color: #0d0d0d;
   mask: url('data:image/svg+xml,%3Csvg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M6.00039 10.7998L3.20039 7.9998L2.26672 8.93347L6.00039 12.6668L14.0004 4.6668L13.0667 3.73347L6.00039 10.7998Z"/%3E%3C/svg%3E')
     no-repeat center;
   mask-size: contain;
 }
-
-/* Optional focus styling for accessibility */
-.custom-checkbox:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
+.custom-checkbox:checked {
+  border-color: #0d0d0d;
 }
-
-/* ==================== UNUSED/DEPRECATED STYLES ==================== */
-
-/* Note: The following styles appear to be unused in the current implementation */
-.add-student-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: #fafafa;
+.custom-checkbox:checked::before {
+  transform: scale(1.7);
 }

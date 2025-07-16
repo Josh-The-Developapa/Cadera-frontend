@@ -6,7 +6,6 @@
 .teachers-content-container {
   display: flex;
   flex-direction: row;
-  margin: 0px;
   margin-top: 30px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -36,20 +35,18 @@
 
 /* Scrollable container for teacher list */
 .teacher-list {
-  overflow-y: scroll;
-  height: 90%;
+  overflow-y: auto; /* Changed to auto for better behavior */
+  height: 100%; /* Occupy full height of parent */
 }
 
 /* Custom scrollbar styling */
 .teacher-list::-webkit-scrollbar {
   width: 5px;
 }
-
 .teacher-list::-webkit-scrollbar-track {
   background: #e5e7eb;
   border-radius: 2px;
 }
-
 .teacher-list::-webkit-scrollbar-thumb {
   background: #007ea7;
   border: 1px solid transparent;
@@ -57,27 +54,86 @@
 }
 
 /* =============================================================================
-   TEACHER CARD STYLES
+   TEACHER TABLE STYLES
    ============================================================================= */
 
-/* Individual teacher info container */
-.teacher-info-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 8px;
+/* Main table styling */
+.teacher-table {
+  width: 98%;
+  border-collapse: separate; /* Allows for space between rows */
+  border-spacing: 0 8px; /* Vertical spacing between rows */
+  font-size: 12px;
+  font-weight: 400;
+  border-collapse: separate;
+  border-spacing: 0 8px;
 }
 
-/* Teacher info label container (for header row) */
-.teacher-info-label-container {
+/* Table header cells */
+.teacher-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374151; /* gray-700 */
+  padding: 0 24px 10px 24px;
+}
+
+/* Centering header text for all but the first column */
+.teacher-table th:not(:first-child) {
+  text-align: center;
+}
+
+/* Table body rows */
+.teacher-table tr {
+  cursor: pointer;
+  border-radius: 10px;
+  /* Dynamic background via inline style variable */
+  background: linear-gradient(
+    to right,
+    hsla(var(--hue), 30%, 35%, 0.1),
+    hsla(var(--hue), 30%, 65%, 0.1)
+  );
+  /* Dynamic border via inline style variables */
+  border: var(--border-width) solid var(--border-color);
+  box-sizing: border-box; /* Ensures border is included in height */
+}
+
+/* Table data cells */
+.teacher-table td {
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* Text alignment for cells */
+.teacher-table td:first-child {
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.teacher-table td:not(:first-child) {
+  text-align: center;
+}
+
+/* Optional: Add default styling for all rows */
+.teacher-table tbody tr {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.teacher-row-inner {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  padding: 17px 24px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  /* width: 100%; */
+}
+
+.selected-row {
+  background-color: rgba(0, 191, 118, 0.05);
+  border: 1px solid #000000;
 }
 
 /* =============================================================================
@@ -113,57 +169,4 @@
   cursor: pointer;
   height: 18px;
   width: 18px;
-}
-
-/* =============================================================================
-   CUSTOM CHECKBOX STYLES (Currently unused but preserved)
-   ============================================================================= */
-
-/* Custom checkbox base styling */
-.custom-checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #fff;
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000000;
-  border-radius: 4px;
-  display: grid;
-  place-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* Custom checkbox checkmark */
-.custom-checkbox::before {
-  content: '';
-  width: 12px;
-  height: 12px;
-  transform: scale(0);
-  transition: transform 0.15s ease-in-out;
-  box-shadow: inset 1em 1em var(--checkbox-color);
-  transform-origin: center;
-  background-color: transparent;
-}
-
-/* Custom checkbox checked state */
-.custom-checkbox:checked {
-  border-color: #0d0d0d;
-}
-
-.custom-checkbox:checked::before {
-  transform: scale(1.7);
-  background-color: #0d0d0d;
-  mask: url('data:image/svg+xml,%3Csvg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M6.00039 10.7998L3.20039 7.9998L2.26672 8.93347L6.00039 12.6668L14.0004 4.6668L13.0667 3.73347L6.00039 10.7998Z"/%3E%3C/svg%3E')
-    no-repeat center;
-  mask-size: contain;
-}
-
-/* Custom checkbox focus state */
-.custom-checkbox:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
 }
