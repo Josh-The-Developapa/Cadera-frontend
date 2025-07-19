@@ -11,6 +11,7 @@ import {
   BookOpen as GradesIcon,
   FileText as ReportsIcon,
   ChartPie as AnalyticsIcon,
+  Users,
 } from 'lucide-react';
 
 function NavMenu() {
@@ -37,7 +38,12 @@ function NavMenu() {
             location.pathname === '/' ? 'active' : ''
           }`}
         >
-          <OverViewIcon className="nav-link-icon" />
+          <OverViewIcon
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/' ? 'hsla(195, 100%, 33%, 1)' : '#737373'
+            }
+          />
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -57,7 +63,16 @@ function NavMenu() {
           }`}
           style={{ cursor: 'pointer' }}
         >
-          <img src={AdminIcon} alt="Admin" className="nav-link-icon" />
+          <Users
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/admin/students' ||
+              location.pathname === '/admin/teachers' ||
+              location.pathname === '/admin/classes'
+                ? 'hsla(195, 100%, 33%, 1)'
+                : '#737373'
+            }
+          />
           <span
             className={
               location.pathname.startsWith('/admin')
@@ -104,7 +119,14 @@ function NavMenu() {
             location.pathname === '/grades' ? 'active' : ''
           }`}
         >
-          <GradesIcon className="nav-link-icon" />
+          <GradesIcon
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/grades'
+                ? 'hsla(195, 100%, 33%, 1)'
+                : '#737373'
+            }
+          />
           <NavLink
             to="/grades"
             className={({ isActive }) =>
@@ -122,7 +144,14 @@ function NavMenu() {
             location.pathname === '/reports' ? 'active' : ''
           }`}
         >
-          <ReportsIcon className="nav-link-icon" />
+          <ReportsIcon
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/reports'
+                ? 'hsla(195, 100%, 33%, 1)'
+                : '#737373'
+            }
+          />
           <NavLink
             to="/reports"
             className={({ isActive }) =>
@@ -140,7 +169,14 @@ function NavMenu() {
             location.pathname === '/analytics' ? 'active' : ''
           }`}
         >
-          <AnalyticsIcon className="nav-link-icon" />
+          <AnalyticsIcon
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/analytics'
+                ? 'hsla(195, 100%, 33%, 1)'
+                : '#737373'
+            }
+          />
           <NavLink
             to="/analytics"
             className={({ isActive }) =>
@@ -158,7 +194,14 @@ function NavMenu() {
             location.pathname === '/settings' ? 'active' : ''
           }`}
         >
-          <SettingsIcon className="nav-link-icon" />
+          <SettingsIcon
+            className="nav-link-icon"
+            stroke={
+              location.pathname === '/settings'
+                ? 'hsla(195, 100%, 33%, 1)'
+                : '#737373'
+            }
+          />
           <NavLink
             to="/settings"
             className={({ isActive }) =>

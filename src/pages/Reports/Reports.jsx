@@ -182,7 +182,7 @@ function Reports() {
           <div className="right-panel">
             <div className="section p-[24px]">
               <div className="section-header">
-                <FileClock className="w-5 h-5" color="#000000" />
+                <FileClock className="w-[16px] h-[16px]" color="#000000" />
                 <h3 className="section-title">History</h3>
               </div>
 

@@ -65,20 +65,26 @@ function Students() {
   // ==================== RENDER FUNCTIONS ====================
   // Render student list header with search
   const renderListHeader = () => (
-    <div className="flex flex-row justify-between items-center mb-4">
-      <h2 className="text-[16px] font-[400]">All Students</h2>
-      <div className="student-search-bar">
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <img
-          src={SearchIcon}
-          alt="Search-Icon"
-          className="student-search-icon"
-        />
+    <div className="students-header">
+      <h2 className="students-title">All Students</h2>
+      <div className="header-controls">
+        <button className="add-student-btn">
+          <Plus size={16} />
+          Add New Student
+        </button>
+        <div className="student-search-bar">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <img
+            src={SearchIcon}
+            alt="Search-Icon"
+            className="student-search-icon"
+          />
+        </div>
       </div>
     </div>
   );
@@ -118,7 +124,7 @@ function Students() {
                 className="custom-checkbox"
               />
             </th>
-            <th>Student Name</th>
+            <th>Name</th>
             <th>Student ID</th>
             <th>Class</th>
           </tr>
@@ -128,23 +134,29 @@ function Students() {
             const originalIndex = students.findIndex(
               (s) => s.id === student.id
             );
-            const isSelected = selectedIndex == originalIndex;
+            const isSelected = selectedIndex === originalIndex;
 
-            const style = {
-              '--row-bg-color': index % 2 == 0 ? '#FAFAFA' : '#F6FCFD',
-              '--border-gradient': isSelected
-                ? 'linear-gradient(to right, #007EA7, #00BF76)'
-                : 'none',
-              '--row-border': isSelected ? '2px solid transparent' : 'none',
-            };
+            const baseColor =
+              index % 2 === 0
+                ? 'hsla(189, 64%, 95%, 1)'
+                : 'hsla(0, 0%, 98%, 1)';
+            const selectedColor =
+              index % 2 === 0
+                ? 'hsla(189, 64%, 85%, 1)'
+                : 'hsla(0, 0%, 85%, 1)';
 
             return (
               <tr
                 key={originalIndex}
                 onClick={() => handleStudentSelect(originalIndex)}
-                style={style}
+                style={{
+                  backgroundColor: isSelected ? selectedColor : baseColor,
+                  transition: 'all 0.2s ease-in-out',
+                  height: '32px',
+                }}
+                className="student-row"
               >
-                <td>
+                <td className="rounded-left">
                   <input
                     type="checkbox"
                     checked={selectedAll || isSelected}
@@ -154,7 +166,7 @@ function Students() {
                 </td>
                 <td>{student.name}</td>
                 <td>{student.id}</td>
-                <td>{student.class}</td>
+                <td className="rounded-right">{student.class}</td>
               </tr>
             );
           })}
@@ -192,6 +204,7 @@ function Students() {
                     fontSize: '12px',
                   }
                 : {};
+
             return (
               <span
                 key={idx}
@@ -229,7 +242,7 @@ function Students() {
         <div className="students-content-container text-gray-800">
           <div className="all-students">
             {renderListHeader()}
-            {renderAddStudentSection()}
+            {/* {renderAddStudentSection()} */}
             {renderStudentTable()}
           </div>
           {renderStudentProfile()}

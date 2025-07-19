@@ -38,7 +38,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 16px;
+  font-size: 14px;
   color: #555;
   width: 80px;
 }
@@ -50,44 +50,44 @@
   width: 18px;
 }
 
-/* ==================== ADD STUDENT SECTION ==================== */
-.add-student-container {
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.students-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.header-controls {
   display: flex;
   align-items: center;
-  padding: 8px;
-  background-color: #fafafa;
-  border-radius: 5px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+  gap: 16px;
 }
-.add-student-input {
-  flex: 1;
+
+.add-student-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 16px;
+  background-color: hsla(0, 0%, 25%, 1);
+  color: white;
   border: none;
-  background: transparent;
-  outline: none;
-  color: #404040;
+  border-radius: 6px;
   font-size: 14px;
-}
-.add-student-button {
-  padding: 12px;
-  background: transparent;
-  border: none;
+  font-weight: 300;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  margin-right: 4px;
+  transition: background-color 0.2s;
+  width: 185px;
 }
-.plus-icon {
-  color: #6b7280;
-}
-.add-student-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+
+.add-student-btn:hover {
+  background-color: #4b5563;
 }
 
 /* ==================== STUDENT TABLE STYLES ==================== */
@@ -103,11 +103,11 @@
 }
 .student-table thead tr {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.05);
+  /* background: rgba(0, 0, 0, 0.05); */
   border-radius: 5px;
 }
 .student-table th {
-  padding: 18px;
+  padding: 16px;
   text-align: left;
   font-weight: 400;
   font-size: 14px;
@@ -120,9 +120,9 @@
 .student-table tbody tr {
   border-radius: 10px;
   cursor: pointer;
-  font-size: 14px;
-  color: #404040;
-  font-weight: 400;
+  font-size: 13px;
+  color: hsl(0, 0%, 25%);
+  font-weight: 300;
   /* Dynamic background color from inline style */
   background: var(--row-bg-color);
   /* Gradient border effect */
@@ -131,7 +131,27 @@
   border-image: var(--border-gradient) 1;
 }
 .student-table td {
-  padding: 18px;
+  padding: 15px 16px 15px 16px;
+}
+
+/* Round the leftmost cell */
+.rounded-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Round the rightmost cell */
+.rounded-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Hover effect and border */
+.student-table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+.student-table tbody tr:hover {
+  background-color: hsla(189, 64%, 90%, 1);
 }
 
 /* ==================== RIGHT PANEL - PROFILE STYLES ==================== */
@@ -141,6 +161,7 @@
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
+
 .profile-class {
   color: #262626;
   font-size: 18px;

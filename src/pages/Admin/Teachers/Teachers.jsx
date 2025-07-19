@@ -106,15 +106,21 @@ function Teachers() {
                           backgroundColor: isSelected
                             ? selectedColor
                             : baseColor,
-                          borderRadius: '10px',
+                          // borderRadius: '10px',
                           transition: 'all 0.2s ease-in-out',
-                          boxShadow: isSelected ? '0 0 0 1px #000000' : 'none',
                         }}
                       >
                         <td>{teacher.name}</td>
                         <td>{teacher.subjects.join(', ')}</td>
                         <td>{teacher.classCount}</td>
-                        <td>{teacher.id}</td>
+                        <td
+                          style={{
+                            borderTopRightRadius: '10px',
+                            borderBottomRightRadius: '10px',
+                          }}
+                        >
+                          {teacher.id}
+                        </td>
                       </tr>
                     );
                   })}
