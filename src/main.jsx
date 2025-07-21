@@ -19,6 +19,7 @@ import Grades from './pages/Grades/Grades.jsx';
 import Settings from './pages/Settings/Settings.jsx';
 import Reports from './pages/Reports/Reports.jsx';
 import IndividualClass from './pages/Grades/Class/IndividualClass.jsx';
+import Performance from './pages/Grades/Class/Performance/Performance.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +35,12 @@ const router = createBrowserRouter([
       { path: 'settings', element: <Settings /> },
       { path: 'reports', element: <Reports /> },
       {
-        path: '/grades/:class_name',
+        path: 'grades/:class_name',
         element: <IndividualClass />,
+      },
+      {
+        path: 'grades/:class_name/student-performance',
+        element: <Performance />,
       },
       // Add other pages that use NavMenu here
     ],

@@ -182,9 +182,11 @@ const PerformanceChart = ({ performanceData, className }) => {
 
       {/* Bottom Button */}
       <div className="mt-8 text-center">
-        <button className="bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors">
-          Edit Student Grades
-        </button>
+        <Link to={`/grades/${className}/student-performance`}>
+          <button className="cursor-pointer bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors">
+            Edit Student Grades
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 .nav-menu {
   position: absolute;
   height: 100%;
-  width: 170px;
   left: 0;
   top: 0;
   background: rgba(255, 255, 255, 0.3);
@@ -12,6 +11,16 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 27px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.nav-menu.expanded {
+  width: 170px;
+}
+
+.nav-menu.collapsed {
+  width: 70px;
 }
 
 .nav-link-div {
@@ -23,9 +32,19 @@
   margin-bottom: 30px;
   padding-left: 30px;
   height: 30px;
-  /* background-color: green; */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.nav-menu.collapsed .nav-link-div {
+  justify-content: center;
+  padding-left: 0;
+}
+
 .nav-link-div.active {
+  border-right: #00bf76 3px solid;
+}
+
+.nav-menu.collapsed .nav-link-div.active {
   border-right: #00bf76 3px solid;
 }
 
@@ -34,10 +53,30 @@
   width: 20px;
   margin-right: 10px;
   color: #737373;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-menu.collapsed .nav-link-icon {
+  margin-right: 0;
 }
 
 .nav-link-text {
   color: #737373;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .admin-submenu {
@@ -45,19 +84,31 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  /* width: 100%; */
   margin-top: -20px;
   margin-bottom: 30px;
   margin-right: 40px;
   padding-left: 20px;
   gap: 10px;
   border-left: #a6a6a6 2px solid;
+  transform-origin: top;
+  overflow: hidden;
+  max-height: 200px;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .admin-sub-link {
-  /* font-size: 14px; */
   color: #737373;
   text-decoration: none;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .admin-sub-link.active {
@@ -68,8 +119,125 @@
 .nav-link-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   text-align: left;
   width: 100%;
+  flex: 1;
+}
+
+.nav-toggle-container {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  z-index: 10;
+}
+
+.nav-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-toggle-icon {
+  height: 20px;
+  width: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Collapsed state animations */
+.nav-menu.collapsed .nav-link-text {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition-delay: 0s;
+}
+
+.nav-menu.collapsed .admin-submenu {
+  opacity: 0;
+  transform: scaleY(0);
+  max-height: 0;
+  transition-delay: 0s;
+}
+
+.nav-menu.collapsed .admin-sub-link {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition-delay: 0s;
+}
+
+/* Expanded state animations with staggered delays */
+.nav-menu.expanded .nav-link-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+
+.nav-menu.expanded .admin-submenu {
+  opacity: 1;
+  transform: scaleY(1);
+  max-height: 200px;
+  transition-delay: 0.15s;
+}
+
+.nav-menu.expanded .admin-sub-link {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+/* Individual staggered animations for specific nav items */
+.nav-menu.expanded .nav-link-div:first-child .nav-link-text {
+  transition-delay: 0.05s;
+}
+
+.nav-menu.expanded .nav-link-div:nth-of-type(2) .nav-link-text {
+  transition-delay: 0.1s;
+}
+
+.nav-menu.expanded .nav-link-div:nth-of-type(4) .nav-link-text {
+  transition-delay: 0.15s;
+}
+
+.nav-menu.expanded .nav-link-div:nth-of-type(5) .nav-link-text {
+  transition-delay: 0.2s;
+}
+
+.nav-menu.expanded .nav-link-div:nth-of-type(6) .nav-link-text {
+  transition-delay: 0.25s;
+}
+
+.nav-menu.expanded .nav-link-div:nth-of-type(7) .nav-link-text {
+  transition-delay: 0.3s;
+}
+
+/* Staggered animation for admin submenu items */
+.nav-menu.expanded .admin-submenu .admin-sub-link:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.nav-menu.expanded .admin-submenu .admin-sub-link:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.nav-menu.expanded .admin-submenu .admin-sub-link:nth-child(3) {
+  transition-delay: 0.35s;
+}
+
+/* Header logo animation */
+.header-logo {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }

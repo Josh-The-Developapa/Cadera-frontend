@@ -1,0 +1,167 @@
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analysis-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.combined-card {
+  width: 504px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.two-column-tables {
+  display: flex;
+  gap: 16px;
+}
+
+.table-section {
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #1f2937; /* text-gray-800 */
+  margin-bottom: 12px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 13px;
+  color: #6b7280; /* text-gray-500 */
+  padding: 8px 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table td {
+  font-size: 13px;
+  color: #111827; /* text-gray-900 */
+  padding: 10px 6px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.data-table tr:hover {
+  background-color: #f9fafb;
+}
+
+.rank-badge {
+  color: #404040;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 300;
+  display: inline-block;
+  text-align: center;
+}
+
+.export-container {
+  margin-top: 16px;
+}
+
+.export-button {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #374151; /* text-gray-700 */
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  transform: translateY(-1px);
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ef4444 0deg 162deg,
+    #22c55e 162deg 259.2deg,
+    #3b82f6 259.2deg 360deg,
+    #eab308 360deg 100.8deg
+  );
+  position: relative;
+}
+
+.pie-chart::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.view-analytics-button {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.view-analytics-button:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+  transform: translateY(-1px);
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

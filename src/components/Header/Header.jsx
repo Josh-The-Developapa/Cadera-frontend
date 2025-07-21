@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import './Header.css';
-import CaderaLogo from '../../assets/cadera-logo.png';
 import HelpIcon from '../../assets/help.svg';
 import SearchIcon from '../../assets/search-1.svg';
+import Context from '../../Context/Context';
 
 function Header() {
+  const context = useContext(Context);
+
   return (
-    <div className="header">
+    <motion.div
+      className="header"
+      animate={{ left: context.isExpanded ? 170 : 70 }}
+      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+    >
       <div className="header-left">
         <div className="search-bar">
           <input type="text" placeholder="I'm looking for..." />
@@ -14,7 +21,7 @@ function Header() {
         </div>
       </div>
       <img src={HelpIcon} alt="Help-Icon" className="help-icon" />
-    </div>
+    </motion.div>
   );
 }
 

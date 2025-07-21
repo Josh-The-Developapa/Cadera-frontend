@@ -2,17 +2,17 @@ import Context from './Context.jsx';
 import { useState, useEffect } from 'react';
 
 function ContextProvider(props) {
-  const [isDrop, setIsDrop] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const setIsDropVal = (val) => {
-    setIsDrop(val);
+  const setIsExpandedVal = (val) => {
+    setIsExpanded(val);
   };
 
   return (
     <Context.Provider
       value={{
-        isDrop,
-        setIsDropVal,
+        isExpanded,
+        setIsExpanded: setIsExpandedVal,
       }}
     >
       {props.children}

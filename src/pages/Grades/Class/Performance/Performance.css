@@ -1,0 +1,11 @@
+.grades-right-panel {
+  width: 950px;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.grades-main-content {
+  height: 75%;
+  max-height: 600px; /* Maximum height constraint */
+  min-height: 450px; /* Minimum height constraint */
+}
