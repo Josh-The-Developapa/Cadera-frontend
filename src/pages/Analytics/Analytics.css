@@ -8,6 +8,10 @@
   gap: 24px;
   flex-wrap: wrap;
   margin-top: 20px;
+  background-color: green;
+  max-height: 615px;
+  min-height: 450px;
+  height: 70vh;
 }
 
 .combined-card {
@@ -16,6 +20,7 @@
 
 .card {
   background: white;
+  height: 100%;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 24px;
@@ -32,13 +37,10 @@
   gap: 16px;
 }
 
-.table-section {
-  flex: 1;
-}
-
 .section-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-size: 14px;
   font-weight: 400;
@@ -48,24 +50,25 @@
 
 .data-table {
   width: 100%;
-  border-collapse: collapse;
+  border-spacing: 0 8px; /* Row separation (vertical gap) */
   font-size: 13px;
+  border-collapse: separate; /* VERY IMPORTANT to allow spacing */
 }
 
 .data-table th {
-  text-align: left;
-  font-weight: 500;
-  font-size: 13px;
+  font-weight: 400;
+  font-size: 14px;
   color: #6b7280; /* text-gray-500 */
-  padding: 8px 6px;
+
   border-bottom: 1px solid #e5e7eb;
 }
 
 .data-table td {
   font-size: 13px;
   color: #111827; /* text-gray-900 */
-  padding: 10px 6px;
+  padding: 4px 5px;
   border-bottom: 1px solid #f3f4f6;
+  /* height: 32px; */
 }
 
 .data-table tr:hover {

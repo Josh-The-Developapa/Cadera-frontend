@@ -10,6 +10,7 @@ function ContentBox(props) {
     <div className="content-box">
       <motion.div
         className="content-box"
+        initial={false} // ✅ disables animation on first render
         animate={{
           paddingLeft: context.isExpanded ? '202px' : '90px',
           paddingTop: '90px',

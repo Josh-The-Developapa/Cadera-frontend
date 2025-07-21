@@ -118,7 +118,6 @@
   padding-right: 0;
 }
 .student-table tbody tr {
-  border-radius: 10px;
   cursor: pointer;
   font-size: 13px;
   color: hsl(0, 0%, 25%);

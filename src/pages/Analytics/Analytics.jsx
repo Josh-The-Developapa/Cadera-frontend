@@ -26,8 +26,8 @@ const AnalyticsDashboard = () => {
     { rank: 6, name: 'Ashley Nicole Brown', average: 73.1 },
     { rank: 7, name: 'Michael Anthony Davis', average: 72.8 },
     { rank: 8, name: 'Jennifer Marie Taylor', average: 72.4 },
-    { rank: 9, name: 'Christopher Lee Anderson', average: 72.1 },
-    { rank: 10, name: 'Amanda Grace Thompson', average: 71.7 },
+    { rank: 9, name: 'Christopher Lee', average: 72.1 },
+    { rank: 10, name: 'Amanda Grace', average: 71.7 },
   ];
 
   const gradeDistribution = [
@@ -37,6 +37,18 @@ const AnalyticsDashboard = () => {
     { division: 'Division 4', percentage: 28, color: '#EAB308' },
   ];
 
+  const formatName = (fullName) => {
+    const parts = fullName.trim().split(' ');
+    if (parts.length <= 2) return fullName;
+
+    const firstTwo = parts.slice(0, 2).join(' ');
+    const initials = parts
+      .slice(2)
+      .map((n) => n[0].toUpperCase() + '.')
+      .join(' ');
+    return `${firstTwo} ${initials}`;
+  };
+
   return (
     <ContentBox contentHeading="Analysis">
       <div className="dashboard-container">
@@ -45,7 +57,7 @@ const AnalyticsDashboard = () => {
           <div className="card combined-card">
             <div className="two-column-tables">
               {/* Top Classes */}
-              <div className="table-section">
+              <div className="table-section w-[186px]">
                 <div className="section-header">
                   <GraduationCap size={16} />
                   <span>Top Classes</span>
@@ -53,28 +65,52 @@ const AnalyticsDashboard = () => {
                 <table className="data-table">
                   <thead>
                     <tr>
-                      <th>Class</th>
-                      <th>Avg</th>
+                      <th className="p-[8px]">Class</th>
+                      <th className="text-center p-[8px]">Average</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {topClasses.map((item) => (
-                      <tr key={`class-${item.rank}`}>
-                        <td className="text-[14px] font-[300]">
-                          <span className="rank-badge">{item.rank}.</span>
-                          {item.name}
-                        </td>
-                        <td className="text-[14px] font-[300]">
-                          {item.average}
-                        </td>
-                      </tr>
-                    ))}
+                    {topClasses.map((item, index) => {
+                      const baseColor =
+                        index % 2 === 0
+                          ? 'hsla(189, 64%, 95%, 1)'
+                          : 'hsla(0, 0%, 98%, 1)';
+
+                      const hoverColor =
+                        index % 2 === 0
+                          ? 'hsla(189, 64%, 85%, 1)'
+                          : 'hsla(0, 0%, 85%, 1)';
+
+                      return (
+                        <tr
+                          key={`class-${item.rank}`}
+                          style={{
+                            backgroundColor: baseColor,
+                            transition: 'background-color 0.3s ease',
+                          }}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.backgroundColor = hoverColor)
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.backgroundColor = baseColor)
+                          }
+                        >
+                          <td className="text-[14px] font-[300]">
+                            <span className="rank-badge">{item.rank}.</span>{' '}
+                            {item.name}
+                          </td>
+                          <td className="text-[14px] font-[300] text-center">
+                            {item.average}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
 
               {/* Top Students */}
-              <div className="table-section">
+              <div className="table-section w-[239]">
                 <div className="section-header">
                   <Users size={16} />
                   <span>Top Students</span>
@@ -82,22 +118,46 @@ const AnalyticsDashboard = () => {
                 <table className="data-table">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Avg</th>
+                      <th className="text-left p-[8px] pl-[30px] ">Name</th>
+                      <th className="text-center p-[8px]">Average</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {topStudents.map((student) => (
-                      <tr key={`student-${student.rank}`}>
-                        <td className="text-[14px] font-[300]">
-                          <span className="rank-badge">{student.rank}.</span>
-                          {student.name}
-                        </td>
-                        <td className="text-[14px] font-[300]">
-                          {student.average}
-                        </td>
-                      </tr>
-                    ))}
+                    {topStudents.map((student, index) => {
+                      const baseColor =
+                        index % 2 === 0
+                          ? 'hsla(189, 64%, 95%, 1)'
+                          : 'hsla(0, 0%, 98%, 1)';
+
+                      const hoverColor =
+                        index % 2 === 0
+                          ? 'hsla(189, 64%, 85%, 1)'
+                          : 'hsla(0, 0%, 85%, 1)';
+
+                      return (
+                        <tr
+                          key={`student-${student.rank}`}
+                          style={{
+                            backgroundColor: baseColor,
+                            transition: 'background-color 0.3s ease',
+                          }}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.backgroundColor = hoverColor)
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.backgroundColor = baseColor)
+                          }
+                        >
+                          <td className="text-[14px] font-[300]">
+                            <span className="rank-badge">{student.rank}.</span>{' '}
+                            {formatName(student.name)}
+                          </td>
+                          <td className="text-[14px] font-[300] text-center">
+                            {student.average}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
 
