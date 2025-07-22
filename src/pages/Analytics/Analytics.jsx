@@ -51,24 +51,126 @@ const AnalyticsDashboard = () => {
     return `${firstTwo} ${initials}`;
   };
 
+  // Define the panel height for consistency
+  const panelHeight = 'calc(70vh - 40px)'; // Accounting for margins
+  const minPanelHeight = '450px';
+  const maxPanelHeight = '615px';
+
   return (
     <ContentBox contentHeading="Analysis">
-      <div className="dashboard-container">
-        <div className="analysis-grid">
-          {/* Left side - Top Classes and Students */}
-          <div className="card combined-card h-[100%]">
-            <div className="two-column-tables">
-              {/* Top Classes */}
-              <div className="table-section w-[186px]">
-                <div className="analytics-section-header">
-                  <GraduationCap size={16} />
-                  <span>Top Classes</span>
-                </div>
-                <table className="data-table">
+      {/* Dashboard Container */}
+      <div
+        style={{
+          display: 'flex',
+          gap: '24px',
+          flexWrap: 'wrap',
+          marginTop: '20px',
+        }}
+      >
+        {/* Left Panel - Combined Tables Card */}
+        <div
+          style={{
+            background: '#ffffff',
+            borderRadius: '12px',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+            padding: '20px',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            width: '100%',
+            maxWidth: '504px',
+            minWidth: '480px',
+            height: panelHeight,
+            maxHeight: maxPanelHeight,
+            minHeight: minPanelHeight,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+          }}
+        >
+          {/* Two Column Tables Container */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '16px',
+              flex: '1',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Top Classes Table */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '186px',
+                minWidth: '186px',
+                height: '100%',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px',
+                  fontWeight: '400',
+                  color: '#1f2937',
+                  gap: '8px',
+                  marginBottom: '12px',
+                  height: 'auto',
+                  flexShrink: 0,
+                }}
+              >
+                <GraduationCap size={16} />
+                <span>Top Classes</span>
+              </div>
+
+              <div
+                style={{
+                  flex: '1',
+                  overflowY: 'auto',
+                  minHeight: 0,
+                }}
+              >
+                <table
+                  style={{
+                    width: '100%',
+                    borderSpacing: '0 4px',
+                    fontSize: '13px',
+                    borderCollapse: 'separate',
+                  }}
+                >
                   <thead>
                     <tr>
-                      <th className="p-[4px]">Class</th>
-                      <th className="text-center p-[4px]">Average</th>
+                      <th
+                        style={{
+                          fontWeight: '400',
+                          fontSize: '14px',
+                          color: '#6b7280',
+                          borderBottom: '1px solid hsl(220, 13%, 91%)',
+                          padding: '4px',
+                          textAlign: 'left',
+                        }}
+                      >
+                        Class
+                      </th>
+                      <th
+                        style={{
+                          fontWeight: '400',
+                          fontSize: '14px',
+                          color: '#6b7280',
+                          borderBottom: '1px solid hsl(220, 13%, 91%)',
+                          padding: '4px',
+                          textAlign: 'center',
+                        }}
+                      >
+                        Average
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -77,7 +179,6 @@ const AnalyticsDashboard = () => {
                         index % 2 === 0
                           ? 'hsla(189, 64%, 95%, 1)'
                           : 'hsla(0, 0%, 98%, 1)';
-
                       const hoverColor =
                         index % 2 === 0
                           ? 'hsla(189, 64%, 85%, 1)'
@@ -97,11 +198,40 @@ const AnalyticsDashboard = () => {
                             (e.currentTarget.style.backgroundColor = baseColor)
                           }
                         >
-                          <td className="text-[14px] font-[300]">
-                            <span className="rank-badge">{item.rank}.</span>{' '}
+                          <td
+                            style={{
+                              fontSize: '14px',
+                              fontWeight: '300',
+                              color: '#111827',
+                              padding: '6px 8px',
+                              height: '32px',
+                            }}
+                          >
+                            <span
+                              style={{
+                                color: '#404040',
+                                borderRadius: '8px',
+                                padding: '2px 6px',
+                                fontSize: '14px',
+                                fontWeight: '300',
+                                display: 'inline-block',
+                                textAlign: 'center',
+                              }}
+                            >
+                              {item.rank}.
+                            </span>{' '}
                             {item.name}
                           </td>
-                          <td className="text-[14px] font-[300] text-center">
+                          <td
+                            style={{
+                              fontSize: '14px',
+                              fontWeight: '300',
+                              color: '#111827',
+                              padding: '6px 8px',
+                              textAlign: 'center',
+                              height: '32px',
+                            }}
+                          >
                             {item.average}
                           </td>
                         </tr>
@@ -110,18 +240,77 @@ const AnalyticsDashboard = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
 
-              {/* Top Students */}
-              <div className="table-section w-[239]">
-                <div className="analytics-section-header">
-                  <Users size={16} />
-                  <span>Top Students</span>
-                </div>
-                <table className="data-table">
+            {/* Top Students Table */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                flex: '1',
+                minWidth: '270px',
+                height: '100%',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px',
+                  fontWeight: '400',
+                  color: '#1f2937',
+                  gap: '8px',
+                  marginBottom: '12px',
+                  height: 'auto',
+                  flexShrink: 0,
+                }}
+              >
+                <Users size={16} />
+                <span>Top Students</span>
+              </div>
+
+              <div
+                style={{
+                  flex: '1',
+                  overflowY: 'auto',
+                  minHeight: 0,
+                }}
+              >
+                <table
+                  style={{
+                    width: '100%',
+                    borderSpacing: '0 4px',
+                    fontSize: '13px',
+                    borderCollapse: 'separate',
+                  }}
+                >
                   <thead>
                     <tr>
-                      <th className="text-left p-[4px] pl-[30px] ">Name</th>
-                      <th className="text-center p-[4px]">Average</th>
+                      <th
+                        style={{
+                          fontWeight: '400',
+                          fontSize: '14px',
+                          color: '#6b7280',
+                          borderBottom: '1px solid hsl(220, 13%, 91%)',
+                          padding: '4px 4px 4px 30px',
+                          textAlign: 'left',
+                        }}
+                      >
+                        Name
+                      </th>
+                      <th
+                        style={{
+                          fontWeight: '400',
+                          fontSize: '14px',
+                          color: '#6b7280',
+                          borderBottom: '1px solid hsl(220, 13%, 91%)',
+                          padding: '4px',
+                          textAlign: 'center',
+                        }}
+                      >
+                        Average
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -130,7 +319,6 @@ const AnalyticsDashboard = () => {
                         index % 2 === 0
                           ? 'hsla(189, 64%, 95%, 1)'
                           : 'hsla(0, 0%, 98%, 1)';
-
                       const hoverColor =
                         index % 2 === 0
                           ? 'hsla(189, 64%, 85%, 1)'
@@ -150,11 +338,40 @@ const AnalyticsDashboard = () => {
                             (e.currentTarget.style.backgroundColor = baseColor)
                           }
                         >
-                          <td className="text-[14px] font-[300]">
-                            <span className="rank-badge">{student.rank}.</span>{' '}
+                          <td
+                            style={{
+                              fontSize: '14px',
+                              fontWeight: '300',
+                              color: '#111827',
+                              padding: '6px 8px',
+                              height: '32px',
+                            }}
+                          >
+                            <span
+                              style={{
+                                color: '#404040',
+                                borderRadius: '8px',
+                                padding: '2px 6px',
+                                fontSize: '14px',
+                                fontWeight: '300',
+                                display: 'inline-block',
+                                textAlign: 'center',
+                              }}
+                            >
+                              {student.rank}.
+                            </span>{' '}
                             {formatName(student.name)}
                           </td>
-                          <td className="text-[14px] font-[300] text-center">
+                          <td
+                            style={{
+                              fontSize: '14px',
+                              fontWeight: '300',
+                              color: '#111827',
+                              padding: '6px 8px',
+                              textAlign: 'center',
+                              height: '32px',
+                            }}
+                          >
                             {student.average}
                           </td>
                         </tr>
@@ -164,29 +381,115 @@ const AnalyticsDashboard = () => {
                 </table>
               </div>
             </div>
-            <div className="export-container">
-              <button className="export-button">
-                <Download size={16} stroke="#737373" />
-                Export .xlsx
-              </button>
-            </div>
           </div>
 
-          {/* Right side - Grade distribution and analytics */}
-          <div className="right-column">
-            <div className="card h-[60%]">
-              <h2 className="text-lg font-semibold text-gray-800">
+          {/* Export Button */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              paddingRight: '10px',
+              marginTop: '16px',
+              flexShrink: 0,
+            }}
+          >
+            <button
+              style={{
+                border: '1px solid #737373',
+                borderRadius: '8px',
+                padding: '8px 16px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: '#737373',
+                fontWeight: '400',
+                cursor: 'pointer',
+                fontSize: '14px',
+                background: 'transparent',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background =
+                  'linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              <Download size={16} stroke="#737373" />
+              Export .xlsx
+            </button>
+          </div>
+        </div>
+
+        {/* Right Panel */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '500px',
+            height: panelHeight,
+            maxHeight: maxPanelHeight,
+            minHeight: minPanelHeight,
+            gap: '16px',
+          }}
+        >
+          {/* Grade Distribution Card - 60% */}
+          <div
+            style={{
+              background: '#ffffff',
+              borderRadius: '12px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+              padding: '20px',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              height: '60%',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow =
+                '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }}
+          >
+            <div className=" flex flex-row justify-center items-center">
+              <h2
+                style={{
+                  fontSize: '18px',
+                  fontWeight: '400',
+                  color: '#1f2937',
+                  marginBottom: '16px',
+                }}
+              >
                 Grade Distribution
               </h2>
-              <div className="flex flex-row items-center">
-                <PieChart width={300} height={300}>
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '16px',
+                flex: '1',
+              }}
+            >
+              <div style={{ flex: '1', minWidth: '250px' }}>
+                <PieChart width={250} height={200}>
                   <Pie
                     data={gradeDistribution}
                     dataKey="percentage"
                     nameKey="division"
                     cx="50%"
                     cy="50%"
-                    outerRadius={'80%'}
+                    outerRadius="100%"
                     label={({
                       cx,
                       cy,
@@ -210,7 +513,7 @@ const AnalyticsDashboard = () => {
                           textAnchor="middle"
                           dominantBaseline="central"
                           fontSize={14}
-                          fontWeight={450}
+                          fontWeight={400}
                         >
                           {`${gradeDistribution[index].percentage}%`}
                         </text>
@@ -222,43 +525,139 @@ const AnalyticsDashboard = () => {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  {/* <Tooltip /> */}
                 </PieChart>
+              </div>
 
-                <div className="w-[185px]">
-                  {gradeDistribution.map((item, index) => (
-                    <div key={index} className="legend-item">
-                      <div
-                        className="legend-dot"
-                        style={{ backgroundColor: item.color }}
-                      ></div>
-                      <span className="text-gray-600 text-sm flex-1">
-                        {item.division}
-                      </span>
-                      <span className="font-semibold text-gray-900 text-sm">
-                        {item.percentage}%
-                      </span>
-                    </div>
-                  ))}
-                </div>
+              <div
+                style={{
+                  width: '185px',
+                  minWidth: '150px',
+                }}
+              >
+                {gradeDistribution.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      marginBottom: '12px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '12px',
+                        height: '12px',
+                        borderRadius: '50%',
+                        backgroundColor: item.color,
+                      }}
+                    ></div>
+                    <span
+                      style={{
+                        color: '#6b7280',
+                        fontSize: '14px',
+                        flex: '1',
+                      }}
+                    >
+                      {item.division}
+                    </span>
+                    <span
+                      style={{
+                        fontWeight: '400',
+                        color: '#737373',
+                        fontSize: '14px',
+                      }}
+                    >
+                      {item.percentage}%
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
 
-            <div className="card mt-6 h-[40%]">
-              <h3 className="font-[400] text-gray-800 mb-3 text-[14px]">
-                Individual Student Performance
-              </h3>
-              <p className="text-[#737373] text-[13px] mb-4 font-[300]">
-                Track each student's academic progress in detail, reviewing
-                subject-wise scores, identifying strengths, and pinpointing
-                areas needing improvement.
-              </p>
-              <div className="flex flex-col justify-end items-end">
-                <button className="view-analytics-button">
-                  <BarChart3 size={16} />
-                  View Student Analytics
-                </button>
-              </div>
+          {/* Individual Student Performance Card - 40% */}
+          <div
+            style={{
+              background: '#ffffff',
+              borderRadius: '12px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+              padding: '20px',
+              transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+              height: 'calc(40% - 8px)', // Subtracting half the gap
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow =
+                '0 4px 12px rgba(0, 0, 0, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            }}
+          >
+            <h3
+              style={{
+                fontWeight: '400',
+                color: '#1f2937',
+                marginBottom: '12px',
+                fontSize: '16px',
+              }}
+            >
+              Individual Student Performance
+            </h3>
+
+            <p
+              style={{
+                color: '#737373',
+                fontSize: '14px',
+                marginBottom: '16px',
+                fontWeight: '300',
+                lineHeight: '1.5',
+                flex: '1',
+              }}
+            >
+              Track each student's academic progress in detail, reviewing
+              subject-wise scores, identifying strengths, and pinpointing areas
+              needing improvement.
+            </p>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+              }}
+            >
+              <button
+                style={{
+                  background: '#007ea7',
+                  border: 'none',
+                  borderRadius: '8px',
+                  padding: '10px 16px',
+                  color: 'white',
+                  fontWeight: '400',
+                  fontSize: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#006a8a';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#007ea7';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <BarChart3 size={16} />
+                View Student Analytics
+              </button>
             </div>
           </div>
         </div>

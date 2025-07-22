@@ -86,6 +86,7 @@ function NavMenu() {
             location.pathname.startsWith('/admin') ? 'active' : ''
           }`}
           style={{ cursor: 'pointer' }}
+          onClick={handleAdminClick}
         >
           <div onClick={handleAdminClick} className="nav-icon-link">
             <Users
@@ -106,6 +107,7 @@ function NavMenu() {
                   ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
+              onClick={handleAdminClick}
             >
               Admin
             </span>
