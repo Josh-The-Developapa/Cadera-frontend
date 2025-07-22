@@ -1,5 +1,7 @@
 import React from 'react';
 import { Download, BarChart3, Users, GraduationCap } from 'lucide-react';
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+
 import './Analytics.css';
 import ContentBox from '../../components/ContentBox/ContentBox';
 
@@ -54,19 +56,19 @@ const AnalyticsDashboard = () => {
       <div className="dashboard-container">
         <div className="analysis-grid">
           {/* Left side - Top Classes and Students */}
-          <div className="card combined-card">
+          <div className="card combined-card h-[100%]">
             <div className="two-column-tables">
               {/* Top Classes */}
               <div className="table-section w-[186px]">
-                <div className="section-header">
+                <div className="analytics-section-header">
                   <GraduationCap size={16} />
                   <span>Top Classes</span>
                 </div>
                 <table className="data-table">
                   <thead>
                     <tr>
-                      <th className="p-[8px]">Class</th>
-                      <th className="text-center p-[8px]">Average</th>
+                      <th className="p-[4px]">Class</th>
+                      <th className="text-center p-[4px]">Average</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -111,15 +113,15 @@ const AnalyticsDashboard = () => {
 
               {/* Top Students */}
               <div className="table-section w-[239]">
-                <div className="section-header">
+                <div className="analytics-section-header">
                   <Users size={16} />
                   <span>Top Students</span>
                 </div>
                 <table className="data-table">
                   <thead>
                     <tr>
-                      <th className="text-left p-[8px] pl-[30px] ">Name</th>
-                      <th className="text-center p-[8px]">Average</th>
+                      <th className="text-left p-[4px] pl-[30px] ">Name</th>
+                      <th className="text-center p-[4px]">Average</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -160,26 +162,70 @@ const AnalyticsDashboard = () => {
                     })}
                   </tbody>
                 </table>
-
-                <div className="export-container">
-                  <button className="export-button">
-                    <Download size={16} />
-                    Export .xlsx
-                  </button>
-                </div>
               </div>
+            </div>
+            <div className="export-container">
+              <button className="export-button">
+                <Download size={16} stroke="#737373" />
+                Export .xlsx
+              </button>
             </div>
           </div>
 
           {/* Right side - Grade distribution and analytics */}
-          <div className="right-column w-[480px] bg-amber-700">
-            <div className="card">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">
+          <div className="right-column">
+            <div className="card h-[60%]">
+              <h2 className="text-lg font-semibold text-gray-800">
                 Grade Distribution
               </h2>
-              <div className="flex flex-col items-center">
-                <div className="pie-chart mb-8"></div>
-                <div className="w-full space-y-1">
+              <div className="flex flex-row items-center">
+                <PieChart width={300} height={300}>
+                  <Pie
+                    data={gradeDistribution}
+                    dataKey="percentage"
+                    nameKey="division"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={'80%'}
+                    label={({
+                      cx,
+                      cy,
+                      midAngle,
+                      innerRadius,
+                      outerRadius,
+                      percent,
+                      index,
+                    }) => {
+                      const RADIAN = Math.PI / 180;
+                      const radius =
+                        innerRadius + (outerRadius - innerRadius) / 2;
+                      const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                      const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+                      return (
+                        <text
+                          x={x}
+                          y={y}
+                          fill="#fff"
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fontSize={14}
+                          fontWeight={450}
+                        >
+                          {`${gradeDistribution[index].percentage}%`}
+                        </text>
+                      );
+                    }}
+                    labelLine={false}
+                  >
+                    {gradeDistribution.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  {/* <Tooltip /> */}
+                </PieChart>
+
+                <div className="w-[185px]">
                   {gradeDistribution.map((item, index) => (
                     <div key={index} className="legend-item">
                       <div
@@ -198,19 +244,21 @@ const AnalyticsDashboard = () => {
               </div>
             </div>
 
-            <div className="card mt-6">
-              <h3 className="font-semibold text-gray-800 mb-3">
+            <div className="card mt-6 h-[40%]">
+              <h3 className="font-[400] text-gray-800 mb-3 text-[14px]">
                 Individual Student Performance
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-[#737373] text-[13px] mb-4 font-[300]">
                 Track each student's academic progress in detail, reviewing
                 subject-wise scores, identifying strengths, and pinpointing
                 areas needing improvement.
               </p>
-              <button className="view-analytics-button">
-                <BarChart3 size={16} />
-                View Student Analytics
-              </button>
+              <div className="flex flex-col justify-end items-end">
+                <button className="view-analytics-button">
+                  <BarChart3 size={16} />
+                  View Student Analytics
+                </button>
+              </div>
             </div>
           </div>
         </div>
