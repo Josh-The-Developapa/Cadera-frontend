@@ -8,6 +8,7 @@ import {
   ChevronRight,
   Plus,
   CheckCircle2,
+  CheckCheck,
   Trash2,
   ClipboardList,
   FilePlus2,
@@ -229,7 +230,7 @@ function Home() {
                   width: '100%',
                   padding: '10px 40px 10px 16px',
                   border: '1px solid #404040',
-                  borderRadius: '8px',
+                  borderRadius: '5px',
                   fontSize: '14px',
                   fontWeight: '300',
                   color: '#404040',
@@ -263,7 +264,7 @@ function Home() {
                     padding: '12px 16px',
                     marginBottom: '8px',
                     backgroundColor: '#f9fafb',
-                    borderRadius: '8px',
+                    borderRadius: '5px',
                     border: '1px solid #f3f4f6',
                   }}
                 >
@@ -332,7 +333,7 @@ function Home() {
                       gap: '8px',
                     }}
                   >
-                    <CheckCircle2 size={16} />
+                    <CheckCheck size={16} />
                     Completed{' '}
                     <span style={{ color: '#9ca3af', fontWeight: '400' }}>
                       ({completedItems.length})
@@ -349,7 +350,7 @@ function Home() {
                         padding: '12px 16px',
                         marginBottom: '8px',
                         backgroundColor: '#f9fafb',
-                        borderRadius: '8px',
+                        borderRadius: '5px',
                         opacity: 0.7,
                       }}
                     >

@@ -263,7 +263,7 @@ function Classes() {
 
   return (
     <div className="body-container">
-      <ContentBox contentHeading="Manage Classes">
+      <ContentBox contentHeading="Grades">
         <div className="classes-content-container">
           {/* LEFT PANEL - Classes List */}
           <div

@@ -16,7 +16,7 @@ function ContentBox(props) {
           paddingTop: '90px',
         }}
         transition={{
-          duration: 0.4,
+          duration: 0.32,
           ease: [0.4, 0, 0.2, 1],
         }}
       >
