@@ -2,12 +2,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: radial-gradient(
-    ellipse at center,
-    #a8d5f0 0%,
-    #e8f4fd 50%,
-    #ffffff 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #A7DEEA 0%, #E7F8FE 44.97%, #FFFFFF 100%);
+  border-radius: 0px;
 }
 
 .content-heading {

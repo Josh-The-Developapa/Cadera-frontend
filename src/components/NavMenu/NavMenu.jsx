@@ -41,9 +41,9 @@ function NavMenu() {
           alt={context.isExpanded ? 'Cadera-Logo' : 'Collapsed-Logo'}
           className="header-logo"
           style={{
-            marginBottom: '50px',
+            marginBottom: '48px',
             width: 'auto',
-            height: '20px',
+            height: '16px',
             transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         />

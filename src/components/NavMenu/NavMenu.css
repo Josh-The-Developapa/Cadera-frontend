@@ -1,3 +1,14 @@
+
+.lucide {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.25;
+}
+
+.lucide * {
+  vector-effect: non-scaling-stroke;
+}
+
 .nav-menu {
   position: absolute;
   height: 100%;
@@ -29,9 +40,9 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   padding-left: 30px;
-  height: 30px;
+  height: 32px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -42,6 +53,7 @@
 
 .nav-link-div.active {
   border-right: #00bf76 3px solid;
+  font-size: 14px;
 }
 
 .nav-menu.collapsed .nav-link-div.active {
@@ -49,9 +61,9 @@
 }
 
 .nav-link-icon {
-  height: 20px;
-  width: 20px;
-  margin-right: 10px;
+  height: 18px;
+  width: 18px;
+  margin-right: 12px;
   color: #737373;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
@@ -72,6 +84,7 @@
 .nav-link-text {
   color: #737373;
   white-space: nowrap;
+  font-size: 14px;
   overflow: hidden;
   opacity: 1;
   transform: translateX(0);
@@ -84,12 +97,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: -20px;
+  margin-top: -16px;
   margin-bottom: 30px;
-  margin-right: 40px;
-  padding-left: 20px;
-  gap: 10px;
-  border-left: #a6a6a6 2px solid;
+  margin-right: 48px;
+  padding-left: 16px;
+  gap: 16px;
+  border-left: #a6a6a6 1px solid;
   transform-origin: top;
   overflow: hidden;
   max-height: 200px;
@@ -103,17 +116,19 @@
 .admin-sub-link {
   color: #737373;
   text-decoration: none;
+  font-size: 14px;
   white-space: nowrap;
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .admin-sub-link.active {
-  font-weight: 500;
-  color: #404040;
+  font-weight: 400;
+  font-size: 14px;
+  color: hsl(0,0%,5%);
 }
 
 .nav-link-container {
@@ -150,8 +165,8 @@
 }
 
 .nav-toggle-icon {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -239,5 +254,8 @@
 
 /* Header logo animation */
 .header-logo {
+  width: 77px;
+  height: 16px;
+  margin-bottom: 48px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
