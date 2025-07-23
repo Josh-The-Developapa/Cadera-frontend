@@ -12,7 +12,7 @@ function ContentBox(props) {
         className="content-box"
         initial={false} // ✅ disables animation on first render
         animate={{
-          paddingLeft: context.isExpanded ? '202px' : '90px',
+          paddingLeft: context.isExpanded ? '202px' : '102px',
           paddingTop: '90px',
         }}
         transition={{

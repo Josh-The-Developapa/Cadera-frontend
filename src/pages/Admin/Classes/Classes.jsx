@@ -27,6 +27,7 @@ import {
   Monitor,
   Plus,
   Search as SearchIcon,
+  SquarePen,
 } from 'lucide-react';
 
 // Import Mock Classes Data
@@ -134,15 +135,15 @@ function Classes() {
   // Generate style for "others" avatar circle
   const getOthersAvatarStyle = () => {
     return {
-      width: '40px',
-      height: '40px',
+      width: '32px',
+      height: '32px',
       borderRadius: '50%',
       background: `hsl(${hues[selectedIndex]}, 20%, 50%)`,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       color: 'white',
-      fontSize: '18px',
+      fontSize: '10px',
       fontWeight: '300',
       marginBottom: '8px',
     };
@@ -152,8 +153,8 @@ function Classes() {
   const getOthersTextStyle = () => {
     return {
       color: `hsl(${hues[selectedIndex]}, 30%, 40%)`,
-      fontWeight: '500',
-      fontSize: '12px',
+      fontWeight: '300',
+      fontSize: '10px',
     };
   };
 
@@ -298,8 +299,8 @@ function Classes() {
                   position: 'relative',
                   height: '100%',
                   width: '100%',
-                  top: 82,
-                  left: -130,
+                  top: 65,
+                  left: -120,
                 }}
               />
               <h2 className="class-banner-title">{selectedClass.name}</h2>
@@ -324,7 +325,12 @@ function Classes() {
 
               {/* Edit Button */}
               <div className="edit-section">
-                <button className="edit-class-btn">Edit Class</button>
+                <button className="edit-class-btn">
+                  <div className="flex flex-row justify-center items-center gap-[10px]">
+                    <SquarePen size={20} stroke="#ffffff" />
+                    Edit Class
+                  </div>
+                </button>
               </div>
             </div>
           </div>
