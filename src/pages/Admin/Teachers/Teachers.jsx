@@ -4,6 +4,7 @@ import ContentBox from '../../../components/ContentBox/ContentBox';
 import TeacherIcon from '../../../assets/teacher.png';
 import { Trash2 } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
+import TeacherAssignModal from '../../../components/TeacherAssignModal/TeacherAssignModal.jsx'; // Import the modal component
 import teachers from './TeachersData.js';
 
 function Teachers() {
@@ -11,25 +12,29 @@ function Teachers() {
   const [hues, setHues] = useState([]);
   const [subjectHues, setSubjectHues] = useState({});
   const [searchQuery, setSearchQuery] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [teachersList, setTeachersList] = useState(teachers); // Make teachers list mutable
 
   useEffect(() => {
-    const generatedHues = teachers.map(() => Math.floor(Math.random() * 361));
+    const generatedHues = teachersList.map(() =>
+      Math.floor(Math.random() * 361)
+    );
     setHues(generatedHues);
 
     const subjectHueMap = {};
-    teachers.forEach((teacher, tIndex) => {
+    teachersList.forEach((teacher, tIndex) => {
       subjectHueMap[tIndex] = teacher.subjects.map(() =>
         Math.floor(Math.random() * 361)
       );
     });
     setSubjectHues(subjectHueMap);
-  }, []);
+  }, [teachersList]);
 
-  const filteredTeachers = teachers.filter((teacher) =>
+  const filteredTeachers = teachersList.filter((teacher) =>
     teacher.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const selectedTeacher = teachers[selectedIndex];
+  const selectedTeacher = teachersList[selectedIndex];
 
   const getSubjectTagStyle = (subjIndex) => {
     const subjHue = subjectHues[selectedIndex]?.[subjIndex];
@@ -47,6 +52,29 @@ function Teachers() {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSaveChanges = (assignmentData) => {
+    // Update the selected teacher's assigned classes
+    setTeachersList((prevTeachers) =>
+      prevTeachers.map((teacher, index) =>
+        index === selectedIndex
+          ? {
+              ...teacher,
+              assignedClasses: assignmentData.classes,
+              subjectAssignments: assignmentData.subjects,
+            }
+          : teacher
+      )
+    );
   };
 
   return (
@@ -83,7 +111,7 @@ function Teachers() {
                 </thead>
                 <tbody>
                   {filteredTeachers.map((teacher) => {
-                    const originalIndex = teachers.findIndex(
+                    const originalIndex = teachersList.findIndex(
                       (t) => t.id === teacher.id
                     );
                     const isSelected = selectedIndex === originalIndex;
@@ -164,7 +192,10 @@ function Teachers() {
                 <p>{selectedTeacher.assignedClasses?.join(', ') || 'None'}</p>
               </div>
 
-              <button className="bg-black text-white px-4 py-2 rounded-md mb-[25px] w-[180px]">
+              <button
+                className="bg-black text-white px-4 py-2 rounded-md mb-[25px] w-[180px]"
+                onClick={handleOpenModal}
+              >
                 Assign Classes
               </button>
 
@@ -181,6 +212,14 @@ function Teachers() {
           </div>
         </div>
       </ContentBox>
+
+      {/* Modal Component */}
+      <TeacherAssignModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        teacher={selectedTeacher}
+        onSaveChanges={handleSaveChanges}
+      />
     </div>
   );
 }

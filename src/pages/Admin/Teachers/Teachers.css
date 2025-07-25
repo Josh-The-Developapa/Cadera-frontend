@@ -39,20 +39,6 @@
   height: 100%; /* Occupy full height of parent */
 }
 
-/* Custom scrollbar styling */
-.teacher-list::-webkit-scrollbar {
-  width: 5px;
-}
-.teacher-list::-webkit-scrollbar-track {
-  background: #e5e7eb;
-  border-radius: 2px;
-}
-.teacher-list::-webkit-scrollbar-thumb {
-  background: #007ea7;
-  border: 1px solid transparent;
-  background-clip: content-box;
-}
-
 /* =============================================================================
    TEACHER TABLE STYLES
    ============================================================================= */

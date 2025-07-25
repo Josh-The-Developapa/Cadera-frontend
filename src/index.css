@@ -55,3 +55,19 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
+
+/* Global Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007ea7;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
