@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Students.css';
 import ContentBox from '../../../components/ContentBox/ContentBox';
 import StudentIcon from '../../../assets/student.png';
-import { Trash2, Plus } from 'lucide-react';
+import { Trash2, Plus, Edit } from 'lucide-react'; // Added Edit icon
 import SearchIcon from '../../../assets/search-1.svg';
+import CreateStudentsModal from '../../../components/CreateStudentsModal/StudentsModal.jsx';
+import EditStudentsModal from '../../../components/EditStudentsModal/StudentsModal.jsx'; // Assuming this is the correct path
 
 // Mock data representing registered students
 import students from './StudentsData.js';
@@ -15,40 +17,34 @@ function Students() {
   const [selectedAll, setSelectedAll] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false); // State for create modal
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false); // State for edit modal
+  const [editingStudent, setEditingStudent] = useState(null); // State to hold the student being edited
+  const [studentsList, setStudentsList] = useState(students);
 
   // ==================== EFFECTS ====================
-  // Generate random hues for student subjects on component mount
   useEffect(() => {
     const subjectHueMap = {};
-    students.forEach((student, sIndex) => {
+    studentsList.forEach((student, sIndex) => {
       subjectHueMap[sIndex] = student.subjects.map(() =>
         Math.floor(Math.random() * 361)
       );
     });
     setSubjectHues(subjectHueMap);
-  }, []);
+  }, [studentsList]);
 
   // ==================== EVENT HANDLERS ====================
   const handleSelectAll = () => {
-    if (students.length > 0) {
+    if (studentsList.length > 0) {
       setSelectedAll(true);
-      const sorted = [...students].sort((a, b) => a.name.localeCompare(b.name));
-      const firstIndex = students.findIndex(
+      const sorted = [...studentsList].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      const firstIndex = studentsList.findIndex(
         (student) => student.name === sorted[0].name
       );
       setSelectedIndex(firstIndex);
     }
-  };
-
-  const handleAddStudent = () => {
-    if (inputValue.trim()) {
-      console.log('Adding student:', inputValue);
-      setInputValue('');
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') handleAddStudent();
   };
 
   const handleStudentSelect = (originalIndex) => {
@@ -56,19 +52,66 @@ function Students() {
     setSelectedAll(false);
   };
 
+  // --- Create Modal Handlers ---
+  const handleOpenCreateModal = () => {
+    setIsCreateModalOpen(true);
+  };
+
+  const handleCloseCreateModal = () => {
+    setIsCreateModalOpen(false);
+  };
+
+  const handleCreateStudent = (newStudentData) => {
+    const newId = `ST${(studentsList.length + 1).toString().padStart(3, '0')}`;
+    const newStudent = {
+      id: newId,
+      name: newStudentData.name,
+      class: newStudentData.class,
+      subjects: newStudentData.subjects,
+      dateOfBirth: newStudentData.dateOfBirth,
+    };
+    const updatedList = [...studentsList, newStudent];
+    setStudentsList(updatedList);
+    setSelectedIndex(updatedList.length - 1); // Select the new student
+  };
+
+  // --- Edit Modal Handlers ---
+  const handleOpenEditModal = (studentToEdit) => {
+    setEditingStudent(studentToEdit);
+    setIsEditModalOpen(true);
+  };
+
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+    setEditingStudent(null);
+  };
+
+  const handleUpdateStudent = (updatedStudentData) => {
+    setStudentsList((prevStudents) =>
+      prevStudents.map((student) =>
+        student.id === updatedStudentData.id ? updatedStudentData : student
+      )
+    );
+    // Optionally, you can find the index of the updated student and keep it selected
+    const updatedIndex = studentsList.findIndex(
+      (s) => s.id === updatedStudentData.id
+    );
+    setSelectedIndex(updatedIndex);
+    handleCloseEditModal(); // Close modal after update
+  };
+
   // ==================== COMPUTED VALUES ====================
-  const selectedStudent = students[selectedIndex];
-  const filteredStudents = students.filter((student) =>
+  const selectedStudent = studentsList[selectedIndex];
+  const filteredStudents = studentsList.filter((student) =>
     student.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // ==================== RENDER FUNCTIONS ====================
-  // Render student list header with search
   const renderListHeader = () => (
     <div className="students-header">
       <h2 className="students-title">All Students</h2>
       <div className="header-controls">
-        <button className="add-student-btn">
+        <button className="add-student-btn" onClick={handleOpenCreateModal}>
           <Plus size={16} />
           Add New Student
         </button>
@@ -89,28 +132,6 @@ function Students() {
     </div>
   );
 
-  // Render add student input section
-  const renderAddStudentSection = () => (
-    <div className="add-student-container">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyPress={handleKeyPress}
-        placeholder="Add new student"
-        className="add-student-input"
-      />
-      <button
-        onClick={handleAddStudent}
-        className="add-student-button"
-        disabled={!inputValue.trim()}
-      >
-        <Plus className="plus-icon" size={20} />
-      </button>
-    </div>
-  );
-
-  // Render the entire student table
   const renderStudentTable = () => (
     <div className="student-list">
       <table className="student-table">
@@ -131,7 +152,7 @@ function Students() {
         </thead>
         <tbody>
           {filteredStudents.map((student, index) => {
-            const originalIndex = students.findIndex(
+            const originalIndex = studentsList.findIndex(
               (s) => s.id === student.id
             );
             const isSelected = selectedIndex === originalIndex;
@@ -175,9 +196,8 @@ function Students() {
     </div>
   );
 
-  // Render student profile details
   const renderStudentProfile = () => {
-    if (!selectedStudent) return null; // Handle case where no student is selected
+    if (!selectedStudent) return null;
 
     return (
       <div
@@ -192,7 +212,6 @@ function Students() {
         <h3 className="profile-name">{selectedStudent.name}</h3>
         <p className="profile-class">{selectedStudent.class}</p>
 
-        {/* Subjects */}
         <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[17px]">
           {selectedStudent.subjects.map((subj, idx) => {
             const subjHue = subjectHues[selectedIndex]?.[idx];
@@ -217,11 +236,14 @@ function Students() {
           })}
         </div>
 
-        <button className="bg-black text-white px-4 py-2 rounded-md mb-3 w-[180px]">
+        <button
+          onClick={() => handleOpenEditModal(selectedStudent)}
+          className="bg-black text-white px-4 py-2 rounded-md mb-3 w-[180px] flex items-center justify-center gap-2"
+        >
+          <Edit size={16} />
           Edit Profile
         </button>
 
-        {/* Footer */}
         <div className="flex flex-row justify-between items-end w-full h-[200px]">
           <p className="text-xs text-gray-400 mb-1">
             Student ID: {selectedStudent.id} <br />
@@ -242,12 +264,28 @@ function Students() {
         <div className="students-content-container text-gray-800">
           <div className="all-students">
             {renderListHeader()}
-            {/* {renderAddStudentSection()} */}
             {renderStudentTable()}
           </div>
           {renderStudentProfile()}
         </div>
       </ContentBox>
+
+      {/* Create Student Modal */}
+      <CreateStudentsModal
+        isOpen={isCreateModalOpen}
+        onClose={handleCloseCreateModal}
+        onCreateStudent={handleCreateStudent}
+      />
+
+      {/* Edit Student Modal */}
+      {editingStudent && (
+        <EditStudentsModal
+          isOpen={isEditModalOpen}
+          onClose={handleCloseEditModal}
+          onUpdateStudent={handleUpdateStudent}
+          studentData={editingStudent}
+        />
+      )}
     </div>
   );
 }

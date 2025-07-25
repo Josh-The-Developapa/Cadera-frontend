@@ -85,22 +85,6 @@
   padding-top: 10px;
 }
 
-/* Custom Scrollbar */
-.classes-container::-webkit-scrollbar {
-  width: 5px;
-}
-
-.classes-container::-webkit-scrollbar-track {
-  background: #e5e7eb;
-  border-radius: 2px;
-}
-
-.classes-container::-webkit-scrollbar-thumb {
-  background: #007ea7;
-  border: 1px solid transparent;
-  background-clip: content-box;
-}
-
 /* ============================================
    CLASS CARDS - RESPONSIVE DESIGN
    ============================================ */

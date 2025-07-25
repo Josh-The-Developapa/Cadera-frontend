@@ -306,21 +306,3 @@
   font-size: 14px;
   color: #4a5568;
 }
-
-/* Scrollbar Styling */
-.table-body::-webkit-scrollbar {
-  width: 6px;
-}
-
-.table-body::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-.table-body::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
-  border-radius: 3px;
-}
-
-.table-body::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0;
-}
