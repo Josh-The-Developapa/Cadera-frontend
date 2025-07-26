@@ -1,0 +1,3 @@
+goal: hook up frontend to backend
+ 1. implement login (with jwt)
+ 2. hook logic for each web component
