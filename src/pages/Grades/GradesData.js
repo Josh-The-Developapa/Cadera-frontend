@@ -46,11 +46,7 @@ const GradesData = [
         female: 32,
         teachers: [
             { name: 'David Katongole', avatar: 'https://i.pravatar.cc/150?img=5' },
-            { name: 'Annette Kyomuhendo', avatar: 'https://i.pravatar.cc/150?img=6' },
-        ],
-    },
-    {
-        id: 'C4',
+            { name: 'Annette Kyomuhendo', avatar: 'https://i.pravatar.cc/150?img=6' }, ], }, { id: 'C4',
         name: 'P7D',
         level: 'P7',
         subjects: ['ENG', 'MAT', 'SCI', 'SST', 'RE'],
