@@ -1293,7 +1293,7 @@ const CreateClassModal = ({ isOpen, onClose, onCreateClass }) => {
                 margin: 0,
               }}
             >
-              Create New Class
+              Edit Class
             </h2>
             <button
               onClick={handleClose}

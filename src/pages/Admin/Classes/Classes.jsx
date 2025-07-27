@@ -35,6 +35,7 @@ import mockClasses from './ClassesData.js';
 
 // Import the new CreateClassModal
 import CreateClassModal from '../../../components/CreateClassModal/CreateClassModal.jsx';
+import EditClassModal from '../../../components/EditClassModal/EditClassModal.jsx';
 
 // Available icons for randomization
 const availableIcons = [
@@ -73,6 +74,7 @@ function Classes() {
   const [subjectHues, setSubjectHues] = useState({});
   const [classIcons, setClassIcons] = useState({});
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [classes, setClasses] = useState(mockClasses);
 
   // Generate random hues and icons for class cards on component mount
@@ -128,6 +130,32 @@ function Classes() {
 
     setClasses((prev) => [...prev, newClass]);
     console.log('New class created:', newClass);
+  };
+
+  // Handle edit class
+  const handleEditClass = (updatedClassData) => {
+    setClasses((prev) =>
+      prev.map((cls, index) =>
+        index === selectedIndex
+          ? {
+              ...cls,
+              name: updatedClassData.name,
+              level: updatedClassData.level,
+              teachers: updatedClassData.teachers,
+              students: updatedClassData.students.length,
+              subjects: updatedClassData.subjects.map((subject) => ({
+                name: subject,
+              })),
+            }
+          : cls
+      )
+    );
+    console.log('Class updated:', updatedClassData);
+  };
+
+  // Handle opening edit modal
+  const handleOpenEditModal = () => {
+    setIsEditModalOpen(true);
   };
 
   // Generate hue-based color for icon background
@@ -346,7 +374,10 @@ function Classes() {
 
               {/* Edit Button */}
               <div className="edit-section">
-                <button className="edit-class-btn">
+                <button
+                  className="edit-class-btn"
+                  onClick={handleOpenEditModal}
+                >
                   <div className="flex flex-row justify-center items-center gap-[10px]">
                     <SquarePen size={20} stroke="#ffffff" />
                     Edit Class
@@ -363,6 +394,14 @@ function Classes() {
         isOpen={isCreateModalOpen}
         onClose={() => setIsCreateModalOpen(false)}
         onCreateClass={handleCreateClass}
+      />
+
+      {/* Edit Class Modal */}
+      <EditClassModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        onEditClass={handleEditClass}
+        classData={selectedClass}
       />
     </div>
   );
