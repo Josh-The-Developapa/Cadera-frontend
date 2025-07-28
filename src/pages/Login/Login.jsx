@@ -1,39 +1,39 @@
-import React, { useState } from 'react';
-import './Login.css';
-import { FiMail, FiLock } from 'react-icons/fi';
-import LoggedOutHeader from '../../components/LoggedOutHeader/LoggedOutHeader';
-import { apiFetch } from '../../utils/apiFetch.js';
+import React, { useState } from "react";
+import "./Login.css";
+import { FiMail, FiLock } from "react-icons/fi";
+import LoggedOutHeader from "../../components/LoggedOutHeader/LoggedOutHeader";
+import { apiFetch } from "../../utils/apiFetch.js";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [autoRedirect, setAutoRedirect] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  // const [autoRedirect, setAutoRedirect] = useState(false);
 
-const handleLogin = async () => {
-  setError('');
-  try {
-    const data = await apiFetch('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-    });
+  const handleLogin = async () => {
+    setError("");
+    try {
+      const data = await apiFetch("/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
 
-    console.log('Login success:', data);
+      console.log("Login success:", data);
 
-    const shouldRedirect = true;
+      const shouldRedirect = false;
 
-    if (shouldRedirect) {
-      if (data.mustChangePassword) {
-        window.location.href = '/change-password';
-      } else {
-        window.location.href = '/dashboard';
+      if (shouldRedirect) {
+        if (data.mustChangePassword) {
+          window.location.href = "/change-password";
+        } else {
+          window.location.href = "/dashboard";
+        }
       }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError(err.message || "Login failed");
     }
-  } catch (err) {
-    console.error('Login error:', err);
-    setError(err.message || 'Login failed');
-  }
-};
+  };
 
   return (
     <div className="login-container">
@@ -63,7 +63,7 @@ const handleLogin = async () => {
 
         <div
           className="text-black text-right text-sm mb-4 cursor-pointer w-[80%]"
-          style={{ color: '#003459' }}
+          style={{ color: "#003459" }}
         >
           Forgot password?
         </div>
