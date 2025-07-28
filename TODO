@@ -1,5 +1,5 @@
 goal: hook up frontend to backend
- 1. implement login (with jwt)
+ 1. implement login (with jwt) [done]
  2. hook logic for each web component
 
 (remember to fix Safari cross site cookie bug; host on same domain, or don't use httpOnly cookie)
