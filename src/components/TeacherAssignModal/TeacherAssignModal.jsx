@@ -1,17 +1,31 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Search, Check, Save } from 'lucide-react';
-import './TeacherAssignModal.css';
+import React, { useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Search, Check, Save } from "lucide-react";
+import "./TeacherAssignModal.css";
+import Context from "../../Context/Context";
+import TeacherImg from "../../assets/teacher.png";
 
 // Mock data for classes and subjects
-const CLASSES = ['P7P', 'S1A', 'S1B', 'S2A', 'S2B', 'S3A', 'P7B', 'P6A'];
+const CLASSES = ["P7P", "S1A", "S1B", "S2A", "S2B", "S3A", "P7B", "P6A"];
 
-const SUBJECTS = ['P7P', 'S1A', 'S1B', 'S2A', 'S2B', 'S3A', 'P7B', 'P6A'];
+const SUBJECTS = [
+  "CT",
+  "HIS",
+  "GEO",
+  "MAT",
+  "ENG",
+  "SCI",
+  "FRE",
+  "ART",
+  "MUS",
+  "PE",
+];
 
 const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
+  const context = useContext(Context);
   const [selectedClasses, setSelectedClasses] = useState({});
   const [subjectAssignments, setSubjectAssignments] = useState({});
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClassToggle = (classIndex) => {
@@ -45,7 +59,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
     const assignedSubjects = Object.keys(subjectAssignments)
       .filter((key) => subjectAssignments[key])
       .map((key) => {
-        const [classIndex, subject] = key.split('-');
+        const [classIndex, subject] = key.split("-");
         return { class: CLASSES[classIndex], subject };
       });
 
@@ -65,7 +79,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
   const resetForm = () => {
     setSelectedClasses({});
     setSubjectAssignments({});
-    setSearchQuery('');
+    setSearchQuery("");
   };
 
   const handleClose = () => {
@@ -89,7 +103,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
       scale: 1,
       y: 0,
       transition: {
-        type: 'spring',
+        type: "spring",
         damping: 25,
         stiffness: 300,
       },
@@ -110,12 +124,16 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
       opacity: 1,
       scale: 1,
       transition: {
-        type: 'spring',
+        type: "spring",
         damping: 15,
         stiffness: 300,
       },
     },
   };
+
+  const filteredClasses = CLASSES.filter((className) =>
+    className.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (!teacher) return null;
 
@@ -128,61 +146,61 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
           initial="hidden"
           animate="visible"
           exit="hidden"
+          style={{
+            left: context.isExpanded ? "170px" : "70px",
+          }}
         >
           <AnimatePresence>
             {!showSuccess ? (
               <motion.div
-                className="assign-modal-container"
+                className="modal-container"
                 variants={modalVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
                 {/* Header */}
-                <div className="assign-modal-header">
-                  <h2 className="assign-modal-title">Assign Classes</h2>
-                  <button
-                    onClick={handleClose}
-                    className="assign-modal-close-btn"
-                  >
+                <div className="modal-header">
+                  <h2 className="modal-title">Assign Classes</h2>
+                  <button onClick={handleClose} className="modal-close-btn">
                     <X size={20} />
                   </button>
                 </div>
 
                 {/* Content */}
-                <div className="assign-modal-content">
+                <div className="tam-modal-content">
                   {/* Left Panel - Teacher Info */}
-                  <div className="teacher-info-panel">
-                    <div className="teacher-avatar">
-                      <img
-                        src="/api/placeholder/120/120"
-                        alt="Kevin Kent Musinguzi"
-                        className="teacher-image"
-                      />
-                    </div>
-                    <h3 className="teacher-name">Kevin Kent Musinguzi</h3>
-                    <p className="teacher-role">Teacher</p>
+                  <div className="tam-teacher-info-panel">
+                    <img
+                      src={TeacherImg}
+                      alt="Teacher Image"
+                      className="tam-teacher-image"
+                    />
+                    <h3 className="text-[#2F2F2F] text-[16px] font-[400]">
+                      Kevin Kent Musinguzi
+                    </h3>
+                    <p className="tam-teacher-role">Teacher</p>
 
-                    <div className="teacher-subjects">
-                      {['HIS', 'GEO'].map((subject, index) => (
-                        <span key={index} className="subject-badge">
+                    <div className="tam-teacher-subjects">
+                      {["HIS", "GEO"].map((subject, index) => (
+                        <span key={index} className="tam-subject-badge">
                           {subject}
                         </span>
                       ))}
                     </div>
 
-                    <div className="assigned-classes-info">
-                      <h4 className="assigned-title">Assigned Classes</h4>
-                      <p className="assigned-list">P7P, P7K, S1N, S2Q</p>
+                    <div className="tam-assigned-classes-info">
+                      <h4 className="tam-assigned-title">Assigned Classes</h4>
+                      <p className="tam-assigned-list">P7P, P7K, S1N, S2Q</p>
                     </div>
                   </div>
 
                   {/* Right Panel - Class Assignment */}
-                  <div className="class-assignment-panel">
-                    <div className="assignment-header">
-                      <span className="selected-count">
+                  <div className="tam-class-assignment-panel">
+                    <div className="tam-assignment-header">
+                      <span className="tam-selected-count">
                         ({getSelectedClassCount()} Class
-                        {getSelectedClassCount() !== 1 ? 'es' : ''} Selected)
+                        {getSelectedClassCount() !== 1 ? "es" : ""} Selected)
                       </span>
                       <div className="search-container">
                         <input
@@ -190,85 +208,112 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                           placeholder="Search"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
-                          className="search-input"
+                          className="modal-search-input"
                         />
                         <Search size={16} className="search-icon" />
                       </div>
                     </div>
 
-                    <div className="assignment-table-container">
-                      <table className="assignment-table">
-                        <thead>
-                          <tr>
-                            <th className="class-header">Class</th>
-                            {SUBJECTS.map((subject) => (
-                              <th key={subject} className="subject-header">
-                                {subject}
+                    <div className="tam-assignment-table-container">
+                      <div className="tam-table-wrapper">
+                        <table className="tam-assignment-table">
+                          <thead>
+                            <tr>
+                              <th className="tam-class-header tam-sticky-column">
+                                Class
                               </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {CLASSES.map((className, classIndex) => (
-                            <tr
-                              key={classIndex}
-                              className={`assignment-row ${
-                                selectedClasses[classIndex] ? 'selected' : ''
-                              }`}
-                            >
-                              <td className="class-cell">
-                                <button
-                                  className={`class-radio ${
-                                    selectedClasses[classIndex] ? 'active' : ''
-                                  }`}
-                                  onClick={() => handleClassToggle(classIndex)}
-                                >
-                                  <div
-                                    className={`radio-dot ${
-                                      selectedClasses[classIndex]
-                                        ? 'active'
-                                        : ''
-                                    }`}
-                                  />
-                                </button>
-                                <span className="class-name">{className}</span>
-                              </td>
-
                               {SUBJECTS.map((subject) => (
-                                <td key={subject} className="subject-cell">
-                                  <button
-                                    className={`subject-checkbox ${
-                                      subjectAssignments[
-                                        `${classIndex}-${subject}`
-                                      ]
-                                        ? 'checked'
-                                        : ''
-                                    }`}
-                                    onClick={() =>
-                                      handleSubjectToggle(classIndex, subject)
-                                    }
-                                    disabled={!selectedClasses[classIndex]}
-                                  >
-                                    {subjectAssignments[
-                                      `${classIndex}-${subject}`
-                                    ] && <Check size={12} />}
-                                  </button>
-                                </td>
+                                <th
+                                  key={subject}
+                                  className="tam-subject-header"
+                                >
+                                  {subject}
+                                </th>
                               ))}
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            {filteredClasses.map((className, displayIndex) => {
+                              const classIndex = CLASSES.indexOf(className);
+                              return (
+                                <tr
+                                  key={classIndex}
+                                  className={`tam-assignment-row ${
+                                    selectedClasses[classIndex]
+                                      ? "tam-selected"
+                                      : ""
+                                  }`}
+                                >
+                                  <td className="tam-class-cell tam-sticky-column">
+                                    <div className="tam-class-cell-content">
+                                      <button
+                                        className={`tam-class-radio ${
+                                          selectedClasses[classIndex]
+                                            ? "tam-active"
+                                            : ""
+                                        }`}
+                                        onClick={() =>
+                                          handleClassToggle(classIndex)
+                                        }
+                                      >
+                                        <div
+                                          className={`tam-radio-dot ${
+                                            selectedClasses[classIndex]
+                                              ? "tam-active"
+                                              : ""
+                                          }`}
+                                        />
+                                      </button>
+                                      <span className="tam-class-name">
+                                        {className}
+                                      </span>
+                                    </div>
+                                  </td>
+
+                                  {SUBJECTS.map((subject) => (
+                                    <td
+                                      key={subject}
+                                      className="tam-subject-cell"
+                                    >
+                                      <button
+                                        className={`tam-subject-checkbox ${
+                                          subjectAssignments[
+                                            `${classIndex}-${subject}`
+                                          ]
+                                            ? "tam-checked"
+                                            : ""
+                                        } ${
+                                          !selectedClasses[classIndex]
+                                            ? "tam-disabled"
+                                            : ""
+                                        }`}
+                                        onClick={() =>
+                                          handleSubjectToggle(
+                                            classIndex,
+                                            subject
+                                          )
+                                        }
+                                        disabled={!selectedClasses[classIndex]}
+                                      >
+                                        {subjectAssignments[
+                                          `${classIndex}-${subject}`
+                                        ] && <Check size={12} />}
+                                      </button>
+                                    </td>
+                                  ))}
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Footer */}
-                <div className="assign-modal-footer">
-                  <button
-                    onClick={handleSaveChanges}
-                    className="save-changes-btn"
-                  >
+                <div className="modal-footer">
+                  <button onClick={handleSaveChanges} className="create-btn">
                     <Save size={16} />
                     Save Changes
                   </button>
@@ -276,13 +321,13 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
               </motion.div>
             ) : (
               <motion.div
-                className="success-container"
+                className="tam-success-container"
                 variants={successVariants}
                 initial="hidden"
                 animate="visible"
               >
                 <motion.div
-                  className="success-icon"
+                  className="tam-success-icon"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 10, -10, 0],
@@ -294,8 +339,8 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                 >
                   <Check size={48} />
                 </motion.div>
-                <h3 className="success-title">Changes Saved!</h3>
-                <p className="success-message">
+                <h3 className="tam-success-title">Changes Saved!</h3>
+                <p className="tam-success-message">
                   Class assignments have been successfully updated.
                 </p>
               </motion.div>

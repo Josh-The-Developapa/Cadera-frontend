@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import "tailwindcss";
 :root {
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -14,8 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 
 body {
   margin: 0;
@@ -48,17 +46,15 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
-
 /* Global Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px; /* Add this for horizontal scrollbars */
 }
-
 ::-webkit-scrollbar-track {
   background: #e5e7eb;
   border-radius: 2px;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #007ea7;
   border: 1px solid transparent;

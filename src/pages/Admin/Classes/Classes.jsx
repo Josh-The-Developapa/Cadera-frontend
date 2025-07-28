@@ -33,6 +33,10 @@ import {
 // Import Mock Classes Data
 import mockClasses from './ClassesData.js';
 
+// Import the new CreateClassModal
+import CreateClassModal from '../../../components/CreateClassModal/CreateClassModal.jsx';
+import EditClassModal from '../../../components/EditClassModal/EditClassModal.jsx';
+
 // Available icons for randomization
 const availableIcons = [
   Asset1,
@@ -69,38 +73,39 @@ function Classes() {
   const [hues, setHues] = useState([]);
   const [subjectHues, setSubjectHues] = useState({});
   const [classIcons, setClassIcons] = useState({});
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [classes, setClasses] = useState(mockClasses);
 
   // Generate random hues and icons for class cards on component mount
   useEffect(() => {
-    const generatedHues = mockClasses.map(() =>
-      Math.floor(Math.random() * 361)
-    );
+    const generatedHues = classes.map(() => Math.floor(Math.random() * 361));
     setHues(generatedHues);
 
     // Generate random icons for each class
     const iconMap = {};
-    mockClasses.forEach((cls) => {
+    classes.forEach((cls) => {
       const randomIndex = Math.floor(Math.random() * availableIcons.length);
       iconMap[cls.id] = availableIcons[randomIndex];
     });
     setClassIcons(iconMap);
 
     const subjectHueMap = {};
-    mockClasses.forEach((cls, cIndex) => {
+    classes.forEach((cls, cIndex) => {
       subjectHueMap[cIndex] = cls.subjects.map(() =>
         Math.floor(Math.random() * 361)
       );
     });
     setSubjectHues(subjectHueMap);
-  }, []);
+  }, [classes]);
 
   // Filter classes based on search query
-  const filteredClasses = mockClasses.filter((cls) =>
+  const filteredClasses = classes.filter((cls) =>
     cls.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // Get currently selected class
-  const selectedClass = mockClasses[selectedIndex];
+  const selectedClass = classes[selectedIndex];
 
   // Handle class card selection
   const handleClassSelection = (originalIndex) => {
@@ -110,6 +115,47 @@ function Classes() {
   // Handle search input change
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  // Handle create new class
+  const handleCreateClass = (newClassData) => {
+    const newClass = {
+      id: classes.length + 1,
+      name: newClassData.name,
+      level: newClassData.level,
+      teachers: newClassData.teachers,
+      students: newClassData.students.length,
+      subjects: newClassData.subjects.map((subject) => ({ name: subject })),
+    };
+
+    setClasses((prev) => [...prev, newClass]);
+    console.log('New class created:', newClass);
+  };
+
+  // Handle edit class
+  const handleEditClass = (updatedClassData) => {
+    setClasses((prev) =>
+      prev.map((cls, index) =>
+        index === selectedIndex
+          ? {
+              ...cls,
+              name: updatedClassData.name,
+              level: updatedClassData.level,
+              teachers: updatedClassData.teachers,
+              students: updatedClassData.students.length,
+              subjects: updatedClassData.subjects.map((subject) => ({
+                name: subject,
+              })),
+            }
+          : cls
+      )
+    );
+    console.log('Class updated:', updatedClassData);
+  };
+
+  // Handle opening edit modal
+  const handleOpenEditModal = () => {
+    setIsEditModalOpen(true);
   };
 
   // Generate hue-based color for icon background
@@ -160,7 +206,10 @@ function Classes() {
 
   // Render Create New Class Card
   const renderCreateClassCard = () => (
-    <div className="create-class-card-new">
+    <div
+      className="create-class-card-new"
+      onClick={() => setIsCreateModalOpen(true)}
+    >
       <Plus size={24} />
       <p className="create-class-text">Create New Class</p>
     </div>
@@ -169,7 +218,7 @@ function Classes() {
   // Render Class Cards
   const renderClassCards = () => {
     return filteredClasses.map((cls) => {
-      const originalIndex = mockClasses.findIndex((s) => s.id === cls.id);
+      const originalIndex = classes.findIndex((s) => s.id === cls.id);
       const isSelected = selectedIndex === originalIndex;
       const IconComponent = classIcons[cls.id] || Monitor;
       const classHue = hues[originalIndex];
@@ -325,7 +374,10 @@ function Classes() {
 
               {/* Edit Button */}
               <div className="edit-section">
-                <button className="edit-class-btn">
+                <button
+                  className="edit-class-btn"
+                  onClick={handleOpenEditModal}
+                >
                   <div className="flex flex-row justify-center items-center gap-[10px]">
                     <SquarePen size={20} stroke="#ffffff" />
                     Edit Class
@@ -336,6 +388,21 @@ function Classes() {
           </div>
         </div>
       </ContentBox>
+
+      {/* Create Class Modal */}
+      <CreateClassModal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        onCreateClass={handleCreateClass}
+      />
+
+      {/* Edit Class Modal */}
+      <EditClassModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        onEditClass={handleEditClass}
+        classData={selectedClass}
+      />
     </div>
   );
 }
