@@ -8,11 +8,11 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [whoamiInfo, setWhoamiInfo] = useState(null);
+  // const [whoamiInfo, setWhoamiInfo] = useState(null); // removed for now
 
   const handleLogin = async () => {
     setError("");
-    setWhoamiInfo(null); // clear previous info
+    // setWhoamiInfo(null); // clear previous info
     try {
       const data = await apiFetch("/auth/login", {
         method: "POST",
@@ -20,14 +20,15 @@ const Login = () => {
       });
 
       console.log("Login success:", data);
-      // 👇 fetch the /whoami data
-      const whoami = await apiFetch("/whoami", {
-        method: "GET",
-      });
-      console.log("Whoami response:", whoami);
-      setWhoamiInfo(whoami);
 
-      const shouldRedirect = false;
+      // 👇 removed: whoami fetch
+      // const whoami = await apiFetch("/whoami", {
+      //   method: "GET",
+      // });
+      // console.log("Whoami response:", whoami);
+      // setWhoamiInfo(whoami);
+
+      const shouldRedirect = true;
       if (shouldRedirect) {
         if (data.mustChangePassword) {
           window.location.href = "/change-password";
@@ -76,11 +77,13 @@ const Login = () => {
 
         {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
 
+        {/* 
         {whoamiInfo && (
           <div className="text-green-700 text-sm mb-2">
             Logged in as: {whoamiInfo.email || JSON.stringify(whoamiInfo)}
           </div>
-        )}
+        )} 
+        */}
 
         <button className="login-btn" onClick={handleLogin}>
           LOGIN
@@ -91,3 +94,4 @@ const Login = () => {
 };
 
 export default Login;
+
