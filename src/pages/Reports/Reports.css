@@ -193,7 +193,7 @@
   gap: 0.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  background: #3182ce;
+  background: #7f3f98;
   color: white;
   border: none;
   border-radius: 8px;
@@ -204,7 +204,7 @@
 }
 
 .send-button:hover {
-  background: #2c5282;
+  background: #a44fc6;
 }
 
 .download-button {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './NavMenu.css';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import SchoolLogo from '../../assets/makarios.png';
 import CaderaLogo from '../../assets/cadera-logo.png';
 import Collapsed from '../../assets/collapsed.png';
 import {
@@ -37,13 +38,13 @@ function NavMenu() {
     >
       <NavLink to="/">
         <img
-          src={context.isExpanded ? CaderaLogo : Collapsed}
-          alt={context.isExpanded ? 'Cadera-Logo' : 'Collapsed-Logo'}
+          src={SchoolLogo}
+          alt={'Cadera-Logo'}
           className="header-logo"
           style={{
-            marginBottom: '48px',
-            width: 'auto',
-            height: '16px',
+            marginBottom: '30px',
+            width: '32px',
+            height: '32px',
             transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         />
@@ -59,11 +60,7 @@ function NavMenu() {
           <NavLink to="/" className="nav-icon-link">
             <OverViewIcon
               className="nav-link-icon"
-              stroke={
-                location.pathname === '/'
-                  ? 'hsla(195, 100%, 33%, 1)'
-                  : '#737373'
-              }
+              stroke={location.pathname === '/' ? '#C16CE2' : '#737373'}
             />
           </NavLink>
           {context.isExpanded && (
@@ -71,7 +68,7 @@ function NavMenu() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
             >
@@ -95,7 +92,7 @@ function NavMenu() {
                 location.pathname === '/admin/students' ||
                 location.pathname === '/admin/teachers' ||
                 location.pathname === '/admin/classes'
-                  ? 'hsla(195, 100%, 33%, 1)'
+                  ? '#C16CE2'
                   : '#737373'
               }
             />
@@ -104,7 +101,7 @@ function NavMenu() {
             <span
               className={
                 location.pathname.startsWith('/admin')
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
               onClick={handleAdminClick}
@@ -154,9 +151,7 @@ function NavMenu() {
             <GradesIcon
               className="nav-link-icon"
               stroke={
-                location.pathname.startsWith('/grades')
-                  ? 'hsla(195, 100%, 33%, 1)'
-                  : '#737373'
+                location.pathname.startsWith('/grades') ? '#C16CE2' : '#737373'
               }
             />
           </NavLink>
@@ -165,7 +160,7 @@ function NavMenu() {
               to="/grades"
               className={({ isActive }) =>
                 isActive
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
             >
@@ -182,11 +177,7 @@ function NavMenu() {
           <NavLink to="/reports" className="nav-icon-link">
             <ReportsIcon
               className="nav-link-icon"
-              stroke={
-                location.pathname === '/reports'
-                  ? 'hsla(195, 100%, 33%, 1)'
-                  : '#737373'
-              }
+              stroke={location.pathname === '/reports' ? '#C16CE2' : '#737373'}
             />
           </NavLink>
           {context.isExpanded && (
@@ -194,7 +185,7 @@ function NavMenu() {
               to="/reports"
               className={({ isActive }) =>
                 isActive
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
             >
@@ -212,9 +203,7 @@ function NavMenu() {
             <AnalyticsIcon
               className="nav-link-icon"
               stroke={
-                location.pathname === '/analytics'
-                  ? 'hsla(195, 100%, 33%, 1)'
-                  : '#737373'
+                location.pathname === '/analytics' ? '#C16CE2' : '#737373'
               }
             />
           </NavLink>
@@ -223,7 +212,7 @@ function NavMenu() {
               to="/analytics"
               className={({ isActive }) =>
                 isActive
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
             >
@@ -240,11 +229,7 @@ function NavMenu() {
           <NavLink to="/settings" className="nav-icon-link">
             <SettingsIcon
               className="nav-link-icon"
-              stroke={
-                location.pathname === '/settings'
-                  ? 'hsla(195, 100%, 33%, 1)'
-                  : '#737373'
-              }
+              stroke={location.pathname === '/settings' ? '#C16CE2' : '#737373'}
             />
           </NavLink>
           {context.isExpanded && (
@@ -252,7 +237,7 @@ function NavMenu() {
               to="/settings"
               className={({ isActive }) =>
                 isActive
-                  ? 'bg-gradient-to-r from-[#007EA7] to-[#00BF76] text-transparent bg-clip-text'
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
                   : 'nav-link-text'
               }
             >
@@ -264,6 +249,20 @@ function NavMenu() {
 
       {/* Toggle Button */}
       <div className="nav-toggle-container">
+        <NavLink to="/">
+          <img
+            src={context.isExpanded ? CaderaLogo : Collapsed}
+            alt={context.isExpanded ? 'Cadera-Logo' : 'Collapsed-Logo'}
+            className="header-logo"
+            style={{
+              width: 'auto',
+              height: '16px',
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              marginBottom: '0px',
+              paddingLeft: '15px',
+            }}
+          />
+        </NavLink>
         <button className="nav-toggle-btn" onClick={toggleNavMenu}>
           <PanelLeftClose
             className={`nav-toggle-icon ${context.isExpanded ? '' : 'rotated'}`}

@@ -701,7 +701,7 @@ function Home() {
                         width: '32px',
                         fontSize: '14px',
                         // 2.5: Dynamically style today's date
-                        backgroundColor: isToday ? '#007EA7' : 'transparent',
+                        backgroundColor: isToday ? '#7F3F98' : 'transparent',
                         color: isToday ? 'white' : '#374151',
                         borderRadius: '50%',
                         cursor: day ? 'pointer' : 'default',
@@ -777,7 +777,7 @@ function Home() {
               >
                 <NavLink
                   style={{
-                    background: '#007EA7',
+                    background: '#7F3F98',
                     border: 'none',
                     borderRadius: '8px',
                     padding: '10px 16px',
@@ -792,11 +792,11 @@ function Home() {
                   }}
                   to="reports"
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#0089b7';
+                    e.currentTarget.style.background = '#9247af';
                     e.currentTarget.style.transform = 'translateY(-1px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#007EA7';
+                    e.currentTarget.style.background = '#7F3F98';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >

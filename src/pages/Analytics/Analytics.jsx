@@ -633,7 +633,7 @@ const AnalyticsDashboard = () => {
             >
               <button
                 style={{
-                  background: '#007ea7',
+                  background: '#7F3F98',
                   border: 'none',
                   borderRadius: '8px',
                   padding: '10px 16px',
@@ -647,11 +647,11 @@ const AnalyticsDashboard = () => {
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#006a8a';
+                  e.currentTarget.style.background = '#a44fc6';
                   e.currentTarget.style.transform = 'translateY(-1px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#007ea7';
+                  e.currentTarget.style.background = '#7F3F98';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >

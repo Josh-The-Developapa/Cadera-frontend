@@ -130,7 +130,7 @@
 }
 
 .view-analytics-button {
-  background: #007ea7;
+  background: #7f3f98;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
@@ -144,7 +144,7 @@
 }
 
 .view-analytics-button:hover {
-  background: #007ea7;
+  background: #a44fc6;
   transform: translateY(-1px);
 }
 
