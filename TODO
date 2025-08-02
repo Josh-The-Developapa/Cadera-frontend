@@ -2,4 +2,8 @@ goal: hook up frontend to backend
  1. implement login (with jwt) [done]
  2. hook logic for each web component
 
+1. create frontend mapping according to role (set from login)
+   - universal logic that ensures no subdomain of the site can be accessed without a valid role state. if null, redirect to login.
+
+
 (remember to fix Safari cross site cookie bug; host on same domain, or don't use httpOnly cookie)
