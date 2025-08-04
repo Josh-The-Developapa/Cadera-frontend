@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Report Card Template</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+        body {
+            font-family: "Arial", sans-serif;
+            width: 21cm;
+            max-height: 29.7cm;
+            margin: 0 auto;
+            padding: 0.5cm;
+            font-size: 12pt;
+            box-sizing: border-box;
+        }
+
+        .bigassbox {
+            border: 0.1cm solid purple;
+            padding: 0.5cm;
+            height: 26cm;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .comments {
+            font-size: 12pt;
+        }
+
+        .student-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2cm;
+            padding: 0;
+            height: 1.5cm;
+            margin-bottom: 0.3cm;
+        }
+
+        .student-info1, .student-info2 {
+            display: flex;
+            height: 0.5cm;
+            flex-direction: row;
+            gap: 1cm;
+            padding: 0;
+            margin: 0;
+        }
+
+        .student-info,
+        .grades-table,
+        .attendance,
+        .comments,
+        .grading-scale {
+            margin-bottom: 0.5cm;
+        }
+
+        .tinytext {
+            font-size: 8pt;
+        }
+
+        .grades-table table,
+        .grading-scale table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: center;
+        }
+
+        .small-text {
+            font-size: 1em;
+        }
+
+        .smallishtext {
+            font-size: 10pt;
+        }
+
+        .logo {
+            width: 2cm;
+            height: auto;
+            position: absolute;
+        }
+
+        .cover-logo {
+            width: 5cm;
+            height: 5cm;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .cover-page {
+            text-align: center;
+            border: 0.1cm solid purple;
+            padding: 2cm;
+            height: 27cm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .cover-big * {
+            margin: 0;
+        }
+
+        .cover-heading {
+            font-size: 24pt;
+            margin-top: 0.5cm;
+        }
+
+        .cover-heading2 {
+            font-size: 20pt;
+        }
+
+        .cover-heading3 {
+            font-size: 16pt;
+            font-weight: normal;
+        }
+
+        .cover-subinfo {
+            font-size: 14pt;
+            margin-top: 5cm;
+            line-height: 1em;
+            display: block;
+            text-align: left;
+        }
+
+        .cover-big {
+            margin-top: 3cm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5cm;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 1cm;
+            }
+
+            body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                font-size: 12pt;
+            }
+
+            table,
+            tr,
+            td,
+            th {
+                page-break-inside: avoid;
+            }
+
+            header,
+            footer,
+            div {
+                page-break-after: avoid;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- COVER PAGE -->
+    <div class="cover-page page-break">
+        <div class="cover-big">
+            <img class="cover-logo" src="./makarios.png" alt="School Logo">
+            <h1 class="cover-heading">Makarios Junior School</h1>
+            <h2 class="cover-heading2">Progress Report</h2>
+            <h2 class="cover-heading3">Academic Year 2025</h2>
+        </div>
+
+        <div class="cover-subinfo">
+            <p>Name: John Cena</p>
+            <p>Class: P3K</p>
+            <P>Class Teacher: Kevin Hart</P>
+        </div>
+    </div>
+
+    <!-- MAIN REPORT PAGE -->
+    <div class="bigassbox">
+
+        <img class="logo" src="./makarios.png" alt="Logo">
+
+        <header>
+            <h2>Makarios Junior School</h2>
+            <div class="small-text">
+                <p>P.O. Box 600071 Kajjansi, Uganda</p>
+                <p>Tel: +25677425879</p>
+                <p>Email: makariosjuniorschool@gmail.com</p>
+            </div>
+        </header>
+
+        <div class="student-info smallishtext">
+            <div class="student-info1">
+                <p>Student Name: John Smith Katumba Kateei</p>
+                <p>SPC: 134124</p>
+            </div>
+            <div class="student-info2">
+                <p>Class: P7K</p>
+                <p>Class Teacher: Robert Kim</p>
+                <p>Section: Primary</p>
+            </div>
+        </div>
+
+        <div class="grades-table">
+            <table>
+                <tr>
+                    <th colspan="7">TERM 2 (May 26th 2025 - August 22nd, 2025) Mid Term Report</th>
+                </tr>
+                <tr>
+                    <th>Subject</th>
+                    <th>Mid Term</th>
+                    <th>End of Term</th>
+                    <th>Final Mark</th>
+                    <th>Grade</th>
+                    <th>Teacher's Comment</th>
+                    <th>Initials</th>
+                </tr>
+                <tr>
+                    <td>English Language</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mathematics</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Religious Education</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Computer Studies</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Literacy 1 (Sci & SST)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Literacy 2 (Reading & Writing)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><strong>Total </strong></td>
+                    <td colspan="2"></td>
+                    <td></td>
+                    <td colspan="3"><strong>(out of 600)</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="grading-scale small-text">
+            <table class="tinytext" border="1" cellspacing="0" cellpadding="4"
+                style="border-collapse: collapse; text-align: center;">
+                <tr>
+                    <th>Grades</th>
+                    <th>D1</th>
+                    <th>D2</th>
+                    <th>C3</th>
+                    <th>C4</th>
+                    <th>C5</th>
+                    <th>C6</th>
+                    <th>P7</th>
+                    <th>P8</th>
+                    <th>F9</th>
+                </tr>
+                <tr>
+                    <th>Descriptive</th>
+                    <td>Excellent</td>
+                    <td>Very Good</td>
+                    <td>Good</td>
+                    <td>Satisfactory</td>
+                    <td>Below Avg.</td>
+                    <td>Below Avg.</td>
+                    <td>Cause For Concern</td>
+                    <td>Cause For Concern</td>
+                    <td>Fail</td>
+                </tr>
+                <tr>
+                    <th>Ranges</th>
+                    <td>90% - 100%</td>
+                    <td>75% - 89%</td>
+                    <td>70% - 74%</td>
+                    <td>60% - 69%</td>
+                    <td>55% - 59%</td>
+                    <td>50% - 54%</td>
+                    <td>40% - 49%</td>
+                    <td>30% - 39%</td>
+                    <td>0% - 29%</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="attendance">
+            <table border="1" cellspacing="0" cellpadding="8"
+                style="font-size: 12pt; width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>Expected attendance</td>
+                    <td style="width: 2cm;"></td>
+                    <td>Actual attendance</td>
+                    <td style="width: 2cm;"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="comments">
+            <table border="1" cellspacing="0" cellpadding="8"
+                style="font-size: 12pt; width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th style="text-align: left; width: 25%; height: 2em;">General Comments</th>
+                    <td></td>
+                    <th style="text-align: left; width: 25%;">Signature</th>
+                </tr>
+                <tr>
+                    <th style="text-align: left; height: 2em; width: 30%;">Class Teacher's Comments</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th style="text-align: left; height: 2em;">Head Teacher's Comments</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: relative; top: 3cm; right: 0.5cm; display: flex; flex-direction: row-reverse;">
+            <img style="width: 2cm; height: auto;" src="./Vector.png">
+        </div>
+    </div>
+</body>
+
+</html>

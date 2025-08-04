@@ -22,29 +22,29 @@ import IndividualClass from './pages/Grades/Class/IndividualClass.jsx';
 import Performance from './pages/Grades/Class/Performance/Performance.jsx';
 
 const router = createBrowserRouter([
-{
-  path: '/',
-  element: <MainLayout />, // Shared layout route
-  children: [
-    { index: true, element: <Home /> }, // path: '/'
-    { path: 'dashboard', element: <Navigate to="/" replace /> }, // redirect alias
-    { path: 'admin/teachers', element: <Teachers /> },
-    { path: 'admin/students', element: <Students /> },
-    { path: 'admin/classes', element: <Classes /> },
-    { path: 'analytics', element: <Analytics /> },
-    { path: 'grades', element: <Grades /> },
-    { path: 'settings', element: <Settings /> },
-    { path: 'reports', element: <Reports /> },
-    {
-      path: 'grades/:class_name',
-      element: <IndividualClass />,
-    },
-    {
-      path: 'grades/:class_name/student-performance',
-      element: <Performance />,
-    },
-  ],
-},
+  {
+    path: '/',
+    element: <MainLayout />, // Shared layout route
+    children: [
+      { index: true, element: <Home /> }, // path: '/'
+      { path: 'dashboard', element: <Navigate to="/" replace /> }, // redirect alias
+      { path: 'admin/teachers', element: <Teachers /> },
+      { path: 'admin/students', element: <Students /> },
+      { path: 'admin/classes', element: <Classes /> },
+      { path: 'analytics', element: <Analytics /> },
+      { path: 'grades', element: <Grades /> },
+      { path: 'settings', element: <Settings /> },
+      { path: 'reports', element: <Reports /> },
+      {
+        path: 'grades/:class_name',
+        element: <IndividualClass />,
+      },
+      {
+        path: 'grades/:class_name/student-performance',
+        element: <Performance />,
+      },
+    ],
+  },
   {
     path: '/login',
     element: <Login />,

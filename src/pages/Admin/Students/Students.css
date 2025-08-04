@@ -107,7 +107,10 @@
   border-radius: 5px;
 }
 .student-table th {
-  padding: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: left;
   font-weight: 400;
   font-size: 14px;
@@ -130,7 +133,9 @@
   border-image: var(--border-gradient) 1;
 }
 .student-table td {
-  padding: 15px 16px 15px 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 40px;
 }
 
 /* Round the leftmost cell */
@@ -171,29 +176,28 @@
 .custom-checkbox {
   appearance: none;
   -webkit-appearance: none;
-  background-color: #fff;
   margin: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000000;
-  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #737373;
+  border-radius: 2px;
   display: grid;
   place-content: center;
   cursor: pointer;
 }
 .custom-checkbox::before {
   content: '';
-  width: 12px;
-  height: 12px;
+  width: 7px;
+  height: 7px;
   transform: scale(0);
   transition: transform 0.15s ease-in-out;
-  background-color: #0d0d0d;
+  background-color: #737373;
   mask: url('data:image/svg+xml,%3Csvg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M6.00039 10.7998L3.20039 7.9998L2.26672 8.93347L6.00039 12.6668L14.0004 4.6668L13.0667 3.73347L6.00039 10.7998Z"/%3E%3C/svg%3E')
     no-repeat center;
   mask-size: contain;
 }
 .custom-checkbox:checked {
-  border-color: #0d0d0d;
+  border-color: #737373;
 }
 .custom-checkbox:checked::before {
   transform: scale(1.7);

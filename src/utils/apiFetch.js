@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL ?? 'https://localhost:3000';
 
 export async function apiFetch(path, options = {}) {
   const headers = new Headers({
@@ -6,22 +6,28 @@ export async function apiFetch(path, options = {}) {
     ...(options.headers || {}),
   });
 
-  const response = await fetch(`${API_URL}${path}`, {
+  const url = `${API_URL}${path}`;
+  console.debug('📡 Fetching:', url, { headers, credentials: 'include', ...options });
+
+  const response = await fetch(url, {
     ...options,
     headers,
-    credentials: 'include', // crucial for sending cookies
+    credentials: 'include', // always needed for cookies
   });
 
+  const clone = response.clone(); // so we can inspect twice
+
   if (!response.ok) {
-    const contentType = response.headers.get('content-type');
+    const contentType = clone.headers.get('content-type');
     const error = contentType?.includes('application/json')
-      ? await response.json()
-      : await response.text();
-    throw new Error(
-      typeof error === 'string' ? error : error.message ?? 'API request failed'
-    );
+      ? await clone.json()
+      : await clone.text();
+    console.error('❌ API Error:', error);
+    throw new Error(typeof error === 'string' ? error : error.message ?? 'API request failed');
   }
 
-  return response.json();
+  const result = await clone.json();
+  console.debug('✅ API Response:', result);
+  return result;
 }
 

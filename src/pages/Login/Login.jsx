@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
-import './Login.css';
-import { FiMail, FiLock } from 'react-icons/fi';
-import LoggedOutHeader from '../../components/LoggedOutHeader/LoggedOutHeader';
-import { apiFetch } from '../../utils/apiFetch.js';
+import React, { useState } from "react";
+import "./Login.css";
+import { FiMail, FiLock } from "react-icons/fi";
+import LoggedOutHeader from "../../components/LoggedOutHeader/LoggedOutHeader";
+import { apiFetch } from "../../utils/apiFetch.js";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [autoRedirect, setAutoRedirect] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  // const [whoamiInfo, setWhoamiInfo] = useState(null); // removed for now
 
-const handleLogin = async () => {
-  setError('');
-  try {
-    const data = await apiFetch('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-    });
+  const handleLogin = async () => {
+    setError("");
+    // setWhoamiInfo(null); // clear previous info
+    try {
+      const data = await apiFetch("/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
 
-    console.log('Login success:', data);
+      console.log("Login success:", data);
 
-    const shouldRedirect = true;
+      // 👇 removed: whoami fetch
+      // const whoami = await apiFetch("/whoami", {
+      //   method: "GET",
+      // });
+      // console.log("Whoami response:", whoami);
+      // setWhoamiInfo(whoami);
 
-    if (shouldRedirect) {
-      if (data.mustChangePassword) {
-        window.location.href = '/change-password';
-      } else {
-        window.location.href = '/dashboard';
+      const shouldRedirect = true;
+      if (shouldRedirect) {
+        if (data.mustChangePassword) {
+          window.location.href = "/change-password";
+        } else {
+          window.location.href = "/dashboard";
+        }
       }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError(err.message || "Login failed");
     }
-  } catch (err) {
-    console.error('Login error:', err);
-    setError(err.message || 'Login failed');
-  }
-};
+  };
 
   return (
     <div className="login-container">
@@ -63,12 +70,20 @@ const handleLogin = async () => {
 
         <div
           className="text-black text-right text-sm mb-4 cursor-pointer w-[80%]"
-          style={{ color: '#003459' }}
+          style={{ color: "#003459" }}
         >
           Forgot password?
         </div>
 
         {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
+
+        {/* 
+        {whoamiInfo && (
+          <div className="text-green-700 text-sm mb-2">
+            Logged in as: {whoamiInfo.email || JSON.stringify(whoamiInfo)}
+          </div>
+        )} 
+        */}
 
         <button className="login-btn" onClick={handleLogin}>
           LOGIN
@@ -79,3 +94,4 @@ const handleLogin = async () => {
 };
 
 export default Login;
+

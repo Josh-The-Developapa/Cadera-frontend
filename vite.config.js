@@ -13,6 +13,7 @@ export default defineConfig({
       key: fs.readFileSync('./certs/key.pem'),
       cert: fs.readFileSync('./certs/cert.pem'),
     },
+    origin: 'https://localhost:5173',
   },
 });
 

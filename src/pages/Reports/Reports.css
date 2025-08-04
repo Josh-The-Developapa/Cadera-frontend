@@ -239,7 +239,7 @@
 .history-table {
   background: white;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: scroll;
   border: none; /* Remove current light border */
   box-shadow: 2px 6px 15px rgba(0, 0, 0, 0.1); /* Match left card style */
   height: 100%;
@@ -306,3 +306,31 @@
   font-size: 14px;
   color: #4a5568;
 }
+
+/* IndividualReportsModal.css */
+.all-students-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.students-table th:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+.students-table th:nth-child(3) {
+  width: 100px;
+}
+
+.students-table th:nth-child(4) {
+  width: 120px;
+}
+
+.students-table input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/*HTML FILE STYLES*/
