@@ -2,7 +2,12 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background: radial-gradient(50% 50% at 50% 50%, #A7DEEA 0%, #E7F8FE 44.97%, #FFFFFF 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #d3a7ea 0%,
+    #fae7fe 44.97%,
+    #ffffff 100%
+  );
   border-radius: 0px;
 }
 

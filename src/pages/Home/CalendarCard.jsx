@@ -48,6 +48,7 @@ function CalendarCard() {
         borderRadius: '12px',
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
         padding: '20px',
+        paddingTop: '10px',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
         height: '60%',
         display: 'flex',
@@ -74,8 +75,8 @@ function CalendarCard() {
         <ChevronLeft
           size={16}
           onClick={() => changeMonth(-1)}
-          style={{ 
-            color: '#6b7280', 
+          style={{
+            color: '#6b7280',
             cursor: 'pointer',
             transition: 'color 0.2s ease',
           }}
@@ -95,8 +96,8 @@ function CalendarCard() {
         <ChevronRight
           size={16}
           onClick={() => changeMonth(1)}
-          style={{ 
-            color: '#6b7280', 
+          style={{
+            color: '#6b7280',
             cursor: 'pointer',
             transition: 'color 0.2s ease',
           }}

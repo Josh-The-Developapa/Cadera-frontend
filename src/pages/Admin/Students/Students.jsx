@@ -157,14 +157,8 @@ function Students() {
             );
             const isSelected = selectedIndex === originalIndex;
 
-            const baseColor =
-              index % 2 === 0
-                ? 'hsla(189, 64%, 95%, 1)'
-                : 'hsla(0, 0%, 98%, 1)';
-            const selectedColor =
-              index % 2 === 0
-                ? 'hsla(189, 64%, 85%, 1)'
-                : 'hsla(0, 0%, 85%, 1)';
+            const baseColor = index % 2 === 0 ? '#FAFAFA' : '#F6FCFD';
+            const selectedColor = index % 2 === 0 ? '#e9e9e9' : '#b2e3eb';
 
             return (
               <tr
