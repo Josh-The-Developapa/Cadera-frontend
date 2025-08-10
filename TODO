@@ -7,3 +7,5 @@ goal: hook up frontend to backend
 
 
 (remember to fix Safari cross site cookie bug; host on same domain, or don't use httpOnly cookie)
+
+remember to plan for CSRF protection if necessary. probably not since this is not a public site, and we have role protection
