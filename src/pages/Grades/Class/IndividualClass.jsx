@@ -2,7 +2,18 @@ import React, { useState } from 'react';
 import './IndividualClass.css';
 import ContentBox from '../../../components/ContentBox/ContentBox';
 import { Link, useParams } from 'react-router-dom';
-import { ChevronDown, ChevronRight, PlusCircle } from 'lucide-react';
+import { ChevronDown, ChevronRight, ChartBar } from 'lucide-react';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+import rightPanelIcon from '../../../assets/classes-right-panel-icon.svg';
+import '../../../components/NavMenu/NavMenu.css';
 
 // --- Mock Data ---
 // Expanded fictitious data to ensure all subjects have performance metrics.
@@ -11,34 +22,40 @@ import ClassesData from '../../Admin/Classes/ClassesData';
 // Left Sidebar for selecting subjects (Unchanged)
 const SubjectSidebar = ({ subjects, selectedSubject, setSelectedSubject }) => (
   <aside
-    className="md:w-48 flex-shrink-0 h-[615px] w-[142px] p-[30px]"
+    className="md:w-48 flex-shrink-0 h-[73vh] max-h-[484px] min-h-[450px] w-[142px] p-[30px] pr-0"
     style={{
-      background: 'rgba(255, 255, 255, 0.7)',
+      background: '#FFFFFFB2',
       boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)',
       borderRadius: '10px',
     }}
   >
     <nav className="space-y-2">
       {subjects.map((subject) => (
-        <button
+        <div
           key={subject.name}
-          onClick={() => setSelectedSubject(subject.name)}
-          className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-            selectedSubject === subject.name
-              ? 'bg-green-100 text-green-700'
-              : 'text-gray-600 hover:bg-gray-100'
+          className={`nav-link-div ${
+            selectedSubject === subject.name ? 'active' : ''
           }`}
         >
-          {subject.name}
-        </button>
+          <button
+            onClick={() => setSelectedSubject(subject.name)}
+            className={`nav-icon-link  ${
+              selectedSubject === subject.name
+                ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
+                : 'nav-link-text'
+            }`}
+          >
+            {subject.name}
+          </button>
+        </div>
       ))}
     </nav>
   </aside>
 );
 
-// Card for Weighting section (Unchanged)
+// Card for Weighting section (Resized for right sidebar)
 const WeightingCard = ({ weighting }) => (
-  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-[265px] w-[302px]">
+  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-[265px] w-[280px]">
     <h3 className="font-semibold text-gray-800 mb-4">Weighting</h3>
     {weighting.length > 0 ? (
       <>
@@ -79,111 +96,186 @@ const WeightingCard = ({ weighting }) => (
   </div>
 );
 
-// Card for Assessment Components (Unchanged)
-const AssessmentComponentsCard = ({ components }) => (
-  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-[325px] w-[302px]">
-    <h3 className="font-semibold text-gray-800 mb-4">Assessment Components</h3>
-    <button className="w-full flex items-center justify-center space-x-2 border-2 border-dashed border-gray-300 text-gray-500 py-2 rounded-lg hover:bg-gray-50 transition-colors mb-4">
-      <PlusCircle className="w-4 h-4" />
-      <span className="text-sm font-medium">Add New Component</span>
-    </button>
-    <div className="space-y-2 max-h-40 overflow-y-auto pr-2">
-      {components.map((component, index) => (
-        <div
-          key={index}
-          className="bg-gray-50 border border-gray-200 p-3 rounded-lg text-sm text-gray-700"
-        >
-          {component}
-        </div>
-      ))}
-    </div>
-  </div>
-);
+// Custom tooltip component for the chart
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white p-3 border border-gray-200 rounded-lg shadow-lg">
+        <p className="text-sm font-medium text-gray-800">{`${label}`}</p>
+        <p className="text-sm text-blue-600">{`Score: ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
-// --- REBUILT Performance Overview Chart ---
-const PerformanceChart = ({ performanceData, className }) => {
-  const maxValue = 30;
-  // Create a realistic, evenly-spaced Y-axis
-  const yAxisLabels = [30, 22.5, 15, 7.5, 0];
+// --- REBUILT Performance Overview Chart with Recharts ---
+const PerformanceChart = ({
+  performanceData,
+  className,
+  selectedYear,
+  setSelectedYear,
+  selectedTerm,
+  setSelectedTerm,
+}) => {
+  // Transform data for Recharts format
+  const chartData = performanceData.map((item, index) => ({
+    name: item.name,
+    score: item.score,
+    // Cycle through colors for variety
+    fill: ['#003459', '#00A8E8', '#00BF76'][index % 3],
+  }));
+
+  // Available years and terms
+  const years = [
+    { name: '2024', value: '2024' },
+    { name: '2023', value: '2023' },
+    { name: '2022', value: '2022' },
+  ];
+
+  const terms = [
+    { name: 'Term 1', value: 'Term 1' },
+    { name: 'Term 2', value: 'Term 2' },
+    { name: 'Term 3', value: 'Term 3' },
+  ];
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col w-[624px] h-[615px]">
+    <div className="bg-white rounded-xl shadow-sm flex flex-col w-[580px] h-[73vh] max-h-[484px] min-h-[450px]">
       {/* Chart Header */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center space-x-2">
-          <button className="flex items-center space-x-1 text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-md hover:bg-gray-200">
-            <span>2024</span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
-          <button className="flex items-center space-x-1 text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-md hover:bg-gray-200">
-            <span>Term 1</span>
-            <ChevronDown className="w-4 h-4" />
-          </button>
+      <div
+        className="flex flex-row justify-between items-end pr-[32px] mb-[15px]"
+        style={{
+          background:
+            'linear-gradient(to left, #FFFFFF -5.22%, #BFBFBF 202.05%)',
+        }}
+      >
+        <div className="flex flex-row items-end">
+          <img
+            src={rightPanelIcon}
+            alt="RightPanelIcon"
+            style={{
+              height: '100%',
+            }}
+          />
+          <div className="flex flex-row gap-[8px]">
+            {/* Year Select */}
+            <div className="relative">
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(e.target.value)}
+                className="
+                  font-[400] text-[#737373] text-[12px] bg-white 
+                  px-[10px] py-[6px] rounded-md border-[1px] border-[#A6A6A6] 
+                  hover:bg-gray-50 w-[84px] h-[32px] mb-[5px]
+                  appearance-none cursor-pointer
+                  pr-[28px]
+                "
+                style={{
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  lineHeight: '1.2',
+                  minHeight: '32px',
+                }}
+              >
+                {years.map((year) => (
+                  <option key={year.value} value={year.value}>
+                    {year.name}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                size={12}
+                className="absolute right-[8px] top-1/2 transform -translate-y-1/2 pointer-events-none text-[#737373]"
+              />
+            </div>
+
+            {/* Term Select */}
+            <div className="relative">
+              <select
+                value={selectedTerm}
+                onChange={(e) => setSelectedTerm(e.target.value)}
+                className="
+                  font-[400] text-[#737373] text-[12px] bg-white 
+                  px-[10px] py-[6px] rounded-md border-[1px] border-[#A6A6A6] 
+                  hover:bg-gray-50 w-[84px] h-[32px] mb-[5px]
+                  appearance-none cursor-pointer
+                  pr-[28px]
+                "
+                style={{
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  lineHeight: '1.2',
+                  minHeight: '32px',
+                }}
+              >
+                {terms.map((term) => (
+                  <option key={term.value} value={term.value}>
+                    {term.name}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                size={12}
+                className="absolute right-[8px] top-1/2 transform -translate-y-1/2 pointer-events-none text-[#737373]"
+              />
+            </div>
+          </div>
         </div>
-        <h2 className="text-2xl font-light text-gray-400">{className}</h2>
+        <h2 className="text-[#404040] text-[40px] font-[100] mb-[5px] leading-none">
+          {className}
+        </h2>
       </div>
 
-      <h3 className="font-semibold text-gray-800 mb-4">Performance Overview</h3>
-
-      {/* Chart Body */}
-      <div className="flex-grow flex flex-col">
-        <div className="flex-grow flex">
-          {/* Y-Axis Labels (Fixed width for alignment) */}
-          <div className="w-10 flex flex-col justify-between text-xs text-right text-gray-500 pr-2">
-            {yAxisLabels.map((label) => (
-              <span key={label}>{label.toFixed(1)}</span>
-            ))}
-          </div>
-
-          {/* Chart Area: Gridlines and Bars */}
-          <div className="flex-grow relative border-l border-gray-200">
-            {/* Horizontal Gridlines */}
-            <div className="absolute inset-0 grid grid-rows-4">
-              {yAxisLabels.slice(0, -1).map((label) => (
-                <div key={label} className="border-b border-gray-200"></div>
-              ))}
-            </div>
-
-            {/* Bars */}
-            <div className="absolute inset-0 flex items-end justify-around gap-6 pl-[20px] pr-[20px]">
-              {performanceData.length > 0 ? (
-                performanceData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-1/2 rounded-t-md z-10 transition-all duration-300 ease-out"
-                    style={{
-                      height: `${(item.score / maxValue) * 100}%`,
-                      backgroundColor: ['#2dd4bf', '#34d399', '#38bdf8'][
-                        index % 3
-                      ],
-                    }}
-                    title={`${item.name}: ${item.score}`}
-                  ></div>
-                ))
-              ) : (
-                <div className="z-10 text-gray-500">No performance data.</div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* X-Axis Labels (Padded left to align with chart) */}
-        <div className="w-full flex justify-around pl-10 pt-2">
-          {performanceData.map((item) => (
-            <span
-              key={item.name}
-              className="text-xs text-gray-600 w-1/2 text-center"
+      <div className="flex flex-col gap-[15px] justify-center items-start mb-[15px]">
+        <h3 className="font-[400] text-[14px] text-[#0D0D0D] ml-[30px]">
+          Performance Overview
+        </h3>
+        {/* Chart Body with Recharts */}
+        <div className="flex-grow flex flex-col mt-[15px], mr-[10px]">
+          {performanceData.length > 0 ? (
+            <ResponsiveContainer
+              width={496}
+              height={250}
+              style={{ padding: '0px' }}
             >
-              {item.name}
-            </span>
-          ))}
+              <BarChart data={chartData} height="100%" width="100%">
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis
+                  dataKey="name"
+                  tick={{ fontSize: 14, fill: '#404040' }}
+                  axisLine={{ stroke: '#d1d5db' }}
+                  tickLine={{ stroke: '#d1d5db' }}
+                  interval={0}
+                  // height={60}
+                />
+                <YAxis
+                  tick={{ fontSize: 14, fill: '#A6A6A6' }}
+                  axisLine={{ stroke: '#d1d5db' }}
+                  tickLine={{ stroke: '#d1d5db' }}
+                  domain={[0, 30]}
+                  ticks={[0, 7.5, 15, 22.5, 30]}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Bar dataKey="score" barSize={75}>
+                  {chartData.map((entry, index) => (
+                    <Bar key={`bar-${index}`} fill={entry.fill} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="flex-grow flex items-center justify-center text-gray-500">
+              No performance data available.
+            </div>
+          )}
         </div>
       </div>
 
       {/* Bottom Button */}
-      <div className="mt-8 text-center">
+      <div className="text-center flex flex-row justify-center items-center">
         <Link to={`/grades/${className}/student-performance`}>
-          <button className="cursor-pointer bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-700 transition-colors">
+          <button className="cursor-pointer mb-[32px] bg-[#7F3F98] text-white px-6 py-2 rounded-lg text-[14px] font-[300] transition-colors flex flex-row justify-center items-center">
+            <ChartBar className="w-[16px] h-[16px] mr-2" />
             Edit Student Grades
           </button>
         </Link>
@@ -216,6 +308,8 @@ export default function IndividualClass() {
   const [selectedSubject, setSelectedSubject] = useState(
     subjects[0]?.name || ''
   );
+  const [selectedYear, setSelectedYear] = useState('2024');
+  const [selectedTerm, setSelectedTerm] = useState('Term 1');
 
   const subjectData = subjects.find((s) => s.name === selectedSubject) || {
     weighting: [],
@@ -223,7 +317,8 @@ export default function IndividualClass() {
     performance: {},
   };
 
-  const performanceData = subjectData.performance?.['2024']?.['Term 1'] || [];
+  const performanceData =
+    subjectData.performance?.[selectedYear]?.[selectedTerm] || [];
 
   return (
     <ContentBox
@@ -241,26 +336,21 @@ export default function IndividualClass() {
         </span>
       }
     >
-      <div className="flex flex-col md:flex-row gap-8 mt-[30px]">
+      <div className="flex flex-row gap-8 mt-[30px] items-start">
         <SubjectSidebar
           subjects={subjects}
           selectedSubject={selectedSubject}
           setSelectedSubject={setSelectedSubject}
         />
-        <main className="flex-grow grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-1 flex flex-col gap-6">
-            <WeightingCard weighting={subjectData.weighting} />
-            <AssessmentComponentsCard
-              components={subjectData.assessmentComponents}
-            />
-          </div>
-          <div className="lg:col-span-2">
-            <PerformanceChart
-              performanceData={performanceData}
-              className={className}
-            />
-          </div>
-        </main>
+        <PerformanceChart
+          performanceData={performanceData}
+          className={className}
+          selectedYear={selectedYear}
+          setSelectedYear={setSelectedYear}
+          selectedTerm={selectedTerm}
+          setSelectedTerm={setSelectedTerm}
+        />
+        <WeightingCard weighting={subjectData.weighting} />
       </div>
     </ContentBox>
   );

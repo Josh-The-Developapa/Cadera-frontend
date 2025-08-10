@@ -144,7 +144,7 @@ function NavMenu() {
         {/* Other Menu Items */}
         <div
           className={`nav-link-div ${
-            location.pathname === '/grades' ? 'active' : ''
+            location.pathname.startsWith('/grades') ? 'active' : ''
           }`}
         >
           <NavLink to="/grades" className="nav-icon-link">
@@ -196,14 +196,19 @@ function NavMenu() {
 
         <div
           className={`nav-link-div ${
-            location.pathname === '/analytics' ? 'active' : ''
+            location.pathname === '/analytics' ||
+            location.pathname === '/analytics/classes'
+              ? 'active'
+              : ''
           }`}
         >
           <NavLink to="/analytics" className="nav-icon-link">
             <AnalyticsIcon
               className="nav-link-icon"
               stroke={
-                location.pathname === '/analytics' ? '#C16CE2' : '#737373'
+                location.pathname.startsWith('/analytics')
+                  ? '#C16CE2'
+                  : '#737373'
               }
             />
           </NavLink>

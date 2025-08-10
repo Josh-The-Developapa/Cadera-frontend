@@ -51,12 +51,12 @@
 }
 
 .nav-link-div.active {
-  border-right: #00bf76 3px solid;
+  border-right: #cb9136 3px solid;
   font-size: 14px;
 }
 
 .nav-menu.collapsed .nav-link-div.active {
-  border-right: #00bf76 3px solid;
+  border-right: #cb9136 3px solid;
 }
 
 .nav-link-icon {

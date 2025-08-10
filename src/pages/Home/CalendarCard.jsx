@@ -157,7 +157,7 @@ function CalendarCard() {
                 height: '32px',
                 width: '32px',
                 fontSize: '14px',
-                backgroundColor: isToday ? '#007EA7' : 'transparent',
+                backgroundColor: isToday ? '#7F3F98' : 'transparent',
                 color: isToday ? 'white' : '#374151',
                 borderRadius: '50%',
                 cursor: day ? 'pointer' : 'default',

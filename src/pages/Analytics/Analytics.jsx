@@ -1,9 +1,10 @@
 import React from 'react';
 import { Download, BarChart3, Users, GraduationCap } from 'lucide-react';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 
 import './Analytics.css';
 import ContentBox from '../../components/ContentBox/ContentBox';
+import { Link } from 'react-router-dom';
 
 const AnalyticsDashboard = () => {
   const topClasses = [
@@ -57,7 +58,7 @@ const AnalyticsDashboard = () => {
   const maxPanelHeight = '615px';
 
   return (
-    <ContentBox contentHeading="Analysis">
+    <ContentBox contentHeading="Analytics">
       {/* Dashboard Container */}
       <div
         style={{
@@ -631,7 +632,8 @@ const AnalyticsDashboard = () => {
                 alignItems: 'flex-end',
               }}
             >
-              <button
+              <Link
+                to="/analytics/classes"
                 style={{
                   background: '#7F3F98',
                   border: 'none',
@@ -656,8 +658,8 @@ const AnalyticsDashboard = () => {
                 }}
               >
                 <BarChart3 size={16} />
-                View Student Analytics
-              </button>
+                View Class Analytics
+              </Link>
             </div>
           </div>
         </div>
