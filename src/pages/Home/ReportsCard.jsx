@@ -51,7 +51,8 @@ function ReportsCard() {
           flex: 1,
         }}
       >
-        Generate comprehensive academic reports for individual students or classes.
+        Generate comprehensive academic reports for individual students or
+        classes.
       </p>
 
       {/* Call-to-Action Button */}
@@ -64,7 +65,7 @@ function ReportsCard() {
       >
         <NavLink
           style={{
-            background: '#007EA7',
+            background: '#7F3F98',
             border: 'none',
             borderRadius: '8px',
             padding: '10px 16px',
@@ -80,12 +81,13 @@ function ReportsCard() {
           }}
           to="reports"
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#0089b7';
+            e.currentTarget.style.background = '#7F3F98';
             e.currentTarget.style.transform = 'translateY(-1px)';
-            e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 126, 167, 0.3)';
+            e.currentTarget.style.boxShadow =
+              '0 2px 8px rgba(0, 126, 167, 0.3)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#007EA7';
+            e.currentTarget.style.background = '#6e2c88';
             e.currentTarget.style.transform = 'translateY(0)';
             e.currentTarget.style.boxShadow = 'none';
           }}

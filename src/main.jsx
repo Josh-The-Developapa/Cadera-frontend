@@ -20,6 +20,8 @@ import Settings from './pages/Settings/Settings.jsx';
 import Reports from './pages/Reports/Reports.jsx';
 import IndividualClass from './pages/Grades/Class/IndividualClass.jsx';
 import Performance from './pages/Grades/Class/Performance/Performance.jsx';
+import SelectClass from './pages/Analytics/SelectClass/SelectClass.jsx';
+import AnalysisIndividualClass from './pages/Analytics/AnalyticsIndividualClass/AnalyticsIndividualClass.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,9 +34,18 @@ const router = createBrowserRouter([
       { path: 'admin/students', element: <Students /> },
       { path: 'admin/classes', element: <Classes /> },
       { path: 'analytics', element: <Analytics /> },
-      { path: 'grades', element: <Grades /> },
+      {
+        path: 'analytics/classes',
+        element: <SelectClass />,
+      },
+      {
+        path: 'analytics/classes/:class_name',
+        element: <AnalysisIndividualClass />,
+      },
+
       { path: 'settings', element: <Settings /> },
       { path: 'reports', element: <Reports /> },
+      { path: 'grades', element: <Grades /> },
       {
         path: 'grades/:class_name',
         element: <IndividualClass />,

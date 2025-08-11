@@ -5,107 +5,19 @@ let ClassesData = [
     "level": "P7",
     "subjects": [
       {
-        "name": "Geography",
-        "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
-        ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
-        "performance": {
-          "2024": {
-            "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 23.7
-              },
-              {
-                "name": "Listening",
-                "score": 26.9
-              },
-              {
-                "name": "Writing",
-                "score": 21.0
-              },
-              {
-                "name": "Reading",
-                "score": 17.7
-              },
-              {
-                "name": "Grammar",
-                "score": 18.4
-              }
-            ]
-          }
-        }
-      },
-      {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 23.7
-              },
-              {
-                "name": "Listening",
-                "score": 26.9
-              },
-              {
-                "name": "Writing",
-                "score": 21.0
-              },
-              {
-                "name": "Reading",
-                "score": 17.7
-              },
-              {
-                "name": "Grammar",
-                "score": 18.4
-              }
+              { "name": "Mid Term", "score": 23.7 },
+              { "name": "End of Term", "score": 26.9 },
+              { "name": "Final", "score": 21.0 }
             ]
           }
         }
@@ -113,37 +25,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 19.0
-              },
-              {
-                "name": "Geometry",
-                "score": 19.6
-              },
-              {
-                "name": "Calculus",
-                "score": 29.5
-              }
+              { "name": "Mid Term", "score": 19.0 },
+              { "name": "End of Term", "score": 19.6 },
+              { "name": "Final", "score": 29.5 }
             ]
           }
         }
@@ -151,47 +43,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 15.9
-              },
-              {
-                "name": "Chemistry",
-                "score": 19.0
-              },
-              {
-                "name": "Physics",
-                "score": 15.4
-              },
-              {
-                "name": "Lab Work",
-                "score": 21.8
-              }
+              { "name": "Mid Term", "score": 15.9 },
+              { "name": "End of Term", "score": 19.0 },
+              { "name": "Final", "score": 15.4 }
             ]
           }
         }
@@ -199,21 +61,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.0
-              },
-              {
-                "name": "Civics",
-                "score": 27.4
-              }
+              { "name": "Mid Term", "score": 21.0 },
+              { "name": "End of Term", "score": 27.4 },
+              { "name": "Final", "score": 24.2 }
             ]
           }
         }
@@ -221,21 +75,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 23.4
-              },
-              {
-                "name": "Modern",
-                "score": 20.5
-              }
+              { "name": "Mid Term", "score": 23.4 },
+              { "name": "End of Term", "score": 20.5 },
+              { "name": "Final", "score": 22.0 }
             ]
           }
         }
@@ -243,37 +89,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 28.1
-              },
-              {
-                "name": "Writing",
-                "score": 18.0
-              },
-              {
-                "name": "Comprehension",
-                "score": 17.1
-              }
+              { "name": "Mid Term", "score": 28.1 },
+              { "name": "End of Term", "score": 18.0 },
+              { "name": "Final", "score": 17.1 }
             ]
           }
         }
@@ -283,41 +109,14 @@ let ClassesData = [
     "male": 27,
     "female": 29,
     "teachers": [
-      {
-        "name": "Joan Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Paul Katushabe",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Kenny Owor",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ritah Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mariam Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Susan Namugga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Simon Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Joan Nankya", "avatar": "" },
+      { "name": "Paul Katushabe", "avatar": "" },
+      { "name": "Kenny Owor", "avatar": "" },
+      { "name": "Ritah Mutebi", "avatar": "" },
+      { "name": "Mariam Ouma", "avatar": "" },
+      { "name": "Susan Namugga", "avatar": "" }
     ]
   },
-
   {
     "id": "C2",
     "name": "P7B",
@@ -326,52 +125,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 28.5
-              },
-              {
-                "name": "Listening",
-                "score": 16.9
-              },
-              {
-                "name": "Writing",
-                "score": 18.8
-              },
-              {
-                "name": "Reading",
-                "score": 27.4
-              },
-              {
-                "name": "Grammar",
-                "score": 27.8
-              }
+              { "name": "Mid Term", "score": 28.5 },
+              { "name": "End of Term", "score": 16.9 },
+              { "name": "Final", "score": 18.8 }
             ]
           }
         }
@@ -379,37 +143,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 17.8
-              },
-              {
-                "name": "Geometry",
-                "score": 24.6
-              },
-              {
-                "name": "Calculus",
-                "score": 26.7
-              }
+              { "name": "Mid Term", "score": 17.8 },
+              { "name": "End of Term", "score": 24.6 },
+              { "name": "Final", "score": 26.7 }
             ]
           }
         }
@@ -417,47 +161,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 29.7
-              },
-              {
-                "name": "Chemistry",
-                "score": 15.9
-              },
-              {
-                "name": "Physics",
-                "score": 23.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 29.5
-              }
+              { "name": "Mid Term", "score": 29.7 },
+              { "name": "End of Term", "score": 15.9 },
+              { "name": "Final", "score": 23.9 }
             ]
           }
         }
@@ -465,21 +179,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.8
-              },
-              {
-                "name": "Civics",
-                "score": 28.3
-              }
+              { "name": "Mid Term", "score": 21.8 },
+              { "name": "End of Term", "score": 28.3 },
+              { "name": "Final", "score": 25.1 }
             ]
           }
         }
@@ -487,21 +193,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 22.0
-              },
-              {
-                "name": "Modern",
-                "score": 20.1
-              }
+              { "name": "Mid Term", "score": 22.0 },
+              { "name": "End of Term", "score": 20.1 },
+              { "name": "Final", "score": 21.1 }
             ]
           }
         }
@@ -509,37 +207,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 17.7
-              },
-              {
-                "name": "Writing",
-                "score": 28.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 22.0
-              }
+              { "name": "Mid Term", "score": 17.7 },
+              { "name": "End of Term", "score": 28.3 },
+              { "name": "Final", "score": 22.0 }
             ]
           }
         }
@@ -549,38 +227,12 @@ let ClassesData = [
     "male": 31,
     "female": 29,
     "teachers": [
-      {
-        "name": "Patrick Namusoke",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fiona Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Josephine Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Annette Nabakka",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Elijah Namiiro",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Catherine Lwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Patrick Namusoke", "avatar": "" },
+      { "name": "Fiona Namatovu", "avatar": "" },
+      { "name": "Josephine Mutebi", "avatar": "" },
+      { "name": "Jackie Nabirye", "avatar": "" },
+      { "name": "Dorothy Ochieng", "avatar": "" },
+      { "name": "Annette Nabakka", "avatar": "" }
     ]
   },
   {
@@ -591,52 +243,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 19.8
-              },
-              {
-                "name": "Listening",
-                "score": 22.1
-              },
-              {
-                "name": "Writing",
-                "score": 20.2
-              },
-              {
-                "name": "Reading",
-                "score": 24.1
-              },
-              {
-                "name": "Grammar",
-                "score": 24.7
-              }
+              { "name": "Mid Term", "score": 19.8 },
+              { "name": "End of Term", "score": 22.1 },
+              { "name": "Final", "score": 20.2 }
             ]
           }
         }
@@ -644,37 +261,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 18.6
-              },
-              {
-                "name": "Geometry",
-                "score": 22.6
-              },
-              {
-                "name": "Calculus",
-                "score": 28.4
-              }
+              { "name": "Mid Term", "score": 18.6 },
+              { "name": "End of Term", "score": 22.6 },
+              { "name": "Final", "score": 28.4 }
             ]
           }
         }
@@ -682,47 +279,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 29.6
-              },
-              {
-                "name": "Chemistry",
-                "score": 25.4
-              },
-              {
-                "name": "Physics",
-                "score": 29.8
-              },
-              {
-                "name": "Lab Work",
-                "score": 28.2
-              }
+              { "name": "Mid Term", "score": 29.6 },
+              { "name": "End of Term", "score": 25.4 },
+              { "name": "Final", "score": 29.8 }
             ]
           }
         }
@@ -730,21 +297,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 22.0
-              },
-              {
-                "name": "Civics",
-                "score": 22.5
-              }
+              { "name": "Mid Term", "score": 22.0 },
+              { "name": "End of Term", "score": 22.5 },
+              { "name": "Final", "score": 22.2 }
             ]
           }
         }
@@ -752,21 +311,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 26.5
-              },
-              {
-                "name": "Modern",
-                "score": 29.4
-              }
+              { "name": "Mid Term", "score": 26.5 },
+              { "name": "End of Term", "score": 29.4 },
+              { "name": "Final", "score": 28.0 }
             ]
           }
         }
@@ -774,37 +325,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 17.9
-              },
-              {
-                "name": "Writing",
-                "score": 22.4
-              },
-              {
-                "name": "Comprehension",
-                "score": 27.2
-              }
+              { "name": "Mid Term", "score": 17.9 },
+              { "name": "End of Term", "score": 22.4 },
+              { "name": "Final", "score": 27.2 }
             ]
           }
         }
@@ -814,38 +345,12 @@ let ClassesData = [
     "male": 32,
     "female": 26,
     "teachers": [
-      {
-        "name": "Agnes Bukenya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Tom Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mary Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Susan Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Martin Ssali",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gerald Mugisha",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patrick Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Agnes Bukenya", "avatar": "" },
+      { "name": "Tom Kyomuhendo", "avatar": "" },
+      { "name": "Stella Nsubuga", "avatar": "" },
+      { "name": "Mary Kyomuhendo", "avatar": "" },
+      { "name": "Susan Sserunkuuma", "avatar": "" },
+      { "name": "Martin Ssali", "avatar": "" }
     ]
   },
   {
@@ -856,52 +361,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 26.0
-              },
-              {
-                "name": "Listening",
-                "score": 29.8
-              },
-              {
-                "name": "Writing",
-                "score": 29.9
-              },
-              {
-                "name": "Reading",
-                "score": 26.3
-              },
-              {
-                "name": "Grammar",
-                "score": 28.5
-              }
+              { "name": "Mid Term", "score": 26.0 },
+              { "name": "End of Term", "score": 29.8 },
+              { "name": "Final", "score": 29.9 }
             ]
           }
         }
@@ -909,37 +379,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 28.5
-              },
-              {
-                "name": "Geometry",
-                "score": 19.4
-              },
-              {
-                "name": "Calculus",
-                "score": 24.1
-              }
+              { "name": "Mid Term", "score": 28.5 },
+              { "name": "End of Term", "score": 19.4 },
+              { "name": "Final", "score": 24.1 }
             ]
           }
         }
@@ -947,47 +397,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 29.2
-              },
-              {
-                "name": "Chemistry",
-                "score": 26.3
-              },
-              {
-                "name": "Physics",
-                "score": 21.6
-              },
-              {
-                "name": "Lab Work",
-                "score": 15.6
-              }
+              { "name": "Mid Term", "score": 29.2 },
+              { "name": "End of Term", "score": 26.3 },
+              { "name": "Final", "score": 21.6 }
             ]
           }
         }
@@ -995,21 +415,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 18.2
-              },
-              {
-                "name": "Civics",
-                "score": 26.8
-              }
+              { "name": "Mid Term", "score": 18.2 },
+              { "name": "End of Term", "score": 26.8 },
+              { "name": "Final", "score": 22.5 }
             ]
           }
         }
@@ -1017,21 +429,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 23.3
-              },
-              {
-                "name": "Modern",
-                "score": 24.8
-              }
+              { "name": "Mid Term", "score": 23.3 },
+              { "name": "End of Term", "score": 24.8 },
+              { "name": "Final", "score": 24.1 }
             ]
           }
         }
@@ -1039,37 +443,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 23.4
-              },
-              {
-                "name": "Writing",
-                "score": 20.8
-              },
-              {
-                "name": "Comprehension",
-                "score": 21.4
-              }
+              { "name": "Mid Term", "score": 23.4 },
+              { "name": "End of Term", "score": 20.8 },
+              { "name": "Final", "score": 21.4 }
             ]
           }
         }
@@ -1079,38 +463,12 @@ let ClassesData = [
     "male": 29,
     "female": 30,
     "teachers": [
-      {
-        "name": "Catherine Achieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Josephine Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Bukenya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patrick Achieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patrick Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patrick Nabakka",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Eva Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Catherine Achieng", "avatar": "" },
+      { "name": "Jackie Ntale", "avatar": "" },
+      { "name": "Josephine Ntale", "avatar": "" },
+      { "name": "Frank Bukenya", "avatar": "" },
+      { "name": "Patrick Achieng", "avatar": "" },
+      { "name": "Eva Ssenoga", "avatar": "" }
     ]
   },
   {
@@ -1121,52 +479,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.7
-              },
-              {
-                "name": "Listening",
-                "score": 21.5
-              },
-              {
-                "name": "Writing",
-                "score": 28.6
-              },
-              {
-                "name": "Reading",
-                "score": 15.4
-              },
-              {
-                "name": "Grammar",
-                "score": 28.2
-              }
+              { "name": "Mid Term", "score": 24.7 },
+              { "name": "End of Term", "score": 21.5 },
+              { "name": "Final", "score": 28.6 }
             ]
           }
         }
@@ -1174,37 +497,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 18.8
-              },
-              {
-                "name": "Geometry",
-                "score": 22.5
-              },
-              {
-                "name": "Calculus",
-                "score": 15.2
-              }
+              { "name": "Mid Term", "score": 18.8 },
+              { "name": "End of Term", "score": 22.5 },
+              { "name": "Final", "score": 15.2 }
             ]
           }
         }
@@ -1212,47 +515,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 28.8
-              },
-              {
-                "name": "Chemistry",
-                "score": 21.4
-              },
-              {
-                "name": "Physics",
-                "score": 15.4
-              },
-              {
-                "name": "Lab Work",
-                "score": 24.3
-              }
+              { "name": "Mid Term", "score": 28.8 },
+              { "name": "End of Term", "score": 21.4 },
+              { "name": "Final", "score": 15.4 }
             ]
           }
         }
@@ -1260,21 +533,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 15.6
-              },
-              {
-                "name": "Civics",
-                "score": 22.9
-              }
+              { "name": "Mid Term", "score": 15.6 },
+              { "name": "End of Term", "score": 22.9 },
+              { "name": "Final", "score": 19.3 }
             ]
           }
         }
@@ -1282,21 +547,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 27.6
-              },
-              {
-                "name": "Modern",
-                "score": 19.0
-              }
+              { "name": "Mid Term", "score": 27.6 },
+              { "name": "End of Term", "score": 19.0 },
+              { "name": "Final", "score": 23.3 }
             ]
           }
         }
@@ -1304,37 +561,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 20.5
-              },
-              {
-                "name": "Writing",
-                "score": 26.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 26.2
-              }
+              { "name": "Mid Term", "score": 20.5 },
+              { "name": "End of Term", "score": 26.3 },
+              { "name": "Final", "score": 26.2 }
             ]
           }
         }
@@ -1344,38 +581,12 @@ let ClassesData = [
     "male": 32,
     "female": 31,
     "teachers": [
-      {
-        "name": "James Kembabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Grace Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Eva Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patrick Katongole",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Catherine Kembabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Henry Achieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "James Kembabazi", "avatar": "" },
+      { "name": "Grace Akello", "avatar": "" },
+      { "name": "Stella Nsubuga", "avatar": "" },
+      { "name": "Agnes Ochieng", "avatar": "" },
+      { "name": "Eva Nankya", "avatar": "" },
+      { "name": "Patrick Katongole", "avatar": "" }
     ]
   },
   {
@@ -1386,52 +597,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 26.5
-              },
-              {
-                "name": "Listening",
-                "score": 19.1
-              },
-              {
-                "name": "Writing",
-                "score": 29.7
-              },
-              {
-                "name": "Reading",
-                "score": 18.1
-              },
-              {
-                "name": "Grammar",
-                "score": 27.0
-              }
+              { "name": "Mid Term", "score": 26.5 },
+              { "name": "End of Term", "score": 19.1 },
+              { "name": "Final", "score": 29.7 }
             ]
           }
         }
@@ -1439,37 +615,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 16.6
-              },
-              {
-                "name": "Geometry",
-                "score": 29.7
-              },
-              {
-                "name": "Calculus",
-                "score": 18.6
-              }
+              { "name": "Mid Term", "score": 16.6 },
+              { "name": "End of Term", "score": 29.7 },
+              { "name": "Final", "score": 18.6 }
             ]
           }
         }
@@ -1477,47 +633,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 26.6
-              },
-              {
-                "name": "Chemistry",
-                "score": 21.3
-              },
-              {
-                "name": "Physics",
-                "score": 16.8
-              },
-              {
-                "name": "Lab Work",
-                "score": 18.7
-              }
+              { "name": "Mid Term", "score": 26.6 },
+              { "name": "End of Term", "score": 21.3 },
+              { "name": "Final", "score": 16.8 }
             ]
           }
         }
@@ -1525,21 +651,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 26.3
-              },
-              {
-                "name": "Civics",
-                "score": 15.1
-              }
+              { "name": "Mid Term", "score": 26.3 },
+              { "name": "End of Term", "score": 15.1 },
+              { "name": "Final", "score": 20.7 }
             ]
           }
         }
@@ -1547,21 +665,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 24.7
-              },
-              {
-                "name": "Modern",
-                "score": 24.4
-              }
+              { "name": "Mid Term", "score": 24.7 },
+              { "name": "End of Term", "score": 24.4 },
+              { "name": "Final", "score": 24.6 }
             ]
           }
         }
@@ -1569,37 +679,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 22.0
-              },
-              {
-                "name": "Writing",
-                "score": 18.8
-              },
-              {
-                "name": "Comprehension",
-                "score": 18.6
-              }
+              { "name": "Mid Term", "score": 22.0 },
+              { "name": "End of Term", "score": 18.8 },
+              { "name": "Final", "score": 18.6 }
             ]
           }
         }
@@ -1609,38 +699,12 @@ let ClassesData = [
     "male": 31,
     "female": 28,
     "teachers": [
-      {
-        "name": "Michael Ssekito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Okoth",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Daniel Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sarah Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Michael Ssemwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Isaac Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gloria Achieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Michael Ssekito", "avatar": "" },
+      { "name": "Stella Okoth", "avatar": "" },
+      { "name": "Daniel Mutebi", "avatar": "" },
+      { "name": "Sarah Namatovu", "avatar": "" },
+      { "name": "Charles Namatovu", "avatar": "" },
+      { "name": "Isaac Nankya", "avatar": "" }
     ]
   },
   {
@@ -1651,52 +715,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.9
-              },
-              {
-                "name": "Listening",
-                "score": 24.3
-              },
-              {
-                "name": "Writing",
-                "score": 20.5
-              },
-              {
-                "name": "Reading",
-                "score": 17.0
-              },
-              {
-                "name": "Grammar",
-                "score": 19.9
-              }
+              { "name": "Mid Term", "score": 29.9 },
+              { "name": "End of Term", "score": 24.3 },
+              { "name": "Final", "score": 20.5 }
             ]
           }
         }
@@ -1704,37 +733,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 16.4
-              },
-              {
-                "name": "Geometry",
-                "score": 19.6
-              },
-              {
-                "name": "Calculus",
-                "score": 16.4
-              }
+              { "name": "Mid Term", "score": 16.4 },
+              { "name": "End of Term", "score": 19.6 },
+              { "name": "Final", "score": 16.4 }
             ]
           }
         }
@@ -1742,47 +751,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 22.9
-              },
-              {
-                "name": "Chemistry",
-                "score": 17.0
-              },
-              {
-                "name": "Physics",
-                "score": 21.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 24.1
-              }
+              { "name": "Mid Term", "score": 22.9 },
+              { "name": "End of Term", "score": 17.0 },
+              { "name": "Final", "score": 21.9 }
             ]
           }
         }
@@ -1790,21 +769,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 22.0
-              },
-              {
-                "name": "Civics",
-                "score": 22.3
-              }
+              { "name": "Mid Term", "score": 22.0 },
+              { "name": "End of Term", "score": 22.3 },
+              { "name": "Final", "score": 22.1 }
             ]
           }
         }
@@ -1812,21 +783,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 25.4
-              },
-              {
-                "name": "Modern",
-                "score": 29.2
-              }
+              { "name": "Mid Term", "score": 25.4 },
+              { "name": "End of Term", "score": 29.2 },
+              { "name": "Final", "score": 27.3 }
             ]
           }
         }
@@ -1834,37 +797,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 18.6
-              },
-              {
-                "name": "Writing",
-                "score": 16.7
-              },
-              {
-                "name": "Comprehension",
-                "score": 22.2
-              }
+              { "name": "Mid Term", "score": 18.6 },
+              { "name": "End of Term", "score": 16.7 },
+              { "name": "Final", "score": 22.2 }
             ]
           }
         }
@@ -1874,38 +817,12 @@ let ClassesData = [
     "male": 31,
     "female": 30,
     "teachers": [
-      {
-        "name": "Richard Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Doreen Kembabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Naomi Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Ssekito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patience Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mary Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Namusoke",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Grace Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Richard Namatovu", "avatar": "" },
+      { "name": "Doreen Kembabazi", "avatar": "" },
+      { "name": "Naomi Namayanja", "avatar": "" },
+      { "name": "Rachael Ssekito", "avatar": "" },
+      { "name": "Patience Ochieng", "avatar": "" },
+      { "name": "Mary Nankya", "avatar": "" }
     ]
   },
   {
@@ -1916,52 +833,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.8
-              },
-              {
-                "name": "Listening",
-                "score": 17.4
-              },
-              {
-                "name": "Writing",
-                "score": 21.1
-              },
-              {
-                "name": "Reading",
-                "score": 21.4
-              },
-              {
-                "name": "Grammar",
-                "score": 25.3
-              }
+              { "name": "Mid Term", "score": 29.8 },
+              { "name": "End of Term", "score": 17.4 },
+              { "name": "Final", "score": 21.1 }
             ]
           }
         }
@@ -1969,37 +851,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 17.6
-              },
-              {
-                "name": "Geometry",
-                "score": 21.8
-              },
-              {
-                "name": "Calculus",
-                "score": 29.3
-              }
+              { "name": "Mid Term", "score": 17.6 },
+              { "name": "End of Term", "score": 21.8 },
+              { "name": "Final", "score": 29.3 }
             ]
           }
         }
@@ -2007,47 +869,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 20.2
-              },
-              {
-                "name": "Chemistry",
-                "score": 26.7
-              },
-              {
-                "name": "Physics",
-                "score": 22.3
-              },
-              {
-                "name": "Lab Work",
-                "score": 28.0
-              }
+              { "name": "Mid Term", "score": 20.2 },
+              { "name": "End of Term", "score": 26.7 },
+              { "name": "Final", "score": 22.3 }
             ]
           }
         }
@@ -2055,21 +887,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 27.6
-              },
-              {
-                "name": "Civics",
-                "score": 18.6
-              }
+              { "name": "Mid Term", "score": 27.6 },
+              { "name": "End of Term", "score": 18.6 },
+              { "name": "Final", "score": 23.1 }
             ]
           }
         }
@@ -2077,21 +901,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 22.7
-              },
-              {
-                "name": "Modern",
-                "score": 28.5
-              }
+              { "name": "Mid Term", "score": 22.7 },
+              { "name": "End of Term", "score": 28.5 },
+              { "name": "Final", "score": 25.6 }
             ]
           }
         }
@@ -2099,37 +915,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 23.8
-              },
-              {
-                "name": "Writing",
-                "score": 15.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 27.7
-              }
+              { "name": "Mid Term", "score": 23.8 },
+              { "name": "End of Term", "score": 15.3 },
+              { "name": "Final", "score": 27.7 }
             ]
           }
         }
@@ -2139,38 +935,12 @@ let ClassesData = [
     "male": 27,
     "female": 27,
     "teachers": [
-      {
-        "name": "Charles Namiiro",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Kobusingye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Naomi Kizito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "David Nanyanzi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Patience Kisakye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Tom Katongole",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fiona Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Charles Namiiro", "avatar": "" },
+      { "name": "Diana Kobusingye", "avatar": "" },
+      { "name": "Naomi Kizito", "avatar": "" },
+      { "name": "David Nanyanzi", "avatar": "" },
+      { "name": "Patience Kisakye", "avatar": "" },
+      { "name": "Tom Katongole", "avatar": "" }
     ]
   },
   {
@@ -2181,52 +951,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 19.9
-              },
-              {
-                "name": "Listening",
-                "score": 17.2
-              },
-              {
-                "name": "Writing",
-                "score": 25.6
-              },
-              {
-                "name": "Reading",
-                "score": 22.9
-              },
-              {
-                "name": "Grammar",
-                "score": 26.5
-              }
+              { "name": "Mid Term", "score": 19.9 },
+              { "name": "End of Term", "score": 17.2 },
+              { "name": "Final", "score": 25.6 }
             ]
           }
         }
@@ -2234,37 +969,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 23.7
-              },
-              {
-                "name": "Geometry",
-                "score": 24.3
-              },
-              {
-                "name": "Calculus",
-                "score": 19.6
-              }
+              { "name": "Mid Term", "score": 23.7 },
+              { "name": "End of Term", "score": 24.3 },
+              { "name": "Final", "score": 19.6 }
             ]
           }
         }
@@ -2272,47 +987,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 17.9
-              },
-              {
-                "name": "Chemistry",
-                "score": 19.9
-              },
-              {
-                "name": "Physics",
-                "score": 22.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 26.2
-              }
+              { "name": "Mid Term", "score": 17.9 },
+              { "name": "End of Term", "score": 19.9 },
+              { "name": "Final", "score": 22.9 }
             ]
           }
         }
@@ -2320,21 +1005,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 17.3
-              },
-              {
-                "name": "Civics",
-                "score": 16.0
-              }
+              { "name": "Mid Term", "score": 17.3 },
+              { "name": "End of Term", "score": 16.0 },
+              { "name": "Final", "score": 16.7 }
             ]
           }
         }
@@ -2342,21 +1019,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 23.6
-              },
-              {
-                "name": "Modern",
-                "score": 26.7
-              }
+              { "name": "Mid Term", "score": 23.6 },
+              { "name": "End of Term", "score": 26.7 },
+              { "name": "Final", "score": 25.2 }
             ]
           }
         }
@@ -2364,37 +1033,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 27.5
-              },
-              {
-                "name": "Writing",
-                "score": 18.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 16.2
-              }
+              { "name": "Mid Term", "score": 27.5 },
+              { "name": "End of Term", "score": 18.3 },
+              { "name": "Final", "score": 16.2 }
             ]
           }
         }
@@ -2404,38 +1053,12 @@ let ClassesData = [
     "male": 31,
     "female": 33,
     "teachers": [
-      {
-        "name": "Catherine Namugga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Mbabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Elijah Ssali",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Victor Mbabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Birungi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Derrick Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ritah Kembabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Catherine Namugga", "avatar": "" },
+      { "name": "Stella Mbabazi", "avatar": "" },
+      { "name": "Elijah Ssali", "avatar": "" },
+      { "name": "Victor Mbabazi", "avatar": "" },
+      { "name": "Sandra Birungi", "avatar": "" },
+      { "name": "Derrick Mukasa", "avatar": "" }
     ]
   },
   {
@@ -2446,52 +1069,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 15.1
-              },
-              {
-                "name": "Listening",
-                "score": 16.1
-              },
-              {
-                "name": "Writing",
-                "score": 26.9
-              },
-              {
-                "name": "Reading",
-                "score": 19.9
-              },
-              {
-                "name": "Grammar",
-                "score": 20.0
-              }
+              { "name": "Mid Term", "score": 15.1 },
+              { "name": "End of Term", "score": 16.1 },
+              { "name": "Final", "score": 26.9 }
             ]
           }
         }
@@ -2499,37 +1087,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 28.9
-              },
-              {
-                "name": "Geometry",
-                "score": 20.8
-              },
-              {
-                "name": "Calculus",
-                "score": 21.4
-              }
+              { "name": "Mid Term", "score": 28.9 },
+              { "name": "End of Term", "score": 20.8 },
+              { "name": "Final", "score": 21.4 }
             ]
           }
         }
@@ -2537,47 +1105,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 29.1
-              },
-              {
-                "name": "Chemistry",
-                "score": 20.3
-              },
-              {
-                "name": "Physics",
-                "score": 23.0
-              },
-              {
-                "name": "Lab Work",
-                "score": 18.4
-              }
+              { "name": "Mid Term", "score": 29.1 },
+              { "name": "End of Term", "score": 20.3 },
+              { "name": "Final", "score": 23.0 }
             ]
           }
         }
@@ -2585,21 +1123,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 16.9
-              },
-              {
-                "name": "Civics",
-                "score": 23.0
-              }
+              { "name": "Mid Term", "score": 16.9 },
+              { "name": "End of Term", "score": 23.0 },
+              { "name": "Final", "score": 20.0 }
             ]
           }
         }
@@ -2607,21 +1137,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 20.2
-              },
-              {
-                "name": "Modern",
-                "score": 23.8
-              }
+              { "name": "Mid Term", "score": 20.2 },
+              { "name": "End of Term", "score": 23.8 },
+              { "name": "Final", "score": 22.0 }
             ]
           }
         }
@@ -2629,37 +1151,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 28.3
-              },
-              {
-                "name": "Writing",
-                "score": 27.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 28.8
-              }
+              { "name": "Mid Term", "score": 28.3 },
+              { "name": "End of Term", "score": 27.3 },
+              { "name": "Final", "score": 28.8 }
             ]
           }
         }
@@ -2669,38 +1171,12 @@ let ClassesData = [
     "male": 26,
     "female": 30,
     "teachers": [
-      {
-        "name": "Kenny Nakato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Michael Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Victor Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Elijah Kobusingye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Lwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "James Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Daniel Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Michael Katongole",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Kenny Nakato", "avatar": "" },
+      { "name": "Michael Sserunkuuma", "avatar": "" },
+      { "name": "Victor Ochieng", "avatar": "" },
+      { "name": "Elijah Kobusingye", "avatar": "" },
+      { "name": "Stella Lwanga", "avatar": "" },
+      { "name": "James Mukasa", "avatar": "" }
     ]
   },
   {
@@ -2711,52 +1187,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.2
-              },
-              {
-                "name": "Listening",
-                "score": 18.9
-              },
-              {
-                "name": "Writing",
-                "score": 25.1
-              },
-              {
-                "name": "Reading",
-                "score": 18.5
-              },
-              {
-                "name": "Grammar",
-                "score": 19.7
-              }
+              { "name": "Mid Term", "score": 24.2 },
+              { "name": "End of Term", "score": 18.9 },
+              { "name": "Final", "score": 25.1 }
             ]
           }
         }
@@ -2764,37 +1205,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 25.8
-              },
-              {
-                "name": "Geometry",
-                "score": 15.7
-              },
-              {
-                "name": "Calculus",
-                "score": 29.0
-              }
+              { "name": "Mid Term", "score": 25.8 },
+              { "name": "End of Term", "score": 15.7 },
+              { "name": "Final", "score": 29.0 }
             ]
           }
         }
@@ -2802,47 +1223,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 27.5
-              },
-              {
-                "name": "Chemistry",
-                "score": 26.3
-              },
-              {
-                "name": "Physics",
-                "score": 17.1
-              },
-              {
-                "name": "Lab Work",
-                "score": 15.7
-              }
+              { "name": "Mid Term", "score": 27.5 },
+              { "name": "End of Term", "score": 26.3 },
+              { "name": "Final", "score": 17.1 }
             ]
           }
         }
@@ -2850,21 +1241,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 15.7
-              },
-              {
-                "name": "Civics",
-                "score": 17.2
-              }
+              { "name": "Mid Term", "score": 15.7 },
+              { "name": "End of Term", "score": 17.2 },
+              { "name": "Final", "score": 16.5 }
             ]
           }
         }
@@ -2872,21 +1255,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 21.5
-              },
-              {
-                "name": "Modern",
-                "score": 28.6
-              }
+              { "name": "Mid Term", "score": 21.5 },
+              { "name": "End of Term", "score": 28.6 },
+              { "name": "Final", "score": 25.1 }
             ]
           }
         }
@@ -2894,37 +1269,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 22.2
-              },
-              {
-                "name": "Writing",
-                "score": 27.1
-              },
-              {
-                "name": "Comprehension",
-                "score": 15.3
-              }
+              { "name": "Mid Term", "score": 22.2 },
+              { "name": "End of Term", "score": 27.1 },
+              { "name": "Final", "score": 15.3 }
             ]
           }
         }
@@ -2934,38 +1289,12 @@ let ClassesData = [
     "male": 28,
     "female": 27,
     "teachers": [
-      {
-        "name": "Diana Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Tom Mugisha",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Okello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Ssemwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Annette Kisakye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Susan Kato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Diana Ssenoga", "avatar": "" },
+      { "name": "Tom Mugisha", "avatar": "" },
+      { "name": "Sandra Okello", "avatar": "" },
+      { "name": "Diana Nalwoga", "avatar": "" },
+      { "name": "Frank Ssemwanga", "avatar": "" },
+      { "name": "Annette Kisakye", "avatar": "" }
     ]
   },
   {
@@ -2976,52 +1305,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.1
-              },
-              {
-                "name": "Listening",
-                "score": 23.9
-              },
-              {
-                "name": "Writing",
-                "score": 20.9
-              },
-              {
-                "name": "Reading",
-                "score": 25.3
-              },
-              {
-                "name": "Grammar",
-                "score": 22.7
-              }
+              { "name": "Mid Term", "score": 29.1 },
+              { "name": "End of Term", "score": 23.9 },
+              { "name": "Final", "score": 20.9 }
             ]
           }
         }
@@ -3029,37 +1323,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 18.2
-              },
-              {
-                "name": "Geometry",
-                "score": 19.4
-              },
-              {
-                "name": "Calculus",
-                "score": 28.7
-              }
+              { "name": "Mid Term", "score": 18.2 },
+              { "name": "End of Term", "score": 19.4 },
+              { "name": "Final", "score": 28.7 }
             ]
           }
         }
@@ -3067,47 +1341,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 17.2
-              },
-              {
-                "name": "Chemistry",
-                "score": 15.2
-              },
-              {
-                "name": "Physics",
-                "score": 25.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 27.6
-              }
+              { "name": "Mid Term", "score": 17.2 },
+              { "name": "End of Term", "score": 15.2 },
+              { "name": "Final", "score": 25.9 }
             ]
           }
         }
@@ -3115,21 +1359,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.9
-              },
-              {
-                "name": "Civics",
-                "score": 20.4
-              }
+              { "name": "Mid Term", "score": 21.9 },
+              { "name": "End of Term", "score": 20.4 },
+              { "name": "Final", "score": 21.2 }
             ]
           }
         }
@@ -3137,21 +1373,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 29.5
-              },
-              {
-                "name": "Modern",
-                "score": 18.4
-              }
+              { "name": "Mid Term", "score": 29.5 },
+              { "name": "End of Term", "score": 18.4 },
+              { "name": "Final", "score": 24.0 }
             ]
           }
         }
@@ -3159,37 +1387,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 25.0
-              },
-              {
-                "name": "Writing",
-                "score": 19.6
-              },
-              {
-                "name": "Comprehension",
-                "score": 26.7
-              }
+              { "name": "Mid Term", "score": 25.0 },
+              { "name": "End of Term", "score": 19.6 },
+              { "name": "Final", "score": 26.7 }
             ]
           }
         }
@@ -3199,38 +1407,12 @@ let ClassesData = [
     "male": 27,
     "female": 33,
     "teachers": [
-      {
-        "name": "Mary Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Derrick Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Faith Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ritah Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Lwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Owor",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Kevin Mukama",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Mary Kaggwa", "avatar": "" },
+      { "name": "Derrick Akello", "avatar": "" },
+      { "name": "Joan Kyomuhendo", "avatar": "" },
+      { "name": "Faith Namatovu", "avatar": "" },
+      { "name": "Ritah Ouma", "avatar": "" },
+      { "name": "Charles Lwanga", "avatar": "" }
     ]
   },
   {
@@ -3241,52 +1423,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 27.0
-              },
-              {
-                "name": "Listening",
-                "score": 27.6
-              },
-              {
-                "name": "Writing",
-                "score": 26.5
-              },
-              {
-                "name": "Reading",
-                "score": 21.7
-              },
-              {
-                "name": "Grammar",
-                "score": 16.1
-              }
+              { "name": "Mid Term", "score": 27.0 },
+              { "name": "End of Term", "score": 27.6 },
+              { "name": "Final", "score": 26.5 }
             ]
           }
         }
@@ -3294,37 +1441,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 20.6
-              },
-              {
-                "name": "Geometry",
-                "score": 15.8
-              },
-              {
-                "name": "Calculus",
-                "score": 27.0
-              }
+              { "name": "Mid Term", "score": 20.6 },
+              { "name": "End of Term", "score": 15.8 },
+              { "name": "Final", "score": 27.0 }
             ]
           }
         }
@@ -3332,47 +1459,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 28.6
-              },
-              {
-                "name": "Chemistry",
-                "score": 28.0
-              },
-              {
-                "name": "Physics",
-                "score": 19.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 24.2
-              }
+              { "name": "Mid Term", "score": 28.6 },
+              { "name": "End of Term", "score": 28.0 },
+              { "name": "Final", "score": 19.9 }
             ]
           }
         }
@@ -3380,21 +1477,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 23.8
-              },
-              {
-                "name": "Civics",
-                "score": 25.6
-              }
+              { "name": "Mid Term", "score": 23.8 },
+              { "name": "End of Term", "score": 25.6 },
+              { "name": "Final", "score": 24.7 }
             ]
           }
         }
@@ -3402,21 +1491,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 26.2
-              },
-              {
-                "name": "Modern",
-                "score": 22.8
-              }
+              { "name": "Mid Term", "score": 26.2 },
+              { "name": "End of Term", "score": 22.8 },
+              { "name": "Final", "score": 24.5 }
             ]
           }
         }
@@ -3424,37 +1505,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 23.0
-              },
-              {
-                "name": "Writing",
-                "score": 25.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 24.3
-              }
+              { "name": "Mid Term", "score": 23.0 },
+              { "name": "End of Term", "score": 25.3 },
+              { "name": "Final", "score": 24.3 }
             ]
           }
         }
@@ -3464,38 +1525,12 @@ let ClassesData = [
     "male": 32,
     "female": 33,
     "teachers": [
-      {
-        "name": "Ronald Akena",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gloria Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Eva Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fred Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gerald Nanyanzi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Grace Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Ronald Akena", "avatar": "" },
+      { "name": "Gloria Nsubuga", "avatar": "" },
+      { "name": "Rachael Kyomuhendo", "avatar": "" },
+      { "name": "Eva Ssenoga", "avatar": "" },
+      { "name": "Fred Nsubuga", "avatar": "" },
+      { "name": "Dorothy Sserunkuuma", "avatar": "" }
     ]
   },
   {
@@ -3506,52 +1541,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 17.7
-              },
-              {
-                "name": "Listening",
-                "score": 21.0
-              },
-              {
-                "name": "Writing",
-                "score": 23.0
-              },
-              {
-                "name": "Reading",
-                "score": 23.2
-              },
-              {
-                "name": "Grammar",
-                "score": 20.4
-              }
+              { "name": "Mid Term", "score": 17.7 },
+              { "name": "End of Term", "score": 21.0 },
+              { "name": "Final", "score": 23.0 }
             ]
           }
         }
@@ -3559,37 +1559,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 26.7
-              },
-              {
-                "name": "Geometry",
-                "score": 18.6
-              },
-              {
-                "name": "Calculus",
-                "score": 22.8
-              }
+              { "name": "Mid Term", "score": 26.7 },
+              { "name": "End of Term", "score": 18.6 },
+              { "name": "Final", "score": 22.8 }
             ]
           }
         }
@@ -3597,47 +1577,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 29.8
-              },
-              {
-                "name": "Chemistry",
-                "score": 24.5
-              },
-              {
-                "name": "Physics",
-                "score": 24.1
-              },
-              {
-                "name": "Lab Work",
-                "score": 21.1
-              }
+              { "name": "Mid Term", "score": 29.8 },
+              { "name": "End of Term", "score": 24.5 },
+              { "name": "Final", "score": 24.1 }
             ]
           }
         }
@@ -3645,21 +1595,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.1
-              },
-              {
-                "name": "Civics",
-                "score": 22.2
-              }
+              { "name": "Mid Term", "score": 21.1 },
+              { "name": "End of Term", "score": 22.2 },
+              { "name": "Final", "score": 21.7 }
             ]
           }
         }
@@ -3667,21 +1609,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 19.6
-              },
-              {
-                "name": "Modern",
-                "score": 20.4
-              }
+              { "name": "Mid Term", "score": 19.6 },
+              { "name": "End of Term", "score": 20.4 },
+              { "name": "Final", "score": 20.0 }
             ]
           }
         }
@@ -3689,37 +1623,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.7
-              },
-              {
-                "name": "Writing",
-                "score": 20.4
-              },
-              {
-                "name": "Comprehension",
-                "score": 19.7
-              }
+              { "name": "Mid Term", "score": 24.7 },
+              { "name": "End of Term", "score": 20.4 },
+              { "name": "Final", "score": 19.7 }
             ]
           }
         }
@@ -3729,38 +1643,12 @@ let ClassesData = [
     "male": 27,
     "female": 25,
     "teachers": [
-      {
-        "name": "Grace Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mariam Katushabe",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "James Ssemwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Paul Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Katongole",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Brian Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Nakato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Grace Ntale", "avatar": "" },
+      { "name": "Charles Akello", "avatar": "" },
+      { "name": "Mariam Katushabe", "avatar": "" },
+      { "name": "James Ssemwanga", "avatar": "" },
+      { "name": "Paul Mukasa", "avatar": "" },
+      { "name": "Diana Katongole", "avatar": "" }
     ]
   },
   {
@@ -3771,52 +1659,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 18.0
-              },
-              {
-                "name": "Listening",
-                "score": 21.6
-              },
-              {
-                "name": "Writing",
-                "score": 25.1
-              },
-              {
-                "name": "Reading",
-                "score": 28.7
-              },
-              {
-                "name": "Grammar",
-                "score": 24.8
-              }
+              { "name": "Mid Term", "score": 18.0 },
+              { "name": "End of Term", "score": 21.6 },
+              { "name": "Final", "score": 25.1 }
             ]
           }
         }
@@ -3824,37 +1677,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 21.7
-              },
-              {
-                "name": "Geometry",
-                "score": 27.8
-              },
-              {
-                "name": "Calculus",
-                "score": 25.4
-              }
+              { "name": "Mid Term", "score": 21.7 },
+              { "name": "End of Term", "score": 27.8 },
+              { "name": "Final", "score": 25.4 }
             ]
           }
         }
@@ -3862,47 +1695,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 18.1
-              },
-              {
-                "name": "Chemistry",
-                "score": 29.8
-              },
-              {
-                "name": "Physics",
-                "score": 19.6
-              },
-              {
-                "name": "Lab Work",
-                "score": 19.7
-              }
+              { "name": "Mid Term", "score": 18.1 },
+              { "name": "End of Term", "score": 29.8 },
+              { "name": "Final", "score": 19.6 }
             ]
           }
         }
@@ -3910,21 +1713,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 26.0
-              },
-              {
-                "name": "Civics",
-                "score": 23.6
-              }
+              { "name": "Mid Term", "score": 26.0 },
+              { "name": "End of Term", "score": 23.6 },
+              { "name": "Final", "score": 24.8 }
             ]
           }
         }
@@ -3932,21 +1727,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 22.1
-              },
-              {
-                "name": "Modern",
-                "score": 24.5
-              }
+              { "name": "Mid Term", "score": 22.1 },
+              { "name": "End of Term", "score": 24.5 },
+              { "name": "Final", "score": 23.3 }
             ]
           }
         }
@@ -3954,37 +1741,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 17.3
-              },
-              {
-                "name": "Writing",
-                "score": 25.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 25.1
-              }
+              { "name": "Mid Term", "score": 17.3 },
+              { "name": "End of Term", "score": 25.3 },
+              { "name": "Final", "score": 25.1 }
             ]
           }
         }
@@ -3994,38 +1761,12 @@ let ClassesData = [
     "male": 28,
     "female": 27,
     "teachers": [
-      {
-        "name": "Jackie Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gerald Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Annette Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Doreen Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Kobusingye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Ssekito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Nakato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Jackie Nabirye", "avatar": "" },
+      { "name": "Gerald Kaggwa", "avatar": "" },
+      { "name": "Annette Namayanja", "avatar": "" },
+      { "name": "Doreen Sserunkuuma", "avatar": "" },
+      { "name": "Jackie Kobusingye", "avatar": "" },
+      { "name": "Joan Ssekito", "avatar": "" }
     ]
   },
   {
@@ -4036,52 +1777,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.6
-              },
-              {
-                "name": "Listening",
-                "score": 26.9
-              },
-              {
-                "name": "Writing",
-                "score": 27.0
-              },
-              {
-                "name": "Reading",
-                "score": 24.5
-              },
-              {
-                "name": "Grammar",
-                "score": 29.2
-              }
+              { "name": "Mid Term", "score": 29.6 },
+              { "name": "End of Term", "score": 26.9 },
+              { "name": "Final", "score": 27.0 }
             ]
           }
         }
@@ -4089,37 +1795,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 20.4
-              },
-              {
-                "name": "Geometry",
-                "score": 28.5
-              },
-              {
-                "name": "Calculus",
-                "score": 15.8
-              }
+              { "name": "Mid Term", "score": 20.4 },
+              { "name": "End of Term", "score": 28.5 },
+              { "name": "Final", "score": 15.8 }
             ]
           }
         }
@@ -4127,47 +1813,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 23.9
-              },
-              {
-                "name": "Chemistry",
-                "score": 27.1
-              },
-              {
-                "name": "Physics",
-                "score": 20.2
-              },
-              {
-                "name": "Lab Work",
-                "score": 16.6
-              }
+              { "name": "Mid Term", "score": 23.9 },
+              { "name": "End of Term", "score": 27.1 },
+              { "name": "Final", "score": 20.2 }
             ]
           }
         }
@@ -4175,21 +1831,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 16.7
-              },
-              {
-                "name": "Civics",
-                "score": 16.9
-              }
+              { "name": "Mid Term", "score": 16.7 },
+              { "name": "End of Term", "score": 16.9 },
+              { "name": "Final", "score": 16.8 }
             ]
           }
         }
@@ -4197,21 +1845,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 15.0
-              },
-              {
-                "name": "Modern",
-                "score": 17.6
-              }
+              { "name": "Mid Term", "score": 15.0 },
+              { "name": "End of Term", "score": 17.6 },
+              { "name": "Final", "score": 16.3 }
             ]
           }
         }
@@ -4219,37 +1859,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 22.1
-              },
-              {
-                "name": "Writing",
-                "score": 17.2
-              },
-              {
-                "name": "Comprehension",
-                "score": 15.9
-              }
+              { "name": "Mid Term", "score": 22.1 },
+              { "name": "End of Term", "score": 17.2 },
+              { "name": "Final", "score": 15.9 }
             ]
           }
         }
@@ -4259,38 +1879,12 @@ let ClassesData = [
     "male": 29,
     "female": 25,
     "teachers": [
-      {
-        "name": "Jackie Bukenya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Naomi Kobusingye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Michael Kobusingye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sarah Tumwine",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Daniel Obbo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Paul Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Faith Bukenya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Jackie Bukenya", "avatar": "" },
+      { "name": "Naomi Kobusingye", "avatar": "" },
+      { "name": "Michael Kobusingye", "avatar": "" },
+      { "name": "Sarah Tumwine", "avatar": "" },
+      { "name": "Daniel Obbo", "avatar": "" },
+      { "name": "Paul Nalwoga", "avatar": "" }
     ]
   },
   {
@@ -4301,52 +1895,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 26.9
-              },
-              {
-                "name": "Listening",
-                "score": 25.7
-              },
-              {
-                "name": "Writing",
-                "score": 29.3
-              },
-              {
-                "name": "Reading",
-                "score": 26.2
-              },
-              {
-                "name": "Grammar",
-                "score": 20.6
-              }
+              { "name": "Mid Term", "score": 26.9 },
+              { "name": "End of Term", "score": 25.7 },
+              { "name": "Final", "score": 29.3 }
             ]
           }
         }
@@ -4354,37 +1913,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 21.5
-              },
-              {
-                "name": "Geometry",
-                "score": 28.0
-              },
-              {
-                "name": "Calculus",
-                "score": 16.5
-              }
+              { "name": "Mid Term", "score": 21.5 },
+              { "name": "End of Term", "score": 28.0 },
+              { "name": "Final", "score": 16.5 }
             ]
           }
         }
@@ -4392,47 +1931,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 26.2
-              },
-              {
-                "name": "Chemistry",
-                "score": 20.7
-              },
-              {
-                "name": "Physics",
-                "score": 22.7
-              },
-              {
-                "name": "Lab Work",
-                "score": 21.4
-              }
+              { "name": "Mid Term", "score": 26.2 },
+              { "name": "End of Term", "score": 20.7 },
+              { "name": "Final", "score": 22.7 }
             ]
           }
         }
@@ -4440,21 +1949,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 24.8
-              },
-              {
-                "name": "Civics",
-                "score": 15.4
-              }
+              { "name": "Mid Term", "score": 24.8 },
+              { "name": "End of Term", "score": 15.4 },
+              { "name": "Final", "score": 20.1 }
             ]
           }
         }
@@ -4462,21 +1963,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 25.5
-              },
-              {
-                "name": "Modern",
-                "score": 24.1
-              }
+              { "name": "Mid Term", "score": 25.5 },
+              { "name": "End of Term", "score": 24.1 },
+              { "name": "Final", "score": 24.8 }
             ]
           }
         }
@@ -4484,37 +1977,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 27.7
-              },
-              {
-                "name": "Writing",
-                "score": 15.6
-              },
-              {
-                "name": "Comprehension",
-                "score": 18.6
-              }
+              { "name": "Mid Term", "score": 27.7 },
+              { "name": "End of Term", "score": 15.6 },
+              { "name": "Final", "score": 18.6 }
             ]
           }
         }
@@ -4524,38 +1997,12 @@ let ClassesData = [
     "male": 24,
     "female": 28,
     "teachers": [
-      {
-        "name": "Beatrice Okoth",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "James Nakato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Tumwine",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Kevin Birungi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mary Kisakye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mariam Birungi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sarah Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Beatrice Okoth", "avatar": "" },
+      { "name": "James Nakato", "avatar": "" },
+      { "name": "Diana Tumwine", "avatar": "" },
+      { "name": "Kevin Birungi", "avatar": "" },
+      { "name": "Mary Kisakye", "avatar": "" },
+      { "name": "Mariam Birungi", "avatar": "" }
     ]
   },
   {
@@ -4566,52 +2013,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 21.3
-              },
-              {
-                "name": "Listening",
-                "score": 16.3
-              },
-              {
-                "name": "Writing",
-                "score": 27.1
-              },
-              {
-                "name": "Reading",
-                "score": 18.5
-              },
-              {
-                "name": "Grammar",
-                "score": 19.6
-              }
+              { "name": "Mid Term", "score": 21.3 },
+              { "name": "End of Term", "score": 16.3 },
+              { "name": "Final", "score": 27.1 }
             ]
           }
         }
@@ -4619,37 +2031,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 24.6
-              },
-              {
-                "name": "Geometry",
-                "score": 16.9
-              },
-              {
-                "name": "Calculus",
-                "score": 27.3
-              }
+              { "name": "Mid Term", "score": 24.6 },
+              { "name": "End of Term", "score": 16.9 },
+              { "name": "Final", "score": 27.3 }
             ]
           }
         }
@@ -4657,47 +2049,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 21.0
-              },
-              {
-                "name": "Chemistry",
-                "score": 26.3
-              },
-              {
-                "name": "Physics",
-                "score": 16.0
-              },
-              {
-                "name": "Lab Work",
-                "score": 23.8
-              }
+              { "name": "Mid Term", "score": 21.0 },
+              { "name": "End of Term", "score": 26.3 },
+              { "name": "Final", "score": 16.0 }
             ]
           }
         }
@@ -4705,21 +2067,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 27.6
-              },
-              {
-                "name": "Civics",
-                "score": 22.4
-              }
+              { "name": "Mid Term", "score": 27.6 },
+              { "name": "End of Term", "score": 22.4 },
+              { "name": "Final", "score": 25.0 }
             ]
           }
         }
@@ -4727,21 +2081,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 26.1
-              },
-              {
-                "name": "Modern",
-                "score": 29.0
-              }
+              { "name": "Mid Term", "score": 26.1 },
+              { "name": "End of Term", "score": 29.0 },
+              { "name": "Final", "score": 27.6 }
             ]
           }
         }
@@ -4749,37 +2095,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 26.7
-              },
-              {
-                "name": "Writing",
-                "score": 29.0
-              },
-              {
-                "name": "Comprehension",
-                "score": 20.7
-              }
+              { "name": "Mid Term", "score": 26.7 },
+              { "name": "End of Term", "score": 29.0 },
+              { "name": "Final", "score": 20.7 }
             ]
           }
         }
@@ -4789,38 +2115,12 @@ let ClassesData = [
     "male": 27,
     "female": 24,
     "teachers": [
-      {
-        "name": "Joan Kembabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Elijah Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Beatrice Musimenta",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "James Bukenya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Henry Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Grace Namiiro",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Joan Kembabazi", "avatar": "" },
+      { "name": "Charles Nalwoga", "avatar": "" },
+      { "name": "Elijah Ouma", "avatar": "" },
+      { "name": "Beatrice Musimenta", "avatar": "" },
+      { "name": "James Bukenya", "avatar": "" },
+      { "name": "Henry Ntale", "avatar": "" }
     ]
   },
   {
@@ -4831,52 +2131,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 16.7
-              },
-              {
-                "name": "Listening",
-                "score": 20.9
-              },
-              {
-                "name": "Writing",
-                "score": 20.7
-              },
-              {
-                "name": "Reading",
-                "score": 18.6
-              },
-              {
-                "name": "Grammar",
-                "score": 29.0
-              }
+              { "name": "Mid Term", "score": 16.7 },
+              { "name": "End of Term", "score": 20.9 },
+              { "name": "Final", "score": 20.7 }
             ]
           }
         }
@@ -4884,37 +2149,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 20.3
-              },
-              {
-                "name": "Geometry",
-                "score": 25.0
-              },
-              {
-                "name": "Calculus",
-                "score": 21.0
-              }
+              { "name": "Mid Term", "score": 20.3 },
+              { "name": "End of Term", "score": 25.0 },
+              { "name": "Final", "score": 21.0 }
             ]
           }
         }
@@ -4922,47 +2167,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 22.3
-              },
-              {
-                "name": "Chemistry",
-                "score": 20.2
-              },
-              {
-                "name": "Physics",
-                "score": 23.5
-              },
-              {
-                "name": "Lab Work",
-                "score": 18.8
-              }
+              { "name": "Mid Term", "score": 22.3 },
+              { "name": "End of Term", "score": 20.2 },
+              { "name": "Final", "score": 23.5 }
             ]
           }
         }
@@ -4970,21 +2185,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 25.5
-              },
-              {
-                "name": "Civics",
-                "score": 15.6
-              }
+              { "name": "Mid Term", "score": 25.5 },
+              { "name": "End of Term", "score": 15.6 },
+              { "name": "Final", "score": 20.6 }
             ]
           }
         }
@@ -4992,21 +2199,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 24.1
-              },
-              {
-                "name": "Modern",
-                "score": 19.6
-              }
+              { "name": "Mid Term", "score": 24.1 },
+              { "name": "End of Term", "score": 19.6 },
+              { "name": "Final", "score": 21.9 }
             ]
           }
         }
@@ -5014,37 +2213,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 16.5
-              },
-              {
-                "name": "Writing",
-                "score": 26.7
-              },
-              {
-                "name": "Comprehension",
-                "score": 28.5
-              }
+              { "name": "Mid Term", "score": 16.5 },
+              { "name": "End of Term", "score": 26.7 },
+              { "name": "Final", "score": 28.5 }
             ]
           }
         }
@@ -5054,38 +2233,12 @@ let ClassesData = [
     "male": 24,
     "female": 25,
     "teachers": [
-      {
-        "name": "Paul Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "James Mukama",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Victor Namanda",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Doreen Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Derrick Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Julius Ayebale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Paul Tumusiime", "avatar": "" },
+      { "name": "James Mukama", "avatar": "" },
+      { "name": "Agnes Mutebi", "avatar": "" },
+      { "name": "Victor Namanda", "avatar": "" },
+      { "name": "Doreen Mutebi", "avatar": "" },
+      { "name": "Jackie Ochieng", "avatar": "" }
     ]
   },
   {
@@ -5096,52 +2249,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 15.6
-              },
-              {
-                "name": "Listening",
-                "score": 20.1
-              },
-              {
-                "name": "Writing",
-                "score": 15.5
-              },
-              {
-                "name": "Reading",
-                "score": 22.2
-              },
-              {
-                "name": "Grammar",
-                "score": 17.3
-              }
+              { "name": "Mid Term", "score": 15.6 },
+              { "name": "End of Term", "score": 20.1 },
+              { "name": "Final", "score": 15.5 }
             ]
           }
         }
@@ -5149,37 +2267,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 29.8
-              },
-              {
-                "name": "Geometry",
-                "score": 17.0
-              },
-              {
-                "name": "Calculus",
-                "score": 29.4
-              }
+              { "name": "Mid Term", "score": 29.8 },
+              { "name": "End of Term", "score": 17.0 },
+              { "name": "Final", "score": 29.4 }
             ]
           }
         }
@@ -5187,47 +2285,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 28.1
-              },
-              {
-                "name": "Chemistry",
-                "score": 15.4
-              },
-              {
-                "name": "Physics",
-                "score": 21.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 22.4
-              }
+              { "name": "Mid Term", "score": 28.1 },
+              { "name": "End of Term", "score": 15.4 },
+              { "name": "Final", "score": 21.9 }
             ]
           }
         }
@@ -5235,21 +2303,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.5
-              },
-              {
-                "name": "Civics",
-                "score": 29.1
-              }
+              { "name": "Mid Term", "score": 21.5 },
+              { "name": "End of Term", "score": 29.1 },
+              { "name": "Final", "score": 25.3 }
             ]
           }
         }
@@ -5257,21 +2317,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 16.6
-              },
-              {
-                "name": "Modern",
-                "score": 29.6
-              }
+              { "name": "Mid Term", "score": 16.6 },
+              { "name": "End of Term", "score": 29.6 },
+              { "name": "Final", "score": 23.1 }
             ]
           }
         }
@@ -5279,37 +2331,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 28.7
-              },
-              {
-                "name": "Writing",
-                "score": 25.3
-              },
-              {
-                "name": "Comprehension",
-                "score": 23.7
-              }
+              { "name": "Mid Term", "score": 28.7 },
+              { "name": "End of Term", "score": 25.3 },
+              { "name": "Final", "score": 23.7 }
             ]
           }
         }
@@ -5319,38 +2351,12 @@ let ClassesData = [
     "male": 32,
     "female": 28,
     "teachers": [
-      {
-        "name": "Joan Asiimwe",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "David Ssali",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Victor Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Isaac Mukama",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ritah Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Kenny Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Joan Asiimwe", "avatar": "" },
+      { "name": "David Ssali", "avatar": "" },
+      { "name": "Victor Akello", "avatar": "" },
+      { "name": "Isaac Mukama", "avatar": "" },
+      { "name": "Sandra Tumusiime", "avatar": "" },
+      { "name": "Ritah Nabirye", "avatar": "" }
     ]
   },
   {
@@ -5361,52 +2367,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 21.7
-              },
-              {
-                "name": "Listening",
-                "score": 22.7
-              },
-              {
-                "name": "Writing",
-                "score": 15.3
-              },
-              {
-                "name": "Reading",
-                "score": 21.4
-              },
-              {
-                "name": "Grammar",
-                "score": 18.9
-              }
+              { "name": "Mid Term", "score": 21.7 },
+              { "name": "End of Term", "score": 22.7 },
+              { "name": "Final", "score": 15.3 }
             ]
           }
         }
@@ -5414,37 +2385,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 20.4
-              },
-              {
-                "name": "Geometry",
-                "score": 20.7
-              },
-              {
-                "name": "Calculus",
-                "score": 26.3
-              }
+              { "name": "Mid Term", "score": 20.4 },
+              { "name": "End of Term", "score": 20.7 },
+              { "name": "Final", "score": 26.3 }
             ]
           }
         }
@@ -5452,47 +2403,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 18.5
-              },
-              {
-                "name": "Chemistry",
-                "score": 25.0
-              },
-              {
-                "name": "Physics",
-                "score": 19.1
-              },
-              {
-                "name": "Lab Work",
-                "score": 25.6
-              }
+              { "name": "Mid Term", "score": 18.5 },
+              { "name": "End of Term", "score": 25.0 },
+              { "name": "Final", "score": 19.1 }
             ]
           }
         }
@@ -5500,21 +2421,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 23.1
-              },
-              {
-                "name": "Civics",
-                "score": 20.5
-              }
+              { "name": "Mid Term", "score": 23.1 },
+              { "name": "End of Term", "score": 20.5 },
+              { "name": "Final", "score": 21.8 }
             ]
           }
         }
@@ -5522,21 +2435,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 28.1
-              },
-              {
-                "name": "Modern",
-                "score": 15.2
-              }
+              { "name": "Mid Term", "score": 28.1 },
+              { "name": "End of Term", "score": 15.2 },
+              { "name": "Final", "score": 21.7 }
             ]
           }
         }
@@ -5544,37 +2449,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 20.4
-              },
-              {
-                "name": "Writing",
-                "score": 26.2
-              },
-              {
-                "name": "Comprehension",
-                "score": 19.1
-              }
+              { "name": "Mid Term", "score": 20.4 },
+              { "name": "End of Term", "score": 26.2 },
+              { "name": "Final", "score": 19.1 }
             ]
           }
         }
@@ -5584,38 +2469,12 @@ let ClassesData = [
     "male": 30,
     "female": 32,
     "teachers": [
-      {
-        "name": "Brian Namugga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Faith Ssali",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fred Kato",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gloria Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Katushabe",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Doreen Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Brian Namugga", "avatar": "" },
+      { "name": "Faith Ssali", "avatar": "" },
+      { "name": "Fred Kato", "avatar": "" },
+      { "name": "Gloria Nankya", "avatar": "" },
+      { "name": "Joan Nsubuga", "avatar": "" },
+      { "name": "Rachael Sserunkuuma", "avatar": "" }
     ]
   },
   {
@@ -5626,52 +2485,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 20.4
-              },
-              {
-                "name": "Listening",
-                "score": 19.6
-              },
-              {
-                "name": "Writing",
-                "score": 22.7
-              },
-              {
-                "name": "Reading",
-                "score": 18.0
-              },
-              {
-                "name": "Grammar",
-                "score": 23.6
-              }
+              { "name": "Mid Term", "score": 20.4 },
+              { "name": "End of Term", "score": 19.6 },
+              { "name": "Final", "score": 22.7 }
             ]
           }
         }
@@ -5679,37 +2503,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 18.6
-              },
-              {
-                "name": "Geometry",
-                "score": 21.0
-              },
-              {
-                "name": "Calculus",
-                "score": 26.0
-              }
+              { "name": "Mid Term", "score": 18.6 },
+              { "name": "End of Term", "score": 21.0 },
+              { "name": "Final", "score": 26.0 }
             ]
           }
         }
@@ -5717,47 +2521,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 17.4
-              },
-              {
-                "name": "Chemistry",
-                "score": 20.6
-              },
-              {
-                "name": "Physics",
-                "score": 29.3
-              },
-              {
-                "name": "Lab Work",
-                "score": 15.6
-              }
+              { "name": "Mid Term", "score": 17.4 },
+              { "name": "End of Term", "score": 20.6 },
+              { "name": "Final", "score": 29.3 }
             ]
           }
         }
@@ -5765,21 +2539,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 29.3
-              },
-              {
-                "name": "Civics",
-                "score": 21.0
-              }
+              { "name": "Mid Term", "score": 29.3 },
+              { "name": "End of Term", "score": 21.0 },
+              { "name": "Final", "score": 25.2 }
             ]
           }
         }
@@ -5787,21 +2553,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 26.4
-              },
-              {
-                "name": "Modern",
-                "score": 18.5
-              }
+              { "name": "Mid Term", "score": 26.4 },
+              { "name": "End of Term", "score": 18.5 },
+              { "name": "Final", "score": 22.5 }
             ]
           }
         }
@@ -5809,37 +2567,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.5
-              },
-              {
-                "name": "Writing",
-                "score": 15.9
-              },
-              {
-                "name": "Comprehension",
-                "score": 19.5
-              }
+              { "name": "Mid Term", "score": 24.5 },
+              { "name": "End of Term", "score": 15.9 },
+              { "name": "Final", "score": 19.5 }
             ]
           }
         }
@@ -5849,38 +2587,12 @@ let ClassesData = [
     "male": 26,
     "female": 26,
     "teachers": [
-      {
-        "name": "Gloria Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Richard Ssekito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Stella Ssali",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Derrick Ntale",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Martin Okello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Daniel Ssemwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Eva Okello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Gloria Tumusiime", "avatar": "" },
+      { "name": "Richard Ssekito", "avatar": "" },
+      { "name": "Diana Ouma", "avatar": "" },
+      { "name": "Stella Ssali", "avatar": "" },
+      { "name": "Derrick Ntale", "avatar": "" },
+      { "name": "Martin Okello", "avatar": "" }
     ]
   },
   {
@@ -5891,52 +2603,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 22.0
-              },
-              {
-                "name": "Listening",
-                "score": 21.4
-              },
-              {
-                "name": "Writing",
-                "score": 15.4
-              },
-              {
-                "name": "Reading",
-                "score": 23.1
-              },
-              {
-                "name": "Grammar",
-                "score": 26.4
-              }
+              { "name": "Mid Term", "score": 22.0 },
+              { "name": "End of Term", "score": 21.4 },
+              { "name": "Final", "score": 15.4 }
             ]
           }
         }
@@ -5944,37 +2621,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 27.6
-              },
-              {
-                "name": "Geometry",
-                "score": 28.9
-              },
-              {
-                "name": "Calculus",
-                "score": 30.0
-              }
+              { "name": "Mid Term", "score": 27.6 },
+              { "name": "End of Term", "score": 28.9 },
+              { "name": "Final", "score": 30.0 }
             ]
           }
         }
@@ -5982,47 +2639,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 20.4
-              },
-              {
-                "name": "Chemistry",
-                "score": 19.1
-              },
-              {
-                "name": "Physics",
-                "score": 22.5
-              },
-              {
-                "name": "Lab Work",
-                "score": 28.5
-              }
+              { "name": "Mid Term", "score": 20.4 },
+              { "name": "End of Term", "score": 19.1 },
+              { "name": "Final", "score": 22.5 }
             ]
           }
         }
@@ -6030,21 +2657,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 28.1
-              },
-              {
-                "name": "Civics",
-                "score": 20.1
-              }
+              { "name": "Mid Term", "score": 28.1 },
+              { "name": "End of Term", "score": 20.1 },
+              { "name": "Final", "score": 24.1 }
             ]
           }
         }
@@ -6052,21 +2671,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 29.1
-              },
-              {
-                "name": "Modern",
-                "score": 27.5
-              }
+              { "name": "Mid Term", "score": 29.1 },
+              { "name": "End of Term", "score": 27.5 },
+              { "name": "Final", "score": 28.3 }
             ]
           }
         }
@@ -6074,37 +2685,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.0
-              },
-              {
-                "name": "Writing",
-                "score": 21.0
-              },
-              {
-                "name": "Comprehension",
-                "score": 20.3
-              }
+              { "name": "Mid Term", "score": 29.0 },
+              { "name": "End of Term", "score": 21.0 },
+              { "name": "Final", "score": 20.3 }
             ]
           }
         }
@@ -6114,38 +2705,12 @@ let ClassesData = [
     "male": 25,
     "female": 26,
     "teachers": [
-      {
-        "name": "Patrick Mukasa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Mariam Akena",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Nabakka",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fiona Namanda",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gloria Akello",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Simon Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Benon Nalwoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Birungi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Patrick Mukasa", "avatar": "" },
+      { "name": "Mariam Akena", "avatar": "" },
+      { "name": "Dorothy Nabakka", "avatar": "" },
+      { "name": "Fiona Namanda", "avatar": "" },
+      { "name": "Gloria Akello", "avatar": "" },
+      { "name": "Simon Nalwoga", "avatar": "" }
     ]
   },
   {
@@ -6156,52 +2721,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.4
-              },
-              {
-                "name": "Listening",
-                "score": 28.5
-              },
-              {
-                "name": "Writing",
-                "score": 19.1
-              },
-              {
-                "name": "Reading",
-                "score": 23.8
-              },
-              {
-                "name": "Grammar",
-                "score": 20.5
-              }
+              { "name": "Mid Term", "score": 24.4 },
+              { "name": "End of Term", "score": 28.5 },
+              { "name": "Final", "score": 19.1 }
             ]
           }
         }
@@ -6209,37 +2739,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 22.2
-              },
-              {
-                "name": "Geometry",
-                "score": 21.0
-              },
-              {
-                "name": "Calculus",
-                "score": 20.7
-              }
+              { "name": "Mid Term", "score": 22.2 },
+              { "name": "End of Term", "score": 21.0 },
+              { "name": "Final", "score": 20.7 }
             ]
           }
         }
@@ -6247,47 +2757,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 18.1
-              },
-              {
-                "name": "Chemistry",
-                "score": 21.2
-              },
-              {
-                "name": "Physics",
-                "score": 19.8
-              },
-              {
-                "name": "Lab Work",
-                "score": 24.5
-              }
+              { "name": "Mid Term", "score": 18.1 },
+              { "name": "End of Term", "score": 21.2 },
+              { "name": "Final", "score": 19.8 }
             ]
           }
         }
@@ -6295,21 +2775,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 23.6
-              },
-              {
-                "name": "Civics",
-                "score": 30.0
-              }
+              { "name": "Mid Term", "score": 23.6 },
+              { "name": "End of Term", "score": 30.0 },
+              { "name": "Final", "score": 26.8 }
             ]
           }
         }
@@ -6317,21 +2789,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 20.0
-              },
-              {
-                "name": "Modern",
-                "score": 22.5
-              }
+              { "name": "Mid Term", "score": 20.0 },
+              { "name": "End of Term", "score": 22.5 },
+              { "name": "Final", "score": 21.3 }
             ]
           }
         }
@@ -6339,37 +2803,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 17.2
-              },
-              {
-                "name": "Writing",
-                "score": 27.8
-              },
-              {
-                "name": "Comprehension",
-                "score": 29.3
-              }
+              { "name": "Mid Term", "score": 17.2 },
+              { "name": "End of Term", "score": 27.8 },
+              { "name": "Final", "score": 29.3 }
             ]
           }
         }
@@ -6379,38 +2823,12 @@ let ClassesData = [
     "male": 29,
     "female": 31,
     "teachers": [
-      {
-        "name": "Faith Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Julius Nabakka",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Obbo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Julius Mbabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Isaac Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Ochieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Joan Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Faith Namatovu", "avatar": "" },
+      { "name": "Julius Nabakka", "avatar": "" },
+      { "name": "Frank Obbo", "avatar": "" },
+      { "name": "Julius Mbabazi", "avatar": "" },
+      { "name": "Isaac Sserunkuuma", "avatar": "" },
+      { "name": "Rachael Ouma", "avatar": "" }
     ]
   },
   {
@@ -6421,52 +2839,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.3
-              },
-              {
-                "name": "Listening",
-                "score": 23.4
-              },
-              {
-                "name": "Writing",
-                "score": 26.1
-              },
-              {
-                "name": "Reading",
-                "score": 22.6
-              },
-              {
-                "name": "Grammar",
-                "score": 22.0
-              }
+              { "name": "Mid Term", "score": 29.3 },
+              { "name": "End of Term", "score": 23.4 },
+              { "name": "Final", "score": 26.1 }
             ]
           }
         }
@@ -6474,37 +2857,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 26.2
-              },
-              {
-                "name": "Geometry",
-                "score": 17.7
-              },
-              {
-                "name": "Calculus",
-                "score": 17.5
-              }
+              { "name": "Mid Term", "score": 26.2 },
+              { "name": "End of Term", "score": 17.7 },
+              { "name": "Final", "score": 17.5 }
             ]
           }
         }
@@ -6512,47 +2875,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 24.1
-              },
-              {
-                "name": "Chemistry",
-                "score": 16.7
-              },
-              {
-                "name": "Physics",
-                "score": 28.3
-              },
-              {
-                "name": "Lab Work",
-                "score": 21.9
-              }
+              { "name": "Mid Term", "score": 24.1 },
+              { "name": "End of Term", "score": 16.7 },
+              { "name": "Final", "score": 28.3 }
             ]
           }
         }
@@ -6560,21 +2893,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 21.7
-              },
-              {
-                "name": "Civics",
-                "score": 20.9
-              }
+              { "name": "Mid Term", "score": 21.7 },
+              { "name": "End of Term", "score": 20.9 },
+              { "name": "Final", "score": 21.3 }
             ]
           }
         }
@@ -6582,21 +2907,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 21.3
-              },
-              {
-                "name": "Modern",
-                "score": 17.4
-              }
+              { "name": "Mid Term", "score": 21.3 },
+              { "name": "End of Term", "score": 17.4 },
+              { "name": "Final", "score": 19.4 }
             ]
           }
         }
@@ -6604,37 +2921,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 19.0
-              },
-              {
-                "name": "Writing",
-                "score": 24.1
-              },
-              {
-                "name": "Comprehension",
-                "score": 29.9
-              }
+              { "name": "Mid Term", "score": 19.0 },
+              { "name": "End of Term", "score": 24.1 },
+              { "name": "Final", "score": 29.9 }
             ]
           }
         }
@@ -6644,38 +2941,12 @@ let ClassesData = [
     "male": 30,
     "female": 33,
     "teachers": [
-      {
-        "name": "Mariam Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Namayanja",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Frank Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Martin Namatovu",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sarah Namusoke",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Dorothy Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Diana Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Mariam Mutebi", "avatar": "" },
+      { "name": "Frank Namayanja", "avatar": "" },
+      { "name": "Frank Namatovu", "avatar": "" },
+      { "name": "Martin Namatovu", "avatar": "" },
+      { "name": "Sarah Namusoke", "avatar": "" },
+      { "name": "Dorothy Kaggwa", "avatar": "" }
     ]
   },
   {
@@ -6686,52 +2957,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 24.2
-              },
-              {
-                "name": "Listening",
-                "score": 25.4
-              },
-              {
-                "name": "Writing",
-                "score": 26.8
-              },
-              {
-                "name": "Reading",
-                "score": 27.9
-              },
-              {
-                "name": "Grammar",
-                "score": 21.0
-              }
+              { "name": "Mid Term", "score": 24.2 },
+              { "name": "End of Term", "score": 25.4 },
+              { "name": "Final", "score": 26.8 }
             ]
           }
         }
@@ -6739,37 +2975,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 20.9
-              },
-              {
-                "name": "Geometry",
-                "score": 19.3
-              },
-              {
-                "name": "Calculus",
-                "score": 29.8
-              }
+              { "name": "Mid Term", "score": 20.9 },
+              { "name": "End of Term", "score": 19.3 },
+              { "name": "Final", "score": 29.8 }
             ]
           }
         }
@@ -6777,47 +2993,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 28.5
-              },
-              {
-                "name": "Chemistry",
-                "score": 20.0
-              },
-              {
-                "name": "Physics",
-                "score": 24.1
-              },
-              {
-                "name": "Lab Work",
-                "score": 19.1
-              }
+              { "name": "Mid Term", "score": 28.5 },
+              { "name": "End of Term", "score": 20.0 },
+              { "name": "Final", "score": 24.1 }
             ]
           }
         }
@@ -6825,21 +3011,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 15.1
-              },
-              {
-                "name": "Civics",
-                "score": 21.5
-              }
+              { "name": "Mid Term", "score": 15.1 },
+              { "name": "End of Term", "score": 21.5 },
+              { "name": "Final", "score": 18.3 }
             ]
           }
         }
@@ -6847,21 +3025,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 27.6
-              },
-              {
-                "name": "Modern",
-                "score": 16.7
-              }
+              { "name": "Mid Term", "score": 27.6 },
+              { "name": "End of Term", "score": 16.7 },
+              { "name": "Final", "score": 22.2 }
             ]
           }
         }
@@ -6869,37 +3039,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 19.9
-              },
-              {
-                "name": "Writing",
-                "score": 27.4
-              },
-              {
-                "name": "Comprehension",
-                "score": 23.2
-              }
+              { "name": "Mid Term", "score": 19.9 },
+              { "name": "End of Term", "score": 27.4 },
+              { "name": "Final", "score": 23.2 }
             ]
           }
         }
@@ -6909,38 +3059,12 @@ let ClassesData = [
     "male": 31,
     "female": 33,
     "teachers": [
-      {
-        "name": "Susan Tumusiime",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Elijah Namanda",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Nsubuga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Mugisha",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Sandra Ouma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Agnes Namiiro",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ronald Achieng",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Paul Namiiro",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Susan Tumusiime", "avatar": "" },
+      { "name": "Elijah Namanda", "avatar": "" },
+      { "name": "Sandra Nsubuga", "avatar": "" },
+      { "name": "Agnes Mugisha", "avatar": "" },
+      { "name": "Sandra Ouma", "avatar": "" },
+      { "name": "Agnes Namiiro", "avatar": "" }
     ]
   },
   {
@@ -6951,52 +3075,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.2
-              },
-              {
-                "name": "Listening",
-                "score": 26.0
-              },
-              {
-                "name": "Writing",
-                "score": 28.3
-              },
-              {
-                "name": "Reading",
-                "score": 28.4
-              },
-              {
-                "name": "Grammar",
-                "score": 16.6
-              }
+              { "name": "Mid Term", "score": 29.2 },
+              { "name": "End of Term", "score": 26.0 },
+              { "name": "Final", "score": 28.3 }
             ]
           }
         }
@@ -7004,37 +3093,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 21.4
-              },
-              {
-                "name": "Geometry",
-                "score": 19.5
-              },
-              {
-                "name": "Calculus",
-                "score": 16.5
-              }
+              { "name": "Mid Term", "score": 21.4 },
+              { "name": "End of Term", "score": 19.5 },
+              { "name": "Final", "score": 16.5 }
             ]
           }
         }
@@ -7042,47 +3111,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 22.5
-              },
-              {
-                "name": "Chemistry",
-                "score": 27.2
-              },
-              {
-                "name": "Physics",
-                "score": 19.9
-              },
-              {
-                "name": "Lab Work",
-                "score": 23.0
-              }
+              { "name": "Mid Term", "score": 22.5 },
+              { "name": "End of Term", "score": 27.2 },
+              { "name": "Final", "score": 19.9 }
             ]
           }
         }
@@ -7090,21 +3129,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 15.4
-              },
-              {
-                "name": "Civics",
-                "score": 28.8
-              }
+              { "name": "Mid Term", "score": 15.4 },
+              { "name": "End of Term", "score": 28.8 },
+              { "name": "Final", "score": 22.1 }
             ]
           }
         }
@@ -7112,21 +3143,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 22.3
-              },
-              {
-                "name": "Modern",
-                "score": 15.6
-              }
+              { "name": "Mid Term", "score": 22.3 },
+              { "name": "End of Term", "score": 15.6 },
+              { "name": "Final", "score": 19.0 }
             ]
           }
         }
@@ -7134,37 +3157,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 29.4
-              },
-              {
-                "name": "Writing",
-                "score": 23.9
-              },
-              {
-                "name": "Comprehension",
-                "score": 17.9
-              }
+              { "name": "Mid Term", "score": 29.4 },
+              { "name": "End of Term", "score": 23.9 },
+              { "name": "Final", "score": 17.9 }
             ]
           }
         }
@@ -7174,38 +3177,12 @@ let ClassesData = [
     "male": 24,
     "female": 29,
     "teachers": [
-      {
-        "name": "Charles Mutebi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Rachael Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Naomi Lwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Josephine Sserunkuuma",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Ritah Nankya",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "David Ssenoga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Isaac Namanda",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Isaac Kaggwa",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Charles Mutebi", "avatar": "" },
+      { "name": "Rachael Nabirye", "avatar": "" },
+      { "name": "Naomi Lwanga", "avatar": "" },
+      { "name": "Josephine Sserunkuuma", "avatar": "" },
+      { "name": "Ritah Nankya", "avatar": "" },
+      { "name": "David Ssenoga", "avatar": "" }
     ]
   },
   {
@@ -7216,52 +3193,17 @@ let ClassesData = [
       {
         "name": "English",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 45,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Listening",
-            "percentage": 27,
-            "color": "bg-green-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 28,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-teal-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-green-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-sky-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Listening",
-          "Writing",
-          "Reading",
-          "Grammar"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 19.8
-              },
-              {
-                "name": "Listening",
-                "score": 22.9
-              },
-              {
-                "name": "Writing",
-                "score": 28.6
-              },
-              {
-                "name": "Reading",
-                "score": 29.6
-              },
-              {
-                "name": "Grammar",
-                "score": 20.5
-              }
+              { "name": "Mid Term", "score": 19.8 },
+              { "name": "End of Term", "score": 22.9 },
+              { "name": "Final", "score": 28.6 }
             ]
           }
         }
@@ -7269,37 +3211,17 @@ let ClassesData = [
       {
         "name": "Mathematics",
         "weighting": [
-          {
-            "component": "Algebra",
-            "percentage": 60,
-            "color": "bg-red-500"
-          },
-          {
-            "component": "Geometry",
-            "percentage": 40,
-            "color": "bg-orange-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-red-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-orange-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-yellow-500" }
         ],
-        "assessmentComponents": [
-          "Algebra",
-          "Geometry",
-          "Calculus"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Algebra",
-                "score": 25.8
-              },
-              {
-                "name": "Geometry",
-                "score": 26.9
-              },
-              {
-                "name": "Calculus",
-                "score": 17.8
-              }
+              { "name": "Mid Term", "score": 25.8 },
+              { "name": "End of Term", "score": 26.9 },
+              { "name": "Final", "score": 17.8 }
             ]
           }
         }
@@ -7307,47 +3229,17 @@ let ClassesData = [
       {
         "name": "Science",
         "weighting": [
-          {
-            "component": "Biology",
-            "percentage": 33,
-            "color": "bg-lime-500"
-          },
-          {
-            "component": "Chemistry",
-            "percentage": 34,
-            "color": "bg-emerald-500"
-          },
-          {
-            "component": "Physics",
-            "percentage": 33,
-            "color": "bg-cyan-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-lime-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-emerald-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-cyan-500" }
         ],
-        "assessmentComponents": [
-          "Biology",
-          "Chemistry",
-          "Physics",
-          "Lab Work"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Biology",
-                "score": 22.8
-              },
-              {
-                "name": "Chemistry",
-                "score": 26.7
-              },
-              {
-                "name": "Physics",
-                "score": 27.8
-              },
-              {
-                "name": "Lab Work",
-                "score": 27.2
-              }
+              { "name": "Mid Term", "score": 22.8 },
+              { "name": "End of Term", "score": 26.7 },
+              { "name": "Final", "score": 27.8 }
             ]
           }
         }
@@ -7355,21 +3247,13 @@ let ClassesData = [
       {
         "name": "SST",
         "weighting": [],
-        "assessmentComponents": [
-          "Geography",
-          "Civics"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Geography",
-                "score": 17.5
-              },
-              {
-                "name": "Civics",
-                "score": 24.2
-              }
+              { "name": "Mid Term", "score": 17.5 },
+              { "name": "End of Term", "score": 24.2 },
+              { "name": "Final", "score": 20.9 }
             ]
           }
         }
@@ -7377,21 +3261,13 @@ let ClassesData = [
       {
         "name": "History",
         "weighting": [],
-        "assessmentComponents": [
-          "Ancient",
-          "Modern"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Ancient",
-                "score": 17.5
-              },
-              {
-                "name": "Modern",
-                "score": 22.3
-              }
+              { "name": "Mid Term", "score": 17.5 },
+              { "name": "End of Term", "score": 22.3 },
+              { "name": "Final", "score": 19.9 }
             ]
           }
         }
@@ -7399,37 +3275,17 @@ let ClassesData = [
       {
         "name": "French",
         "weighting": [
-          {
-            "component": "Speaking",
-            "percentage": 50,
-            "color": "bg-teal-500"
-          },
-          {
-            "component": "Writing",
-            "percentage": 50,
-            "color": "bg-sky-500"
-          }
+          { "component": "Mid Term", "percentage": 35, "color": "bg-purple-500" },
+          { "component": "End of Term", "percentage": 35, "color": "bg-pink-500" },
+          { "component": "Final", "percentage": 30, "color": "bg-indigo-500" }
         ],
-        "assessmentComponents": [
-          "Speaking",
-          "Writing",
-          "Comprehension"
-        ],
+        "assessmentComponents": ["Mid Term", "End of Term", "Final"],
         "performance": {
           "2024": {
             "Term 1": [
-              {
-                "name": "Speaking",
-                "score": 18.2
-              },
-              {
-                "name": "Writing",
-                "score": 15.2
-              },
-              {
-                "name": "Comprehension",
-                "score": 23.0
-              }
+              { "name": "Mid Term", "score": 18.2 },
+              { "name": "End of Term", "score": 15.2 },
+              { "name": "Final", "score": 23.0 }
             ]
           }
         }
@@ -7439,38 +3295,12 @@ let ClassesData = [
     "male": 33,
     "female": 33,
     "teachers": [
-      {
-        "name": "Joan Okoth",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Victor Mbabazi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Peter Kizito",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Fiona Muwanga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Charles Nabirye",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Gloria Nanyanzi",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Jackie Kyomuhendo",
-        "avatar": "https://i.pravatar.cc/150?img="
-      },
-      {
-        "name": "Henry Namugga",
-        "avatar": "https://i.pravatar.cc/150?img="
-      }
+      { "name": "Joan Okoth", "avatar": "" },
+      { "name": "Victor Mbabazi", "avatar": "" },
+      { "name": "Peter Kizito", "avatar": "" },
+      { "name": "Fiona Muwanga", "avatar": "" },
+      { "name": "Charles Nabirye", "avatar": "" },
+      { "name": "Gloria Nanyanzi", "avatar": "" }
     ]
   }
 ];

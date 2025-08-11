@@ -224,10 +224,8 @@
   justify-content: flex-end;
   align-items: flex-end;
   max-height: 120px;
-  /* height: 17%; */
   max-height: 88px;
   padding-right: 15px;
-  /* padding-top: 10px; */
   padding-bottom: 0px;
 }
 
