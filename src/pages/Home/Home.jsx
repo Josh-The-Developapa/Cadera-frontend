@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { CheckCircle2, X } from 'lucide-react';
 import ContentBox from '../../components/ContentBox/ContentBox';
 import './Home.css';
 import ToDoCard from './ToDoCard';
@@ -17,11 +18,11 @@ function Home() {
     return 'Good evening';
   };
 
-  // Check authentication status on component mount
   useEffect(() => {
-    const checkAuth = async () => {
+    void (async () => {
       try {
-        const token = localStorage.getItem('authToken'); // Adjust based on your token storage
+        // NOT USING THIS. token is in httpOnly cookie, and doesn't use a header.
+        const token = localStorage.getItem('authToken');
         if (!token) return;
 
         const response = await fetch('/api/whoami', {
@@ -35,8 +36,7 @@ function Home() {
         if (data.status === 'success' && data.user) {
           setUserInfo(data.user);
           setShowLoginPopup(true);
-          
-          // Auto-hide popup after 3 seconds
+
           setTimeout(() => {
             setShowLoginPopup(false);
           }, 3000);
@@ -44,14 +44,11 @@ function Home() {
       } catch (error) {
         console.error('Auth check failed:', error);
       }
-    };
-
-    checkAuth();
+    })();
   }, []);
 
   return (
     <div className="body-container">
-      {/* Login Confirmation Popup */}
       {showLoginPopup && userInfo && (
         <div
           style={{
@@ -71,25 +68,25 @@ function Home() {
             animation: 'slideIn 0.3s ease-out',
           }}
         >
-          <CheckCircle2 
-            size={20} 
-            style={{ color: '#10b981', flexShrink: 0 }} 
+          <CheckCircle2
+            size={20}
+            style={{ color: '#10b981', flexShrink: 0 }}
           />
           <div style={{ flex: 1 }}>
-            <div 
-              style={{ 
-                fontSize: '14px', 
-                fontWeight: '500', 
+            <div
+              style={{
+                fontSize: '14px',
+                fontWeight: '500',
                 color: '#1f2937',
-                marginBottom: '2px'
+                marginBottom: '2px',
               }}
             >
               Welcome back!
             </div>
-            <div 
-              style={{ 
-                fontSize: '12px', 
-                color: '#6b7280' 
+            <div
+              style={{
+                fontSize: '12px',
+                color: '#6b7280',
               }}
             >
               Logged in as {userInfo.email || userInfo.username || 'User'}
@@ -139,8 +136,7 @@ function Home() {
         </div>
       </ContentBox>
 
-      {/* CSS Animation for popup */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideIn {
           from {
             transform: translateX(100%);
@@ -157,3 +153,4 @@ function Home() {
 }
 
 export default Home;
+
