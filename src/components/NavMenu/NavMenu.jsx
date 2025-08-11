@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './NavMenu.css';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import SchoolLogo from '../../assets/makarios.png';
-import CaderaLogo from '../../assets/cadera-logo.png';
+import CaderaLogo from '../../assets/Vector.png';
 import Collapsed from '../../assets/collapsed.png';
 import {
   LayoutDashboard as OverViewIcon,
@@ -12,6 +12,8 @@ import {
   ChartPie as AnalyticsIcon,
   Users,
   PanelLeftClose,
+  MessageCircle,
+  CalendarCheck,
 } from 'lucide-react';
 import Context from '../../Context/Context';
 
@@ -73,6 +75,36 @@ function NavMenu() {
               }
             >
               Overview
+            </NavLink>
+          )}
+        </div>
+
+        {/* Attendance */}
+        <div
+          className={`nav-link-div ${
+            location.pathname.startsWith('/attendance') ? 'active' : ''
+          }`}
+        >
+          <NavLink to="/attendance" className="nav-icon-link">
+            <CalendarCheck
+              className="nav-link-icon"
+              stroke={
+                location.pathname.startsWith('/attendance')
+                  ? '#C16CE2'
+                  : '#737373'
+              }
+            />
+          </NavLink>
+          {context.isExpanded && (
+            <NavLink
+              to="/attendance"
+              className={({ isActive }) =>
+                isActive
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
+                  : 'nav-link-text'
+              }
+            >
+              Attendance
             </NavLink>
           )}
         </div>
@@ -171,6 +203,35 @@ function NavMenu() {
 
         <div
           className={`nav-link-div ${
+            location.pathname.startsWith('/comments') ? 'active' : ''
+          }`}
+        >
+          <NavLink to="/comments" className="nav-icon-link">
+            <MessageCircle
+              className="nav-link-icon"
+              stroke={
+                location.pathname.startsWith('/comments')
+                  ? '#C16CE2'
+                  : '#737373'
+              }
+            />
+          </NavLink>
+          {context.isExpanded && (
+            <NavLink
+              to="/comments"
+              className={({ isActive }) =>
+                isActive
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
+                  : 'nav-link-text'
+              }
+            >
+              Comments
+            </NavLink>
+          )}
+        </div>
+
+        <div
+          className={`nav-link-div ${
             location.pathname === '/reports' ? 'active' : ''
           }`}
         >
@@ -261,7 +322,7 @@ function NavMenu() {
             className="header-logo"
             style={{
               width: 'auto',
-              height: '16px',
+              height: '18px',
               transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
               marginBottom: '0px',
               paddingLeft: '15px',

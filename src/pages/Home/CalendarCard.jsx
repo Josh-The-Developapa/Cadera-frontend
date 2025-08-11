@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-function CalendarCard() {
-  // Calendar state management - initialize to current date
+function CalendarCard({ height = '300px', width = '300px' }) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  // Calendar functions
   const changeMonth = (direction) => {
     const newDate = new Date(currentDate);
     newDate.setMonth(currentDate.getMonth() + direction);
     setCurrentDate(newDate);
   };
 
-  // Calendar helper functions
-  const getMonthName = (date) => {
-    return date.toLocaleString('default', { month: 'long' });
-  };
+  const getMonthName = (date) =>
+    date.toLocaleString('default', { month: 'long' });
 
   const generateCalendarDays = (date) => {
     const year = date.getFullYear();
@@ -24,22 +20,19 @@ function CalendarCard() {
     const firstDayOfWeek = new Date(year, month, 1).getDay();
     const days = [];
 
-    // Add empty slots for days before the first day of the month
-    for (let i = 0; i < firstDayOfWeek; i++) {
-      days.push(null);
-    }
-
-    // Add all days of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-      days.push(day);
-    }
+    for (let i = 0; i < firstDayOfWeek; i++) days.push(null);
+    for (let day = 1; day <= daysInMonth; day++) days.push(day);
 
     return days;
   };
 
   const calendarDays = generateCalendarDays(currentDate);
   const weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-  const today = new Date(); // Get today's full date for comparison
+  const today = new Date();
+
+  // Calculate scaling factor based on height (numeric value extracted)
+  const numericHeight = parseFloat(height);
+  const scale = numericHeight / 300; // 300px is our baseline design
 
   return (
     <div
@@ -47,12 +40,13 @@ function CalendarCard() {
         background: '#FFFFFFB2',
         borderRadius: '12px',
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-        padding: '20px',
-        paddingTop: '10px',
-        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-        height: '60%',
+        padding: `${20 * scale}px`,
+        paddingTop: `${10 * scale}px`,
+        height,
+        width,
         display: 'flex',
         flexDirection: 'column',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-2px)';
@@ -63,17 +57,17 @@ function CalendarCard() {
         e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
       }}
     >
-      {/* Calendar Header */}
+      {/* Header */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginBottom: '16px',
+          marginBottom: `${6 * scale}px`,
         }}
       >
         <ChevronLeft
-          size={16}
+          size={16 * scale}
           onClick={() => changeMonth(-1)}
           style={{
             color: '#6b7280',
@@ -85,7 +79,7 @@ function CalendarCard() {
         />
         <h3
           style={{
-            fontSize: '14px',
+            fontSize: `${14 * scale}px`,
             fontWeight: '400',
             color: '#1f2937',
             margin: 0,
@@ -94,7 +88,7 @@ function CalendarCard() {
           {`${getMonthName(currentDate)} ${currentDate.getFullYear()}`}
         </h3>
         <ChevronRight
-          size={16}
+          size={16 * scale}
           onClick={() => changeMonth(1)}
           style={{
             color: '#6b7280',
@@ -111,8 +105,8 @@ function CalendarCard() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(7, 1fr)',
-          gap: '4px',
-          marginBottom: '8px',
+          gap: `${4 * scale}px`,
+          marginBottom: `${8 * scale}px`,
         }}
       >
         {weekDays.map((day) => (
@@ -120,10 +114,10 @@ function CalendarCard() {
             key={day}
             style={{
               textAlign: 'center',
-              fontSize: '10px',
+              fontSize: `${10 * scale}px`,
               fontWeight: '400',
               color: '#6b7280',
-              padding: '4px',
+              padding: `${1 * scale}px`,
             }}
           >
             {day}
@@ -131,17 +125,16 @@ function CalendarCard() {
         ))}
       </div>
 
-      {/* Calendar Grid */}
+      {/* Calendar Days */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(7, 1fr)',
-          gap: '4px',
+          gap: `${4 * scale}px`,
           flex: 1,
         }}
       >
         {calendarDays.map((day, index) => {
-          // Check if the rendered day is today's date
           const isToday =
             day === today.getDate() &&
             currentDate.getMonth() === today.getMonth() &&
@@ -154,9 +147,9 @@ function CalendarCard() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '32px',
-                width: '32px',
-                fontSize: '14px',
+                height: `${32 * scale}px`,
+                width: `${32 * scale}px`,
+                fontSize: `${14 * scale}px`,
                 backgroundColor: isToday ? '#7F3F98' : 'transparent',
                 color: isToday ? 'white' : '#374151',
                 borderRadius: '50%',

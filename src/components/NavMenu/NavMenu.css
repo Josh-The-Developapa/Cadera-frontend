@@ -4,10 +4,6 @@
   stroke-width: 1.25;
 }
 
-.lucide * {
-  vector-effect: non-scaling-stroke;
-}
-
 .nav-menu {
   position: absolute;
   height: 100%;

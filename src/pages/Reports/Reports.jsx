@@ -1,7 +1,7 @@
 import ContentBox from '../../components/ContentBox/ContentBox';
 import Context from '../../Context/Context';
-import schoolLogo from '../../Makarios Report HTML/makarios.png';
-import VectorImage from '../../Makarios Report HTML/Vector.png';
+import schoolLogo from '../../assets/makarios.png';
+import VectorImage from '../../assets/Vector.png';
 import React, { useState, useEffect, useContext } from 'react';
 import {
   MoreHorizontal,
