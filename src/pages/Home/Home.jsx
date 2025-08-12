@@ -130,7 +130,7 @@ function Home() {
               gap: '16px',
             }}
           >
-            <CalendarCard />
+            <CalendarCard width="100%" />
             <ReportsCard />
           </div>
         </div>

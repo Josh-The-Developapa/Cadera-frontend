@@ -22,6 +22,10 @@ import IndividualClass from './pages/Grades/Class/IndividualClass.jsx';
 import Performance from './pages/Grades/Class/Performance/Performance.jsx';
 import SelectClass from './pages/Analytics/SelectClass/SelectClass.jsx';
 import AnalysisIndividualClass from './pages/Analytics/AnalyticsIndividualClass/AnalyticsIndividualClass.jsx';
+import Attendance from './pages/Attendance/Attendance.jsx';
+import AttendanceIndividualClass from './pages/Attendance/IndividualClass.jsx';
+import CommentsIndividualClass from './pages/Comments/IndividualClass.jsx';
+import Comments from './pages/Comments/Comments.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +38,16 @@ const router = createBrowserRouter([
       { path: 'admin/students', element: <Students /> },
       { path: 'admin/classes', element: <Classes /> },
       { path: 'analytics', element: <Analytics /> },
+      { path: 'attendance', element: <Attendance /> },
+      {
+        path: 'attendance/:class_name',
+        element: <AttendanceIndividualClass />,
+      },
+      { path: 'comments', element: <Comments /> },
+      {
+        path: 'comments/:class_name',
+        element: <CommentsIndividualClass />,
+      },
       {
         path: 'analytics/classes',
         element: <SelectClass />,
