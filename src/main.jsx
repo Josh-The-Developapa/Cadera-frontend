@@ -1,115 +1,94 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
-} from 'react-router-dom';
-import Home from './pages/Home/Home.jsx';
-import ContextProvider from './Context/ContextProvider.jsx';
-import Login from './pages/Login/Login.jsx';
-import Error from './pages/Error/Error.jsx';
-import Students from './pages/Admin/Students/Students.jsx';
-import Teachers from './pages/Admin/Teachers/Teachers.jsx';
-import Classes from './pages/Admin/Classes/Classes.jsx';
-import MainLayout from './pages/MainLayout/MainLayout.jsx';
-import Analytics from './pages/Analytics/Analytics.jsx';
-import Grades from './pages/Grades/Grades.jsx';
-import Settings from './pages/Settings/Settings.jsx';
-import Reports from './pages/Reports/Reports.jsx';
-import IndividualClass from './pages/Grades/Class/IndividualClass.jsx';
-import Performance from './pages/Grades/Class/Performance/Performance.jsx';
-import SelectClass from './pages/Analytics/SelectClass/SelectClass.jsx';
-import AnalysisIndividualClass from './pages/Analytics/AnalyticsIndividualClass/AnalyticsIndividualClass.jsx';
-import Attendance from './pages/Attendance/Attendance.jsx';
-import AttendanceIndividualClass from './pages/Attendance/IndividualClass.jsx';
-import CommentsIndividualClass from './pages/Comments/IndividualClass.jsx';
-import Comments from './pages/Comments/Comments.jsx';
+} from "react-router-dom";
 
+import { AuthProvider } from "./auth/AuthContext.jsx";
+import ContextProvider from "./Context/ContextProvider.jsx";
+
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+
+import MainLayout from "./pages/MainLayout/MainLayout.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Error from "./pages/Error/Error.jsx";
+
+import Teachers from "./pages/Admin/Teachers/Teachers.jsx";
+import Students from "./pages/Admin/Students/Students.jsx";
+import Classes from "./pages/Admin/Classes/Classes.jsx";
+
+import Analytics from "./pages/Analytics/Analytics.jsx";
+import SelectClass from "./pages/Analytics/SelectClass/SelectClass.jsx";
+import AnalysisIndividualClass from "./pages/Analytics/AnalyticsIndividualClass/AnalyticsIndividualClass.jsx";
+
+import Attendance from "./pages/Attendance/Attendance.jsx";
+import AttendanceIndividualClass from "./pages/Attendance/IndividualClass.jsx";
+
+import Comments from "./pages/Comments/Comments.jsx";
+import CommentsIndividualClass from "./pages/Comments/IndividualClass.jsx";
+
+import Grades from "./pages/Grades/Grades.jsx";
+import IndividualClass from "./pages/Grades/Class/IndividualClass.jsx";
+import Performance from "./pages/Grades/Class/Performance/Performance.jsx";
+
+import Settings from "./pages/Settings/Settings.jsx";
+import Reports from "./pages/Reports/Reports.jsx";
+
+// Define router
 const router = createBrowserRouter([
+  // Protected branch
   {
-    path: '/',
-    element: <MainLayout />, // Shared layout route
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <MainLayout />
+      </ProtectedRoute>
+    ),
     children: [
-      { index: true, element: <Home /> }, // path: '/'
-      { path: 'dashboard', element: <Navigate to="/" replace /> }, // redirect alias
-      { path: 'admin/teachers', element: <Teachers /> },
-      { path: 'admin/students', element: <Students /> },
-      { path: 'admin/classes', element: <Classes /> },
-      { path: 'analytics', element: <Analytics /> },
-      { path: 'attendance', element: <Attendance /> },
+      { index: true, element: <Home /> },
+      { path: "dashboard", element: <Navigate to="/" replace /> },
+      { path: "admin/teachers", element: <Teachers /> },
+      { path: "admin/students", element: <Students /> },
+      { path: "admin/classes", element: <Classes /> },
+      { path: "analytics", element: <Analytics /> },
+      { path: "analytics/classes", element: <SelectClass /> },
       {
-        path: 'attendance/:class_name',
-        element: <AttendanceIndividualClass />,
-      },
-      { path: 'comments', element: <Comments /> },
-      {
-        path: 'comments/:class_name',
-        element: <CommentsIndividualClass />,
-      },
-      {
-        path: 'analytics/classes',
-        element: <SelectClass />,
-      },
-      {
-        path: 'analytics/classes/:class_name',
+        path: "analytics/classes/:class_name",
         element: <AnalysisIndividualClass />,
       },
-
-      { path: 'settings', element: <Settings /> },
-      { path: 'reports', element: <Reports /> },
-      { path: 'grades', element: <Grades /> },
+      { path: "attendance", element: <Attendance /> },
       {
-        path: 'grades/:class_name',
-        element: <IndividualClass />,
+        path: "attendance/:class_name",
+        element: <AttendanceIndividualClass />,
       },
+      { path: "comments", element: <Comments /> },
+      { path: "comments/:class_name", element: <CommentsIndividualClass /> },
+      { path: "settings", element: <Settings /> },
+      { path: "reports", element: <Reports /> },
+      { path: "grades", element: <Grades /> },
+      { path: "grades/:class_name", element: <IndividualClass /> },
       {
-        path: 'grades/:class_name/student-performance',
+        path: "grades/:class_name/student-performance",
         element: <Performance />,
       },
     ],
   },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/error',
-    element: <Error />,
-  },
+  // Public routes
+  { path: "/login", element: <Login /> },
+  { path: "/error", element: <Error /> },
 ]);
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Home />,
-//   },
-//   {
-//     path: '/login',
-//     element: <Login />,
-//   },
-//   {
-//     path: '/error',
-//     element: <Error />,
-//   },
-//   {
-//     path: '/admin/students',
-//     element: <Students />,
-//   },
-//   {
-//     path: '/admin/teachers',
-//     element: <Teachers />,
-//   },
-//   {
-//     path: '/admin/classes',
-//     element: <Classes />,
-//   },
-// ]);
 
-createRoot(document.getElementById('root')).render(
+// Render
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ContextProvider>
-      <RouterProvider router={router} />
-    </ContextProvider>
+    <AuthProvider>
+      <ContextProvider>
+        <RouterProvider router={router} />
+      </ContextProvider>
+    </AuthProvider>
   </StrictMode>
 );

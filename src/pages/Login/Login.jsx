@@ -3,42 +3,72 @@ import "./Login.css";
 import { FiMail, FiLock } from "react-icons/fi";
 import LoggedOutHeader from "../../components/LoggedOutHeader/LoggedOutHeader";
 import { apiFetch } from "../../utils/apiFetch.js";
+import { useAuth } from "../../auth/AuthContext";
 
 const Login = () => {
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  // const [whoamiInfo, setWhoamiInfo] = useState(null); // removed for now
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
     setError("");
-    // setWhoamiInfo(null); // clear previous info
+    setIsLoading(true);
+    
     try {
       const data = await apiFetch("/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
 
-      console.log("Login success:", data);
+      console.log("Login success - Full response:", data);
 
-      // 👇 removed: whoami fetch
-      // const whoami = await apiFetch("/whoami", {
-      //   method: "GET",
-      // });
-      // console.log("Whoami response:", whoami);
-      // setWhoamiInfo(whoami);
+      // Check what role data we actually received
+      // Handle both string roles and Prisma Role objects
+      let role;
+      if (data.role) {
+        // If role is an object (Prisma Role model), extract the name
+        role = typeof data.role === 'object' ? data.role.name : data.role;
+      } else if (data.user?.role) {
+        role = typeof data.user.role === 'object' ? data.user.role.name : data.user.role;
+      } else {
+        role = "user"; // fallback
+      }
+      
+      console.log("Raw role data:", data.role);
+      console.log("Extracted role:", role);
 
-      const shouldRedirect = true;
-      if (shouldRedirect) {
+      if (!role) {
+        console.warn("No role found in response, using default 'user'");
+        role = "user";
+      }
+
+      // Store role in context + localStorage with expiry
+      login(role);
+      
+      console.log("Role stored, about to redirect...");
+
+      // Use a small delay to ensure state is updated before redirect
+      setTimeout(() => {
         if (data.mustChangePassword) {
           window.location.href = "/change-password";
         } else {
           window.location.href = "/dashboard";
         }
-      }
+      }, 100);
+
     } catch (err) {
       console.error("Login error:", err);
       setError(err.message || "Login failed");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !isLoading) {
+      handleLogin();
     }
   };
 
@@ -55,6 +85,8 @@ const Login = () => {
             placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onKeyPress={handleKeyPress}
+            disabled={isLoading}
           />
         </div>
 
@@ -65,6 +97,8 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={handleKeyPress}
+            disabled={isLoading}
           />
         </div>
 
@@ -77,16 +111,12 @@ const Login = () => {
 
         {error && <p className="text-red-600 text-sm mb-2">{error}</p>}
 
-        {/* 
-        {whoamiInfo && (
-          <div className="text-green-700 text-sm mb-2">
-            Logged in as: {whoamiInfo.email || JSON.stringify(whoamiInfo)}
-          </div>
-        )} 
-        */}
-
-        <button className="login-btn" onClick={handleLogin}>
-          LOGIN
+        <button 
+          className="login-btn" 
+          onClick={handleLogin}
+          disabled={isLoading}
+        >
+          {isLoading ? "LOGGING IN..." : "LOGIN"}
         </button>
       </div>
     </div>
@@ -94,4 +124,3 @@ const Login = () => {
 };
 
 export default Login;
-
