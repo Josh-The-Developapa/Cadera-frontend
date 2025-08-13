@@ -3,7 +3,7 @@
 .reports-container {
   display: flex;
   gap: 16px;
-  padding-top: 1.5rem;
+  padding-top: 20px;
   margin: 0 auto;
 }
 

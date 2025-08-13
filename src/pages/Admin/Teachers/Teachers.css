@@ -6,7 +6,7 @@
 .teachers-content-container {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 20px;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
@@ -19,7 +19,7 @@
 /* Left panel containing all teachers */
 .all-teachers {
   width: 701px;
-  max-height: 615px;
+  max-height: 484px;
   min-height: 450px;
   height: 70vh;
   background-color: #ffffff;
@@ -71,7 +71,7 @@
 /* Table body rows */
 .teacher-table tr {
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   /* Dynamic background via inline style variable */
   background: linear-gradient(
     to right,
@@ -85,7 +85,7 @@
 
 /* Table data cells */
 .teacher-table td {
-  padding: 15px 16px 15px 16px;
+  padding: 8px 16px 8px 16px;
   font-size: 13px;
   font-weight: 300;
 }

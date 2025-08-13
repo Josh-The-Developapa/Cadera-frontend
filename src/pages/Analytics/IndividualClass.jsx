@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ContentBox from '../../../components/ContentBox/ContentBox';
+import ContentBox from '../../components/ContentBox/ContentBox';
 import { Link, useParams } from 'react-router-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import rightPanelIcon from '../../../assets/classes-right-panel-icon.svg';
+import rightPanelIcon from '../../assets/classes-right-panel-icon.svg';
 
 import {
   BarChart,
@@ -18,7 +18,7 @@ import {
 } from 'recharts';
 
 // --- Mock Data ---
-import ClassesData from '../../Admin/Classes/ClassesData';
+import ClassesData from '../Admin/Classes/ClassesData';
 
 // Custom tooltip component for the bar chart
 const CustomBarTooltip = ({ active, payload, label }) => {
@@ -204,7 +204,7 @@ const PerformanceChart = ({
       </div>
 
       {/* Chart Title */}
-      <h3 className="text-lg font-medium text-gray-800 mb-6">
+      <h3 className="text-lg font-medium text-gray-800 mb-6 ml-[40px]">
         Subject Performance Overview
       </h3>
 

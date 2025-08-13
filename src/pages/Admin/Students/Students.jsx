@@ -30,30 +30,37 @@ function Students() {
       setLoading(true);
       setError(null);
       const data = await api.get('/students');
-      
+
       // Transform the data to match your existing component structure
-      const transformedStudents = data.map(student => ({
+      const transformedStudents = data.map((student) => ({
         id: student.id,
         name: student.name,
-        class: student.class ? `${student.class.level}-${student.class.stream}` : 'Unknown',
+        class: student.class
+          ? `${student.class.level}-${student.class.stream}`
+          : 'Unknown',
         dateOfBirth: student.dob,
         parentEmails: student.parentEmails || [],
         classId: student.classId,
         // Extract subjects from subject records
-        subjects: student.subjectRecords?.map(record => record.subject.name) || []
+        subjects:
+          student.subjectRecords?.map((record) => record.subject.name) || [],
       }));
-      
+
       setStudentsList(transformedStudents);
-      
+
       // Auto-select first student if available
-      if (transformedStudents.length > 0 && selectedIndex >= transformedStudents.length) {
+      if (
+        transformedStudents.length > 0 &&
+        selectedIndex >= transformedStudents.length
+      ) {
         setSelectedIndex(0);
       }
     } catch (err) {
       console.error('Error fetching students:', err);
-      const errorMessage = err instanceof APIError 
-        ? err.message 
-        : 'Failed to load students. Please try again.';
+      const errorMessage =
+        err instanceof APIError
+          ? err.message
+          : 'Failed to load students. Please try again.';
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -89,27 +96,30 @@ function Students() {
         classId: studentData.classId,
         parentEmails: studentData.parentEmails || [],
       });
-      
+
       // Transform the response to match component structure
       const transformedStudent = {
         id: newStudent.id,
         name: newStudent.name,
-        class: newStudent.class ? `${newStudent.class.level}-${newStudent.class.stream}` : 'Unknown',
+        class: newStudent.class
+          ? `${newStudent.class.level}-${newStudent.class.stream}`
+          : 'Unknown',
         dateOfBirth: newStudent.dob,
         parentEmails: newStudent.parentEmails || [],
         classId: newStudent.classId,
-        subjects: studentData.subjects || []
+        subjects: studentData.subjects || [],
       };
-      
-      setStudentsList(prev => [...prev, transformedStudent]);
+
+      setStudentsList((prev) => [...prev, transformedStudent]);
       setSelectedIndex(studentsList.length); // Select the new student
-      
+
       return newStudent;
     } catch (err) {
       console.error('Error creating student:', err);
-      const errorMessage = err instanceof APIError 
-        ? err.message 
-        : 'Failed to create student. Please try again.';
+      const errorMessage =
+        err instanceof APIError
+          ? err.message
+          : 'Failed to create student. Please try again.';
       throw new Error(errorMessage);
     } finally {
       setActionLoading(false);
@@ -125,28 +135,33 @@ function Students() {
         classId: studentData.classId,
         parentEmails: studentData.parentEmails || [],
       });
-      
+
       // Transform and update in local state
       const transformedStudent = {
         id: updatedStudent.id,
         name: updatedStudent.name,
-        class: updatedStudent.class ? `${updatedStudent.class.level}-${updatedStudent.class.stream}` : 'Unknown',
+        class: updatedStudent.class
+          ? `${updatedStudent.class.level}-${updatedStudent.class.stream}`
+          : 'Unknown',
         dateOfBirth: updatedStudent.dob,
         parentEmails: updatedStudent.parentEmails || [],
         classId: updatedStudent.classId,
-        subjects: studentData.subjects || []
+        subjects: studentData.subjects || [],
       };
-      
-      setStudentsList(prev => 
-        prev.map(student => student.id === id ? transformedStudent : student)
+
+      setStudentsList((prev) =>
+        prev.map((student) =>
+          student.id === id ? transformedStudent : student
+        )
       );
-      
+
       return updatedStudent;
     } catch (err) {
       console.error('Error updating student:', err);
-      const errorMessage = err instanceof APIError 
-        ? err.message 
-        : 'Failed to update student. Please try again.';
+      const errorMessage =
+        err instanceof APIError
+          ? err.message
+          : 'Failed to update student. Please try again.';
       throw new Error(errorMessage);
     } finally {
       setActionLoading(false);
@@ -156,13 +171,9 @@ function Students() {
   // ==================== EFFECTS ====================
   useEffect(() => {
     const initializeData = async () => {
-      await Promise.all([
-        fetchStudents(),
-        fetchClasses(),
-        fetchSubjects()
-      ]);
+      await Promise.all([fetchStudents(), fetchClasses(), fetchSubjects()]);
     };
-    
+
     initializeData();
   }, []);
 
@@ -250,12 +261,16 @@ function Students() {
     <div className="students-header">
       <h2 className="students-title">All Students</h2>
       <div className="header-controls">
-        <button 
-          className="add-student-btn" 
+        <button
+          className="add-student-btn"
           onClick={handleOpenCreateModal}
           disabled={actionLoading}
         >
-          {actionLoading ? <Loader className="animate-spin" size={16} /> : <Plus size={16} />}
+          {actionLoading ? (
+            <Loader className="animate-spin" size={16} />
+          ) : (
+            <Plus size={16} />
+          )}
           Add New Student
         </button>
         <div className="student-search-bar">
@@ -293,7 +308,7 @@ function Students() {
             <span className="font-medium">Error Loading Students</span>
           </div>
           <p className="text-sm text-red-500 mb-4 text-center">{error}</p>
-          <button 
+          <button
             onClick={handleRefresh}
             disabled={loading}
             className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
@@ -308,8 +323,8 @@ function Students() {
     if (filteredStudents.length === 0) {
       return (
         <div className="flex justify-center items-center p-8 text-gray-500">
-          {searchQuery 
-            ? `No students found matching "${searchQuery}".` 
+          {searchQuery
+            ? `No students found matching "${searchQuery}".`
             : 'No students found. Add your first student!'}
         </div>
       );
@@ -378,7 +393,7 @@ function Students() {
   const renderStudentProfile = () => {
     if (loading) {
       return (
-        <div className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px]">
+        <div className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[73vh] max-h-[484px] min-h-[450px] min-w-[360px] w-[331px]">
           <Loader className="animate-spin" size={32} />
           <div className="mt-4 text-gray-500">Loading profile...</div>
         </div>
@@ -387,9 +402,11 @@ function Students() {
 
     if (!selectedStudent) {
       return (
-        <div className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px]">
+        <div className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[484px] min-h-[450px] min-w-[360px] w-[331px]">
           <div className="text-gray-500 text-center">
-            {studentsList.length === 0 ? 'Add a student to get started' : 'Select a student to view profile'}
+            {studentsList.length === 0
+              ? 'Add a student to get started'
+              : 'Select a student to view profile'}
           </div>
         </div>
       );
@@ -397,7 +414,7 @@ function Students() {
 
     return (
       <div
-        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[615px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
+        className="bg-white rounded-xl shadow-md p-10 flex flex-col justify-center items-center h-[70vh] max-h-[484px] min-h-[450px] min-w-[360px] w-[331px] pt-[50px]"
         style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
       >
         <img
@@ -410,7 +427,9 @@ function Students() {
 
         <div className="flex flex-wrap justify-center gap-2 mb-[35px] w-[250px] mt-[17px]">
           {selectedStudent.subjects.length === 0 ? (
-            <span className="text-sm text-gray-400 italic">No subjects assigned</span>
+            <span className="text-sm text-gray-400 italic">
+              No subjects assigned
+            </span>
           ) : (
             selectedStudent.subjects.map((subj, idx) => {
               const subjHue = subjectHues[selectedIndex]?.[idx];
@@ -441,7 +460,11 @@ function Students() {
           disabled={actionLoading}
           className="bg-black text-white px-4 py-2 rounded-md mb-3 w-[180px] flex items-center justify-center gap-2 disabled:opacity-50"
         >
-          {actionLoading ? <Loader className="animate-spin" size={16} /> : <Edit size={16} />}
+          {actionLoading ? (
+            <Loader className="animate-spin" size={16} />
+          ) : (
+            <Edit size={16} />
+          )}
           Edit Profile
         </button>
 

@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Teachers.css';
 import ContentBox from '../../../components/ContentBox/ContentBox';
 import TeacherIcon from '../../../assets/teacher.png';
-import { Trash2 } from 'lucide-react';
+import { ClipboardPlus, Trash2 } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
 import TeacherAssignModal from '../../../components/TeacherAssignModal/TeacherAssignModal.jsx'; // Import the modal component
 import teachers from './TeachersData.js';
-import CreateStaffModal from '../../../components/CreateTeacherModal/CreateTeacherModal.jsx';
 
 function Teachers() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -144,8 +143,8 @@ function Teachers() {
                         <td>{teacher.classCount}</td>
                         <td
                           style={{
-                            borderTopRightRadius: '10px',
-                            borderBottomRightRadius: '10px',
+                            borderTopRightRadius: '5px',
+                            borderBottomRightRadius: '5px',
                           }}
                         >
                           {teacher.id}
@@ -160,27 +159,25 @@ function Teachers() {
 
           <div>
             <div
-              className="bg-white rounded-xl shadow-md p-10 flex flex-col items-center h-[70vh] max-h-[615px] min-h-[450px] w-[391px]"
+              className="bg-white rounded-xl shadow-md pt-[40px] flex flex-col items-center h-[73vh] max-h-[484px] min-h-[450px] w-[331px]"
               style={{ boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)' }}
             >
               <img
                 src={TeacherIcon}
                 alt="Teacher-Icon"
-                style={{ height: '40%', width: 'auto' }}
+                style={{ height: '114px', width: '114px', objectFit: 'cover' }}
               />
-              <h3 className="text-black font-semibold text-xl mb-[10px]">
+              <h3 className="text-black font-[400] text-[14px] mb-[0px]">
                 {selectedTeacher.name}
               </h3>
-              <p className="text-gray-500 mb-0">Teacher</p>
+              <p className="text-[14px] font-[300] text-[#727272]">Teacher</p>
 
-              <div className="flex flex-wrap justify-center gap-2 mb-[10%] w-[250px] mt-[10%]">
+              <div className="flex flex-wrap justify-center gap-2 mb-[24px] w-[250px] mt-[18px]">
                 {selectedTeacher.subjects.map((subj, idx) => {
-                  const tagStyle = getSubjectTagStyle(idx);
                   return (
                     <span
                       key={idx}
-                      style={tagStyle}
-                      className="text-sm px-3 py-1 rounded-[5px]"
+                      className="text-[10px] text-[#000000] border border-[#A6A6A6] font-[300] px-3 py-1 rounded-[5px]"
                     >
                       {subj}
                     </span>
@@ -188,19 +185,22 @@ function Teachers() {
                 })}
               </div>
 
-              <div className="text-center bg-gray-50 rounded-md py-3 px-4 text-sm mb-4">
-                <p className="font-medium">Assigned Classes</p>
-                <p>{selectedTeacher.assignedClasses?.join(', ') || 'None'}</p>
+              <div className="text-center bg-gray-50 rounded-md py-3 px-4 text-sm mb-[24px] text-[#6d6d6d]">
+                <p className="font-[500] text-[13px] ">Assigned Classes</p>
+                <p className="text-[13px] font-[300]">
+                  {selectedTeacher.assignedClasses?.join(', ') || 'None'}
+                </p>
               </div>
 
               <button
-                className="bg-black text-white px-4 py-2 rounded-md mb-[25px] w-[180px]"
+                className="bg-[#7F3F98] text-[14px] font-[300] text-white px-4 py-2 rounded-md  w-[180px] flex flex-row justify-center items-center gap-[5px]"
                 onClick={handleOpenModal}
               >
+                <ClipboardPlus size={16} />
                 Assign Classes
               </button>
 
-              <div className="flex flex-row justify-between items-end w-full h-[100px]">
+              <div className="flex flex-row justify-between items-center px-[24px] w-full h-[100px]">
                 <p className="text-xs text-gray-400 mb-1">
                   Staff ID: {selectedTeacher.id} <br />
                   Profile Modified: {new Date().toLocaleDateString('en-GB')}

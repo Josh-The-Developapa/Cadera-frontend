@@ -2,7 +2,7 @@
 .students-content-container {
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 20px;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
@@ -11,7 +11,7 @@
 /* ==================== LEFT PANEL - ALL STUDENTS ==================== */
 .all-students {
   width: 701px;
-  max-height: 615px;
+  max-height: 484px;
   min-height: 450px;
   height: 70vh;
   background-color: #ffffff;

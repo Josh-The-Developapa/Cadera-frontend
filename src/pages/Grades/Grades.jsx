@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Grades.css';
 import ContentBox from '../../components/ContentBox/ContentBox';
 import Asset1 from '../../assets/SVGs/Asset 1.svg';
 import Asset2 from '../../assets/SVGs/Asset 2.svg';
