@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { FiMail, FiLock } from "react-icons/fi";
 import LoggedOutHeader from "../../components/LoggedOutHeader/LoggedOutHeader";
-import { apiFetch } from "../../utils/apiFetch.js";
+import { apiFetch, getCurrentUser, userStorage } from "../../utils/apiFetch.js";
 import { useAuth } from "../../auth/AuthContext";
 
 const Login = () => {
@@ -17,41 +17,48 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      const data = await apiFetch("/auth/login", {
+      // Step 1: Authenticate and set httpOnly cookie
+      const loginResponse = await apiFetch("/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
 
-      console.log("Login success - Full response:", data);
+      console.log("Login success - Response:", loginResponse);
 
-      // Check what role data we actually received
-      // Handle both string roles and Prisma Role objects
+      // Step 2: Get user data from backend (which reads the httpOnly cookie)
+      const userData = await getCurrentUser();
+      
+      if (!userData) {
+        throw new Error("Failed to retrieve user data after login");
+      }
+
+      console.log("User data retrieved:", userData);
+
+      // Extract role (handle both string and object formats)
       let role;
-      if (data.role) {
-        // If role is an object (Prisma Role model), extract the name
-        role = typeof data.role === 'object' ? data.role.name : data.role;
-      } else if (data.user?.role) {
-        role = typeof data.user.role === 'object' ? data.user.role.name : data.user.role;
+      if (userData.role) {
+        role = typeof userData.role === 'object' ? userData.role.name : userData.role;
       } else {
         role = "user"; // fallback
       }
-      
-      console.log("Raw role data:", data.role);
+
       console.log("Extracted role:", role);
 
-      if (!role) {
-        console.warn("No role found in response, using default 'user'");
-        role = "user";
-      }
+      // Step 3: Store user data in localStorage
+      userStorage.setUserData({
+        name: userData.name,
+        email: userData.email,
+        role: role
+      });
 
-      // Store role in context + localStorage with expiry
+      // Step 4: Store role in context (existing functionality)
       login(role);
       
-      console.log("Role stored, about to redirect...");
+      console.log("User data stored, about to redirect...");
 
       // Use a small delay to ensure state is updated before redirect
       setTimeout(() => {
-        if (data.mustChangePassword) {
+        if (loginResponse.mustChangePassword || userData.mustChangePassword) {
           window.location.href = "/change-password";
         } else {
           window.location.href = "/dashboard";
