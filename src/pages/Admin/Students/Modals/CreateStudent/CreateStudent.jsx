@@ -11,8 +11,8 @@ import {
   Hash,
   Mail,
 } from 'lucide-react';
-import './StudentsModal.css';
-import Context from '../../Context/Context';
+import './CreateStudent.css';
+import Context from '../../../../../Context/Context.jsx';
 
 // Mock data for classes and subjects
 const CLASSES = [

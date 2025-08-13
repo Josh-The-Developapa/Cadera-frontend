@@ -4,8 +4,8 @@ import ContentBox from '../../../components/ContentBox/ContentBox';
 import StudentIcon from '../../../assets/student.png';
 import { Trash2, Plus, Edit, Loader, AlertCircle } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
-import CreateStudentsModal from '../../../components/CreateStudentsModal/StudentsModal.jsx';
-import EditStudentsModal from '../../../components/EditStudentsModal/StudentsModal.jsx';
+import CreateStudentsModal from './Modals/CreateStudent/CreateStudent.jsx';
+import EditStudentsModal from './Modals/EditStudent/EditStudent.jsx';
 import { api, APIError } from '../../../utils/apiFetch';
 
 function Students() {

@@ -34,8 +34,8 @@ import {
 import mockClasses from './ClassesData.js';
 
 // Import the new CreateClassModal
-import CreateClassModal from '../../../components/CreateClassModal/CreateClassModal.jsx';
-import EditClassModal from '../../../components/EditClassModal/EditClassModal.jsx';
+import CreateClassModal from './Modals/CreateClass/CreateClass.jsx';
+import EditClassModal from './Modals/EditClass/EditClass.jsx';
 
 // Available icons for randomization
 const availableIcons = [

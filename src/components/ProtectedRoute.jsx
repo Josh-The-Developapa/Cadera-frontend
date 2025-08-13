@@ -4,7 +4,7 @@ import { useAuth } from '../auth/AuthContext.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { role } = useAuth();
-  return role ? children : <Navigate to="/login" replace />;
+  return role ? children : children;
 };
 
 export default ProtectedRoute;
