@@ -215,12 +215,18 @@ function Teachers() {
       </ContentBox>
 
       {/* Modal Component */}
-      <CreateStaffModal
+      <TeacherAssignModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         teacher={selectedTeacher}
         onSaveChanges={handleSaveChanges}
       />
+      {/* <CreateStaffModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        teacher={selectedTeacher}
+        onSaveChanges={handleSaveChanges}
+      /> */}
     </div>
   );
 }
