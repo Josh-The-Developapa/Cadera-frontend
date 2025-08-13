@@ -1,3 +1,5 @@
+//Reports Individual Class
+
 import React, { useState } from 'react';
 import './IndividualClass.css';
 import ContentBox from '../../../components/ContentBox/ContentBox';

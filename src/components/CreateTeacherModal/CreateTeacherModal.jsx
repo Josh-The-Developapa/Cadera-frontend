@@ -8,10 +8,11 @@ import {
   UserPen,
   CalendarDays,
   SearchIcon,
-  Hash,
   Mail,
+  Phone,
+  Briefcase,
+  UserPlus,
 } from 'lucide-react';
-import './StudentsModal.css';
 import Context from '../../Context/Context';
 
 // Mock data for classes and subjects
@@ -38,13 +39,13 @@ const SUBJECTS = [
   'ENG',
 ];
 
-const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
+const StaffModal = ({ isOpen, onClose, onCreateStaff }) => {
   const context = useContext(Context);
-  const [studentName, setStudentName] = useState('');
+  const [staffName, setStaffName] = useState('');
+  const [title, setTitle] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
-  const [schoolPayCode, setSchoolPayCode] = useState('');
-  const [parent1Email, setParent1Email] = useState('');
-  const [parent2Email, setParent2Email] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [selectedClass, setSelectedClass] = useState('');
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -57,20 +58,25 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
     );
   };
 
-  const handleCreateStudent = () => {
-    if (studentName.trim() && dateOfBirth && selectedClass) {
-      const newStudent = {
-        name: studentName,
+  const handleCreateStaff = () => {
+    if (
+      staffName.trim() &&
+      title.trim() &&
+      dateOfBirth &&
+      emailAddress.trim()
+    ) {
+      const newStaff = {
+        name: staffName,
+        title,
         dateOfBirth,
-        schoolPayCode,
-        parent1Email,
-        parent2Email,
+        emailAddress,
+        phoneNumber,
         class: selectedClass,
         subjects: selectedSubjects,
       };
 
       setShowSuccess(true);
-      onCreateStudent(newStudent);
+      onCreateStaff(newStaff);
 
       setTimeout(() => {
         setShowSuccess(false);
@@ -81,11 +87,11 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   };
 
   const resetForm = () => {
-    setStudentName('');
+    setStaffName('');
+    setTitle('');
     setDateOfBirth('');
-    setSchoolPayCode('');
-    setParent1Email('');
-    setParent2Email('');
+    setEmailAddress('');
+    setPhoneNumber('');
     setSelectedClass('');
     setSelectedSubjects([]);
   };
@@ -144,7 +150,7 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
               >
                 {/* Header */}
                 <div className="modal-header">
-                  <h2 className="modal-title">Create New Student</h2>
+                  <h2 className="modal-title">Create New Staff Member</h2>
                   <button onClick={handleClose} className="modal-close-btn">
                     <X size={20} />
                   </button>
@@ -152,26 +158,39 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
 
                 {/* Content */}
                 <div className="modal-content">
-                  {/* Step 1: Student Details */}
+                  {/* Step 1: Staff Details */}
                   <div className="modal-section">
                     <div className="step-header">
                       <span className="step-number">1.</span>
                       <span className="step-title">
-                        Student Details{' '}
-                        <BadgeCheck size={16} stroke="#00BF76" />
+                        Staff Details <BadgeCheck size={16} stroke="#00BF76" />
                       </span>
                     </div>
 
                     <div className="form-container">
                       <div className="form-group">
-                        <label className="form-label">Student Name</label>
+                        <label className="form-label">Staff Name</label>
                         <div className="input-container">
                           <UserPen className="input-icon" size={16} />
                           <input
                             type="text"
-                            value={studentName}
-                            onChange={(e) => setStudentName(e.target.value)}
+                            value={staffName}
+                            onChange={(e) => setStaffName(e.target.value)}
                             placeholder="John Smith Katumba"
+                            className="form-input"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="form-label">Title</label>
+                        <div className="input-container">
+                          <Briefcase className="input-icon" size={16} />
+                          <input
+                            type="text"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            placeholder="Mathematics Teacher"
                             className="form-input"
                           />
                         </div>
@@ -185,36 +204,20 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                             type="text"
                             value={dateOfBirth}
                             onChange={(e) => setDateOfBirth(e.target.value)}
-                            placeholder="02/08/2009"
+                            placeholder="02/08/1985"
                             className="form-input"
                           />
                         </div>
                       </div>
 
                       <div className="form-group">
-                        <label className="form-label">School Pay Code</label>
-                        <div className="input-container">
-                          <Hash className="input-icon" size={16} />
-                          <input
-                            type="text"
-                            value={schoolPayCode}
-                            onChange={(e) => setSchoolPayCode(e.target.value)}
-                            placeholder="02/08/2009"
-                            className="form-input"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="form-group">
-                        <label className="form-label">
-                          Parent 1 Email Address
-                        </label>
+                        <label className="form-label">Email Address</label>
                         <div className="input-container">
                           <Mail className="input-icon" size={16} />
                           <input
                             type="email"
-                            value={parent1Email}
-                            onChange={(e) => setParent1Email(e.target.value)}
+                            value={emailAddress}
+                            onChange={(e) => setEmailAddress(e.target.value)}
                             placeholder="email@example.com"
                             className="form-input"
                           />
@@ -222,16 +225,14 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                       </div>
 
                       <div className="form-group">
-                        <label className="form-label">
-                          Parent 2 Email Address
-                        </label>
+                        <label className="form-label">Phone Number</label>
                         <div className="input-container">
-                          <Mail className="input-icon" size={16} />
+                          <Phone className="input-icon" size={16} />
                           <input
-                            type="email"
-                            value={parent2Email}
-                            onChange={(e) => setParent2Email(e.target.value)}
-                            placeholder="email@example.com"
+                            type="tel"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            placeholder="+256 700 123 456"
                             className="form-input"
                           />
                         </div>
@@ -243,7 +244,10 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                   <div className="modal-section">
                     <div className="step-header">
                       <span className="step-number">2.</span>
-                      <span className="step-title">Assign to class</span>
+                      <span className="step-title">
+                        Assign to class{' '}
+                        <BadgeCheck size={16} stroke="#00BF76" />
+                      </span>
                     </div>
                     <div
                       className="form-container"
@@ -323,14 +327,17 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                 {/* Footer */}
                 <div className="modal-footer">
                   <button
-                    onClick={handleCreateStudent}
+                    onClick={handleCreateStaff}
                     className="create-btn"
                     disabled={
-                      !studentName.trim() || !dateOfBirth || !selectedClass
+                      !staffName.trim() ||
+                      !title.trim() ||
+                      !dateOfBirth ||
+                      !emailAddress.trim()
                     }
                   >
-                    <User size={16} />
-                    Create Student
+                    <UserPlus size={16} />
+                    Create Teacher
                   </button>
                 </div>
               </motion.div>
@@ -354,9 +361,9 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                 >
                   <Check size={48} />
                 </motion.div>
-                <h3 className="success-title">Student Created!</h3>
+                <h3 className="success-title">Staff Member Created!</h3>
                 <p className="success-message">
-                  The student has been successfully added to the system.
+                  The staff member has been successfully added to the system.
                 </p>
               </motion.div>
             )}
@@ -367,4 +374,4 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   );
 };
 
-export default StudentsModal;
+export default StaffModal;

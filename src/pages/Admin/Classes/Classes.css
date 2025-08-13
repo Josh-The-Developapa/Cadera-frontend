@@ -51,7 +51,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
 }
 
 .search-input {
@@ -59,7 +59,7 @@
   background: transparent;
   outline: none;
   color: #555;
-  width: 109px;
+  width: 100px;
   height: 34px;
   font-size: 14px;
   font-weight: 300;

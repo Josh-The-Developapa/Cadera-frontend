@@ -8,8 +8,10 @@ import {
   UserPen,
   CalendarDays,
   SearchIcon,
+  Hash,
+  Mail,
 } from 'lucide-react';
-// import './StudentsModal.css';
+import './StudentsModal.css';
 import Context from '../../Context/Context';
 
 // Mock data for classes and subjects
@@ -40,6 +42,9 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   const context = useContext(Context);
   const [studentName, setStudentName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
+  const [schoolPayCode, setSchoolPayCode] = useState('');
+  const [parent1Email, setParent1Email] = useState('');
+  const [parent2Email, setParent2Email] = useState('');
   const [selectedClass, setSelectedClass] = useState('');
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -57,6 +62,9 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
       const newStudent = {
         name: studentName,
         dateOfBirth,
+        schoolPayCode,
+        parent1Email,
+        parent2Email,
         class: selectedClass,
         subjects: selectedSubjects,
       };
@@ -75,6 +83,9 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   const resetForm = () => {
     setStudentName('');
     setDateOfBirth('');
+    setSchoolPayCode('');
+    setParent1Email('');
+    setParent2Email('');
     setSelectedClass('');
     setSelectedSubjects([]);
   };
@@ -160,7 +171,7 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                             type="text"
                             value={studentName}
                             onChange={(e) => setStudentName(e.target.value)}
-                            placeholder="Enter Name"
+                            placeholder="John Smith Katumba"
                             className="form-input"
                           />
                         </div>
@@ -174,7 +185,53 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                             type="text"
                             value={dateOfBirth}
                             onChange={(e) => setDateOfBirth(e.target.value)}
-                            placeholder="DD/MM/YYYY"
+                            placeholder="02/08/2009"
+                            className="form-input"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="form-label">School Pay Code</label>
+                        <div className="input-container">
+                          <Hash className="input-icon" size={16} />
+                          <input
+                            type="text"
+                            value={schoolPayCode}
+                            onChange={(e) => setSchoolPayCode(e.target.value)}
+                            placeholder="02/08/2009"
+                            className="form-input"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="form-label">
+                          Parent 1 Email Address
+                        </label>
+                        <div className="input-container">
+                          <Mail className="input-icon" size={16} />
+                          <input
+                            type="email"
+                            value={parent1Email}
+                            onChange={(e) => setParent1Email(e.target.value)}
+                            placeholder="email@example.com"
+                            className="form-input"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="form-label">
+                          Parent 2 Email Address
+                        </label>
+                        <div className="input-container">
+                          <Mail className="input-icon" size={16} />
+                          <input
+                            type="email"
+                            value={parent2Email}
+                            onChange={(e) => setParent2Email(e.target.value)}
+                            placeholder="email@example.com"
                             className="form-input"
                           />
                         </div>

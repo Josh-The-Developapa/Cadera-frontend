@@ -6,6 +6,7 @@ import { Trash2 } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
 import TeacherAssignModal from '../../../components/TeacherAssignModal/TeacherAssignModal.jsx'; // Import the modal component
 import teachers from './TeachersData.js';
+import CreateStaffModal from '../../../components/CreateTeacherModal/CreateTeacherModal.jsx';
 
 function Teachers() {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -214,7 +215,7 @@ function Teachers() {
       </ContentBox>
 
       {/* Modal Component */}
-      <TeacherAssignModal
+      <CreateStaffModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         teacher={selectedTeacher}

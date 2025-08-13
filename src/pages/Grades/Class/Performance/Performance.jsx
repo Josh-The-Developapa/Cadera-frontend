@@ -29,26 +29,32 @@ const mockStudents = [
 // Left Sidebar Component
 const SubjectSidebar = ({ subjects, selectedSubject, setSelectedSubject }) => (
   <aside
-    className="md:w-48 flex-shrink-0 h-[100%] w-[142px] p-[30px]"
+    className="md:w-48 flex-shrink-0 h-[73vh] max-h-[484px] min-h-[450px] w-[142px] p-[30px] pr-0"
     style={{
-      background: 'rgba(255, 255, 255, 0.7)',
+      background: '#FFFFFFB2',
       boxShadow: '2px 6px 15px rgba(0, 0, 0, 0.1)',
       borderRadius: '10px',
     }}
   >
     <nav className="space-y-2">
       {subjects.map((subject) => (
-        <button
+        <div
           key={subject.name}
-          onClick={() => setSelectedSubject(subject.name)}
-          className={`w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-            selectedSubject === subject.name
-              ? 'bg-green-100 text-green-700'
-              : 'text-gray-600 hover:bg-gray-100'
+          className={`nav-link-div ${
+            selectedSubject === subject.name ? 'active' : ''
           }`}
         >
-          {subject.name}
-        </button>
+          <button
+            onClick={() => setSelectedSubject(subject.name)}
+            className={`nav-icon-link  ${
+              selectedSubject === subject.name
+                ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
+                : 'nav-link-text'
+            }`}
+          >
+            {subject.name}
+          </button>
+        </div>
       ))}
     </nav>
   </aside>
