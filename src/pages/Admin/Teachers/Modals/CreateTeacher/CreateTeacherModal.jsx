@@ -13,7 +13,7 @@ import {
   Briefcase,
   UserPlus,
 } from 'lucide-react';
-import Context from '../../Context/Context';
+import Context from '../../../../../Context/Context';
 
 // Mock data for classes and subjects
 const CLASSES = [

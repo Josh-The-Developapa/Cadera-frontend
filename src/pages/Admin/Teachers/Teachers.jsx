@@ -4,7 +4,8 @@ import ContentBox from '../../../components/ContentBox/ContentBox';
 import TeacherIcon from '../../../assets/teacher.png';
 import { ClipboardPlus, Trash2 } from 'lucide-react';
 import SearchIcon from '../../../assets/search-1.svg';
-import TeacherAssignModal from '../../../components/TeacherAssignModal/TeacherAssignModal.jsx'; // Import the modal component
+import TeacherAssignModal from './Modals/TeacherAssign/TeacherAssign.jsx'; // Import the modal component
+import CreateTeacher from './Modals/CreateTeacher/CreateTeacherModal.jsx';
 import teachers from './TeachersData.js';
 
 function Teachers() {
@@ -221,7 +222,7 @@ function Teachers() {
         teacher={selectedTeacher}
         onSaveChanges={handleSaveChanges}
       />
-      {/* <CreateStaffModal
+      {/* <CreateTeacher
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         teacher={selectedTeacher}

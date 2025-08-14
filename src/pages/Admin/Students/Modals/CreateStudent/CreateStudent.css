@@ -102,12 +102,12 @@
 /* Form Groups */
 .form-container {
   border: 1px solid #a6a6a6;
-  padding: 24px;
+  padding: 15px;
   border-radius: 10px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .form-label {

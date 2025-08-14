@@ -1,31 +1,31 @@
-import React, { useContext, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, Search, Check, Save } from "lucide-react";
-import "./TeacherAssignModal.css";
-import Context from "../../Context/Context";
-import TeacherImg from "../../assets/teacher.png";
+import React, { useContext, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Search, Check, Save } from 'lucide-react';
+import './TeacherAssign.css';
+import Context from '../../../../../Context/Context';
+import TeacherImg from '../../../../../assets/teacher.png';
 
 // Mock data for classes and subjects
-const CLASSES = ["P7P", "S1A", "S1B", "S2A", "S2B", "S3A", "P7B", "P6A"];
+const CLASSES = ['P7P', 'S1A', 'S1B', 'S2A', 'S2B', 'S3A', 'P7B', 'P6A'];
 
 const SUBJECTS = [
-  "CT",
-  "HIS",
-  "GEO",
-  "MAT",
-  "ENG",
-  "SCI",
-  "FRE",
-  "ART",
-  "MUS",
-  "PE",
+  'CT',
+  'HIS',
+  'GEO',
+  'MAT',
+  'ENG',
+  'SCI',
+  'FRE',
+  'ART',
+  'MUS',
+  'PE',
 ];
 
 const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
   const context = useContext(Context);
   const [selectedClasses, setSelectedClasses] = useState({});
   const [subjectAssignments, setSubjectAssignments] = useState({});
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleClassToggle = (classIndex) => {
@@ -59,7 +59,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
     const assignedSubjects = Object.keys(subjectAssignments)
       .filter((key) => subjectAssignments[key])
       .map((key) => {
-        const [classIndex, subject] = key.split("-");
+        const [classIndex, subject] = key.split('-');
         return { class: CLASSES[classIndex], subject };
       });
 
@@ -79,7 +79,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
   const resetForm = () => {
     setSelectedClasses({});
     setSubjectAssignments({});
-    setSearchQuery("");
+    setSearchQuery('');
   };
 
   const handleClose = () => {
@@ -103,7 +103,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
       scale: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 25,
         stiffness: 300,
       },
@@ -124,7 +124,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         damping: 15,
         stiffness: 300,
       },
@@ -147,7 +147,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
           animate="visible"
           exit="hidden"
           style={{
-            left: context.isExpanded ? "170px" : "70px",
+            left: context.isExpanded ? '170px' : '70px',
           }}
         >
           <AnimatePresence>
@@ -182,7 +182,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                     <p className="tam-teacher-role">Teacher</p>
 
                     <div className="tam-teacher-subjects">
-                      {["HIS", "GEO"].map((subject, index) => (
+                      {['HIS', 'GEO'].map((subject, index) => (
                         <span key={index} className="tam-subject-badge">
                           {subject}
                         </span>
@@ -200,7 +200,7 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                     <div className="tam-assignment-header">
                       <span className="tam-selected-count">
                         ({getSelectedClassCount()} Class
-                        {getSelectedClassCount() !== 1 ? "es" : ""} Selected)
+                        {getSelectedClassCount() !== 1 ? 'es' : ''} Selected)
                       </span>
                       <div className="search-container">
                         <input
@@ -240,8 +240,8 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                                   key={classIndex}
                                   className={`tam-assignment-row ${
                                     selectedClasses[classIndex]
-                                      ? "tam-selected"
-                                      : ""
+                                      ? 'tam-selected'
+                                      : ''
                                   }`}
                                 >
                                   <td className="tam-class-cell tam-sticky-column">
@@ -249,8 +249,8 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                                       <button
                                         className={`tam-class-radio ${
                                           selectedClasses[classIndex]
-                                            ? "tam-active"
-                                            : ""
+                                            ? 'tam-active'
+                                            : ''
                                         }`}
                                         onClick={() =>
                                           handleClassToggle(classIndex)
@@ -259,8 +259,8 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                                         <div
                                           className={`tam-radio-dot ${
                                             selectedClasses[classIndex]
-                                              ? "tam-active"
-                                              : ""
+                                              ? 'tam-active'
+                                              : ''
                                           }`}
                                         />
                                       </button>
@@ -280,12 +280,12 @@ const TeacherAssignModal = ({ isOpen, onClose, teacher, onSaveChanges }) => {
                                           subjectAssignments[
                                             `${classIndex}-${subject}`
                                           ]
-                                            ? "tam-checked"
-                                            : ""
+                                            ? 'tam-checked'
+                                            : ''
                                         } ${
                                           !selectedClasses[classIndex]
-                                            ? "tam-disabled"
-                                            : ""
+                                            ? 'tam-disabled'
+                                            : ''
                                         }`}
                                         onClick={() =>
                                           handleSubjectToggle(
