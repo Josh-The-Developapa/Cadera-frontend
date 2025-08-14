@@ -8,11 +8,7 @@ function LoggedOutHeader() {
   return (
     <div className="logged-out-header">
       <div className="logged-out-header-left">
-        <img
-          src={CaderaLogo}
-          alt="Cadera-Logo"
-          className="logged-out-header-logo"
-        />
+        <img src={CaderaLogo} alt="Cadera-Logo" className="w-[82px] h-[17px]" />
       </div>
       <img
         src={HelpIcon}
