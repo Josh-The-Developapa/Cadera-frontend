@@ -38,6 +38,8 @@ import Performance from './pages/Grades/Class/Performance/Performance.jsx';
 import Settings from './pages/Settings/Settings.jsx';
 import Reports from './pages/Reports/Reports.jsx';
 
+import SchoolManagement from './pages/SchoolManagement/SchoolManagement.jsx';
+
 // Define router
 const router = createBrowserRouter([
   // Protected branch
@@ -60,6 +62,7 @@ const router = createBrowserRouter([
         path: 'analytics/classes/:class_name',
         element: <AnalysisIndividualClass />,
       },
+      { path: 'school', element: <SchoolManagement /> },
       { path: 'attendance', element: <Attendance /> },
       {
         path: 'attendance/:class_name',

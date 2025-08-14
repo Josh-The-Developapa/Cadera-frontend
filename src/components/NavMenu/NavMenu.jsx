@@ -14,6 +14,7 @@ import {
   PanelLeftClose,
   MessageCircle,
   CalendarCheck,
+  University,
 } from 'lucide-react';
 import Context from '../../Context/Context';
 
@@ -53,7 +54,7 @@ function NavMenu() {
       </NavLink>
 
       <div className="nav-link-container">
-        {/* Overview */}
+        {/* Dashboard */}
         <div
           className={`nav-link-div ${
             location.pathname === '/' ? 'active' : ''
@@ -74,7 +75,7 @@ function NavMenu() {
                   : 'nav-link-text'
               }
             >
-              Overview
+              Dashboard
             </NavLink>
           )}
         </div>
@@ -283,6 +284,33 @@ function NavMenu() {
               }
             >
               Analytics
+            </NavLink>
+          )}
+        </div>
+
+        <div
+          className={`nav-link-div ${
+            location.pathname === '/school' ? 'active' : ''
+          }`}
+        >
+          <NavLink to="/school" className="nav-icon-link">
+            <University
+              className="nav-link-icon"
+              stroke={
+                location.pathname.startsWith('/school') ? '#C16CE2' : '#737373'
+              }
+            />
+          </NavLink>
+          {context.isExpanded && (
+            <NavLink
+              to="/school"
+              className={({ isActive }) =>
+                isActive
+                  ? 'bg-gradient-to-r from-[#C16CE2] to-[#CB9136] text-transparent bg-clip-text'
+                  : 'nav-link-text'
+              }
+            >
+              School
             </NavLink>
           )}
         </div>

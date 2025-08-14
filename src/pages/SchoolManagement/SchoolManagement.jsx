@@ -10,6 +10,7 @@ import {
   UserPlus,
 } from 'lucide-react';
 import ContentBox from '../../components/ContentBox/ContentBox';
+import StaffModal from './CreateTeacherModal'; // Add this import
 
 // Fictitious staff data
 const staffData = [
@@ -94,7 +95,11 @@ function SchoolManagement() {
   const [selectedRow, setSelectedRow] = useState(null);
   const [promotionMode, setPromotionMode] = useState('classes');
 
-  const filteredStaff = staffData.filter(
+  // Add these new state variables for the modal
+  const [isStaffModalOpen, setIsStaffModalOpen] = useState(false);
+  const [staffList, setStaffList] = useState(staffData);
+
+  const filteredStaff = staffList.filter(
     (staff) =>
       staff.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       staff.subjects.some((subject) =>
@@ -104,6 +109,27 @@ function SchoolManagement() {
 
   const handleRowClick = (index) => {
     setSelectedRow(index);
+  };
+
+  // Add handler to open the modal
+  const handleCreateStaffClick = () => {
+    setIsStaffModalOpen(true);
+  };
+
+  // Add handler to close the modal
+  const handleCloseModal = () => {
+    setIsStaffModalOpen(false);
+  };
+
+  // Add handler to create new staff
+  const handleCreateStaff = (newStaff) => {
+    const staffWithId = {
+      ...newStaff,
+      id: staffList.length + 1,
+      classes: Math.floor(Math.random() * 10) + 5, // Random number for demo
+      role: 'Teacher',
+    };
+    setStaffList([...staffList, staffWithId]);
   };
 
   return (
@@ -227,7 +253,10 @@ function SchoolManagement() {
                 </h2>
               </div>
 
-              <button className="py-[5px] px-[10px] bg-[#7F3F98] text-white text-[14px] rounded-md font-[300] hover:bg-[#5b2171] transition-colors">
+              <button
+                onClick={handleCreateStaffClick}
+                className="py-[5px] px-[10px] bg-[#7F3F98] cursor-pointer text-white text-[14px] rounded-md font-[300] hover:bg-[#5b2171] transition-colors"
+              >
                 Create Staff Member
               </button>
             </div>
@@ -305,7 +334,7 @@ function SchoolManagement() {
                           index % 2 === 0 ? 'bg-[#F6F6F6]' : 'bg-[#F6FCFD]'
                         }`}
                       >
-                        {staff.subjects.join(', ')}
+                        {staff.subjects ? staff.subjects.join(', ') : ''}
                       </td>
                       <td
                         className={`px-4 py-3 text-center text-[13px] font-light text-[#404040] font-['Lexend_Deca'] leading-[105%] ${
@@ -328,6 +357,13 @@ function SchoolManagement() {
             </div>
           </div>
         </div>
+
+        {/* Add the StaffModal component */}
+        <StaffModal
+          isOpen={isStaffModalOpen}
+          onClose={handleCloseModal}
+          onCreateStaff={handleCreateStaff}
+        />
       </ContentBox>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
@@ -14,7 +14,6 @@ import {
 import './CreateStudent.css';
 import Context from '../../../../../Context/Context.jsx';
 
-// Mock data for classes and subjects
 const CLASSES = [
   { name: 'P7P', students: 15 },
   { name: 'S1A', students: 18 },
@@ -40,6 +39,8 @@ const SUBJECTS = [
 
 const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   const context = useContext(Context);
+
+  // ==================== STATE ====================
   const [studentName, setStudentName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [schoolPayCode, setSchoolPayCode] = useState('');
@@ -49,15 +50,31 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubjectToggle = (subject) => {
+  // ==================== CALLBACKS ====================
+  const handleSubjectToggle = useCallback((subject) => {
     setSelectedSubjects((prev) =>
       prev.includes(subject)
         ? prev.filter((s) => s !== subject)
         : [...prev, subject]
     );
-  };
+  }, []);
 
-  const handleCreateStudent = () => {
+  const resetForm = useCallback(() => {
+    setStudentName('');
+    setDateOfBirth('');
+    setSchoolPayCode('');
+    setParent1Email('');
+    setParent2Email('');
+    setSelectedClass('');
+    setSelectedSubjects([]);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    resetForm();
+    onClose();
+  }, [resetForm, onClose]);
+
+  const handleCreateStudent = useCallback(() => {
     if (studentName.trim() && dateOfBirth && selectedClass) {
       const newStudent = {
         name: studentName,
@@ -78,23 +95,58 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
         onClose();
       }, 2000);
     }
-  };
+  }, [
+    studentName,
+    dateOfBirth,
+    schoolPayCode,
+    parent1Email,
+    parent2Email,
+    selectedClass,
+    selectedSubjects,
+    onCreateStudent,
+    resetForm,
+    onClose,
+  ]);
 
-  const resetForm = () => {
-    setStudentName('');
-    setDateOfBirth('');
-    setSchoolPayCode('');
-    setParent1Email('');
-    setParent2Email('');
-    setSelectedClass('');
-    setSelectedSubjects([]);
-  };
+  // ==================== MEMOIZED LISTS ====================
+  const renderedClasses = useMemo(
+    () =>
+      CLASSES.map((classItem, index) => {
+        const isSelected = selectedClass === classItem.name;
+        return (
+          <div
+            key={index}
+            className={`class-item ${isSelected ? 'selected' : ''}`}
+            onClick={() => setSelectedClass(classItem.name)}
+          >
+            <div className="class-select-icon">
+              {isSelected && <Check size={8} />}
+            </div>
+            <span className="class-name">{classItem.name}</span>
+            <span className="student-count">{classItem.students}</span>
+          </div>
+        );
+      }),
+    [selectedClass]
+  );
 
-  const handleClose = () => {
-    resetForm();
-    onClose();
-  };
+  const renderedSubjects = useMemo(
+    () =>
+      [...new Set(SUBJECTS)].map((subject, index) => (
+        <button
+          key={index}
+          onClick={() => handleSubjectToggle(subject)}
+          className={`subject-tag ${
+            selectedSubjects.includes(subject) ? 'selected' : ''
+          }`}
+        >
+          {subject}
+        </button>
+      )),
+    [selectedSubjects, handleSubjectToggle]
+  );
 
+  // ==================== MOTION VARIANTS ====================
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -120,6 +172,7 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
     },
   };
 
+  // ==================== RENDER ====================
   return (
     <AnimatePresence>
       {isOpen && (
@@ -129,9 +182,7 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
           initial="hidden"
           animate="visible"
           exit="hidden"
-          style={{
-            left: context.isExpanded ? '170px' : '70px',
-          }}
+          style={{ left: context.isExpanded ? '170px' : '70px' }}
         >
           <AnimatePresence>
             {!showSuccess ? (
@@ -161,7 +212,6 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                         <BadgeCheck size={16} stroke="#00BF76" />
                       </span>
                     </div>
-
                     <div className="form-container">
                       <div className="form-group">
                         <label className="form-label">Student Name</label>
@@ -239,7 +289,7 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                     </div>
                   </div>
 
-                  {/* Step 2: Assign to class */}
+                  {/* Step 2: Assign Class & Subjects */}
                   <div className="modal-section">
                     <div className="step-header">
                       <span className="step-number">2.</span>
@@ -265,56 +315,17 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
                         </div>
                       </div>
 
-                      {/* Class List Header */}
                       <div className="class-list-header">
                         <span>Class</span>
                         <span>Students</span>
                       </div>
-
-                      {/* Class List Body */}
                       <div className="class-list-container">
-                        {CLASSES.map((classItem, index) => {
-                          const isSelected = selectedClass === classItem.name;
-                          return (
-                            <div
-                              key={index}
-                              className={`class-item ${
-                                isSelected ? 'selected' : ''
-                              }`}
-                              onClick={() => setSelectedClass(classItem.name)}
-                            >
-                              <div className="class-select-icon">
-                                {isSelected && <Check size={8} />}
-                              </div>
-                              <span className="class-name">
-                                {classItem.name}
-                              </span>
-                              <span className="student-count">
-                                {classItem.students}
-                              </span>
-                            </div>
-                          );
-                        })}
+                        {renderedClasses}
                       </div>
 
-                      {/* Select Subjects */}
                       <div className="subjects-section">
                         <label className="form-label">Select Subjects</label>
-                        <div className="subjects-grid">
-                          {[...new Set(SUBJECTS)].map((subject, index) => (
-                            <button
-                              key={index}
-                              onClick={() => handleSubjectToggle(subject)}
-                              className={`subject-tag ${
-                                selectedSubjects.includes(subject)
-                                  ? 'selected'
-                                  : ''
-                              }`}
-                            >
-                              {subject}
-                            </button>
-                          ))}
-                        </div>
+                        <div className="subjects-grid">{renderedSubjects}</div>
                       </div>
                     </div>
                   </div>
@@ -343,14 +354,8 @@ const StudentsModal = ({ isOpen, onClose, onCreateStudent }) => {
               >
                 <motion.div
                   className="success-icon"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 10, -10, 0],
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    repeat: 1,
-                  }}
+                  animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 0.6, repeat: 1 }}
                 >
                   <Check size={48} />
                 </motion.div>

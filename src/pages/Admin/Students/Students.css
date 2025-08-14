@@ -92,7 +92,7 @@
 
 /* ==================== STUDENT TABLE STYLES ==================== */
 .student-list {
-  overflow-y: auto;
+  overflow-y: hidden;
   height: 100%;
   padding-right: 10px; /* Space for scrollbar */
 }
