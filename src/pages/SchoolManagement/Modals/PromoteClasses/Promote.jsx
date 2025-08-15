@@ -2,36 +2,34 @@ import React, { useState, useEffect, useContext } from 'react';
 import {
   MoreHorizontal,
   Check,
-  Plus,
   Search,
   BadgeCheck,
   X,
-  TrendingUp,
   Gem,
 } from 'lucide-react';
-import Context from '../../Context/Context';
+import Context from '../../../../Context/Context';
 
 // Import all the asset icons (same as original)
-import Asset1 from '../../assets/SVGs/Asset 1.svg';
-import Asset2 from '../../assets/SVGs/Asset 2.svg';
-import Asset3 from '../../assets/SVGs/Asset 3.svg';
-import Asset4 from '../../assets/SVGs/Asset 4.svg';
-import Asset5 from '../../assets/SVGs/Asset 5.svg';
-import Asset6 from '../../assets/SVGs/Asset 6.svg';
-import Asset7 from '../../assets/SVGs/Asset 7.svg';
-import Asset8 from '../../assets/SVGs/Asset 8.svg';
-import Asset9 from '../../assets/SVGs/Asset 9.svg';
-import Asset10 from '../../assets/SVGs/Asset 10.svg';
-import Asset11 from '../../assets/SVGs/Asset 11.svg';
-import Asset12 from '../../assets/SVGs/Asset 12.svg';
-import Asset13 from '../../assets/SVGs/Asset 13.svg';
-import Asset14 from '../../assets/SVGs/Asset 14.svg';
-import Asset15 from '../../assets/SVGs/Asset 15.svg';
-import Asset16 from '../../assets/SVGs/Asset 16.svg';
-import Asset17 from '../../assets/SVGs/Asset 17.svg';
-import Asset18 from '../../assets/SVGs/Asset 18.svg';
-import Asset19 from '../../assets/SVGs/Asset 19.svg';
-import Asset20 from '../../assets/SVGs/Asset 20.svg';
+import Asset1 from '../../../../assets/SVGs/Asset 1.svg';
+import Asset2 from '../../../../assets/SVGs/Asset 2.svg';
+import Asset3 from '../../../../assets/SVGs/Asset 3.svg';
+import Asset4 from '../../../../assets/SVGs/Asset 4.svg';
+import Asset5 from '../../../../assets/SVGs/Asset 5.svg';
+import Asset6 from '../../../../assets/SVGs/Asset 6.svg';
+import Asset7 from '../../../../assets/SVGs/Asset 7.svg';
+import Asset8 from '../../../../assets/SVGs/Asset 8.svg';
+import Asset9 from '../../../../assets/SVGs/Asset 9.svg';
+import Asset10 from '../../../../assets/SVGs/Asset 10.svg';
+import Asset11 from '../../../../assets/SVGs/Asset 11.svg';
+import Asset12 from '../../../../assets/SVGs/Asset 12.svg';
+import Asset13 from '../../../../assets/SVGs/Asset 13.svg';
+import Asset14 from '../../../../assets/SVGs/Asset 14.svg';
+import Asset15 from '../../../../assets/SVGs/Asset 15.svg';
+import Asset16 from '../../../../assets/SVGs/Asset 16.svg';
+import Asset17 from '../../../../assets/SVGs/Asset 17.svg';
+import Asset18 from '../../../../assets/SVGs/Asset 18.svg';
+import Asset19 from '../../../../assets/SVGs/Asset 19.svg';
+import Asset20 from '../../../../assets/SVGs/Asset 20.svg';
 
 // Mock Data (same as original)
 const mockStudents = [

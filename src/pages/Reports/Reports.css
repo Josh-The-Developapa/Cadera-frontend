@@ -5,22 +5,25 @@
   gap: 16px;
   padding-top: 20px;
   margin: 0 auto;
+  height: 80vh;
+  max-height: 550px;
+  min-height: 450px;
 }
 
 .left-panel {
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  gap: 16px;
   /* flex: 0 0 280px; Fixed width but allows for responsive adjustments */
   height: 80vh;
-  max-height: 550px;
+  max-height: 484px;
   min-height: 450px;
 }
 
 .right-panel {
   width: 659px;
   height: 80vh; /* Responsive height based on viewport */
-  max-height: 550px; /* Maximum height constraint */
+  max-height: 484px; /* Maximum height constraint */
   min-height: 450px; /* Minimum height constraint */
 }
 

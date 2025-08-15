@@ -1,30 +1,6 @@
-import ContentBox from '../../components/ContentBox/ContentBox';
-import Context from '../../Context/Context';
-import schoolLogo from '../../assets/makarios.png';
-import VectorImage from '../../assets/Vector.png';
+import Context from '../../../../Context/Context';
 import React, { useState, useEffect, useContext } from 'react';
-import {
-  MoreHorizontal,
-  Check,
-  Send,
-  Download,
-  Plus,
-  FileStack,
-  File,
-  FilePlus2,
-  History,
-  CircleAlert,
-  FileClock,
-  Loader2,
-  X,
-  Search,
-  BadgeCheck,
-  CheckCircle,
-  FilePlus,
-  ChevronLeft,
-  ChevronRight,
-  Gem,
-} from 'lucide-react';
+import { X, Search, BadgeCheck, Gem } from 'lucide-react';
 
 // Mock Data
 const mockStudents = [

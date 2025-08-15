@@ -181,7 +181,7 @@ function CommentsPage() {
         />
 
         {/* Main Comments Table */}
-        <div className="w-[474px] bg-white shadow-[2px_6px_15px_rgba(0,0,0,0.1)] rounded-[10px] px-8 py-6 h-[73vh] max-h-[484px] min-h-[450px]">
+        <div className="w-[600px] bg-white shadow-[2px_6px_15px_rgba(0,0,0,0.1)] rounded-[10px] px-8 py-6 h-[73vh] max-h-[484px] min-h-[450px]">
           {/* Header Controls */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-4">

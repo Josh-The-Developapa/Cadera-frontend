@@ -10,7 +10,9 @@ import {
   UserPlus,
 } from 'lucide-react';
 import ContentBox from '../../components/ContentBox/ContentBox';
-import StaffModal from './CreateTeacherModal'; // Add this import
+import StaffModal from './Modals/CreateTeacher/CreateTeacher.jsx'; // Add this import
+import PromoteClassesModal from './Modals/PromoteClasses/Promote.jsx';
+import PromoteIndividualsModal from './Modals/PromoteIndividuals/Promote.jsx';
 
 // Fictitious staff data
 const staffData = [
@@ -95,8 +97,12 @@ function SchoolManagement() {
   const [selectedRow, setSelectedRow] = useState(null);
   const [promotionMode, setPromotionMode] = useState('classes');
 
-  // Add these new state variables for the modal
+  // Modal state variables
   const [isStaffModalOpen, setIsStaffModalOpen] = useState(false);
+  const [isPromoteClassesModalOpen, setIsPromoteClassesModalOpen] =
+    useState(false);
+  const [isPromoteIndividualsModalOpen, setIsPromoteIndividualsModalOpen] =
+    useState(false);
   const [staffList, setStaffList] = useState(staffData);
 
   const filteredStaff = staffList.filter(
@@ -111,17 +117,15 @@ function SchoolManagement() {
     setSelectedRow(index);
   };
 
-  // Add handler to open the modal
+  // Staff modal handlers
   const handleCreateStaffClick = () => {
     setIsStaffModalOpen(true);
   };
 
-  // Add handler to close the modal
-  const handleCloseModal = () => {
+  const handleCloseStaffModal = () => {
     setIsStaffModalOpen(false);
   };
 
-  // Add handler to create new staff
   const handleCreateStaff = (newStaff) => {
     const staffWithId = {
       ...newStaff,
@@ -130,6 +134,37 @@ function SchoolManagement() {
       role: 'Teacher',
     };
     setStaffList([...staffList, staffWithId]);
+  };
+
+  // Promotion modal handlers
+  const handlePromoteClassesClick = () => {
+    setPromotionMode('classes');
+    setIsPromoteClassesModalOpen(true);
+  };
+
+  const handlePromoteIndividualsClick = () => {
+    setPromotionMode('individuals');
+    setIsPromoteIndividualsModalOpen(true);
+  };
+
+  const handleClosePromoteClassesModal = () => {
+    setIsPromoteClassesModalOpen(false);
+  };
+
+  const handleClosePromoteIndividualsModal = () => {
+    setIsPromoteIndividualsModalOpen(false);
+  };
+
+  const handlePromoteClasses = (promotionData) => {
+    // Handle the promotion logic here
+    console.log('Promoting classes:', promotionData);
+    // You can add your promotion logic here
+  };
+
+  const handlePromoteIndividuals = (promotionData) => {
+    // Handle the promotion logic here
+    console.log('Promoting individuals:', promotionData);
+    // You can add your promotion logic here
   };
 
   return (
@@ -222,7 +257,7 @@ function SchoolManagement() {
 
               <div className="flex gap-2">
                 <button
-                  onClick={() => setPromotionMode('classes')}
+                  onClick={handlePromoteClassesClick}
                   className={`px-4 py-2 rounded-md text-[14px] font-[300] transition-colors ${
                     promotionMode === 'classes'
                       ? 'bg-red-50 text-red-600 border border-red-200'
@@ -232,7 +267,7 @@ function SchoolManagement() {
                   Promote Classes
                 </button>
                 <button
-                  onClick={() => setPromotionMode('individuals')}
+                  onClick={handlePromoteIndividualsClick}
                   className={`px-4 py-2 rounded-md text-[14px] font-[300] transition-colors ${
                     promotionMode === 'individuals'
                       ? 'bg-red-50 text-red-600 border border-red-200'
@@ -358,11 +393,23 @@ function SchoolManagement() {
           </div>
         </div>
 
-        {/* Add the StaffModal component */}
+        {/* Modal Components */}
         <StaffModal
           isOpen={isStaffModalOpen}
-          onClose={handleCloseModal}
+          onClose={handleCloseStaffModal}
           onCreateStaff={handleCreateStaff}
+        />
+
+        <PromoteClassesModal
+          isOpen={isPromoteClassesModalOpen}
+          onClose={handleClosePromoteClassesModal}
+          onPromote={handlePromoteClasses}
+        />
+
+        <PromoteIndividualsModal
+          isOpen={isPromoteIndividualsModalOpen}
+          onClose={handleClosePromoteIndividualsModal}
+          onPromote={handlePromoteIndividuals}
         />
       </ContentBox>
     </div>

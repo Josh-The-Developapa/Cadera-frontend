@@ -503,7 +503,7 @@ const IndividualReportsModal = ({ isOpen, onClose, onGenerate }) => {
               </div>
             </div>
 
-            <div className="max-h-[350px] overflow-y-auto">
+            <div className="max-h-[300px] overflow-y-auto">
               {/* <table className="w-full"> */}
               <table className="student-table">
                 <thead>
@@ -2017,10 +2017,10 @@ function Reports() {
                 </div>
 
                 <div className="action-buttons">
-                  <button className="send-button text-[14px] w-[159px]">
+                  {/* <button className="send-button text-[14px] w-[159px]">
                     <Send className="w-[16px] h-[16px]" />
                     Send To Parents
-                  </button>
+                  </button> */}
                   <div className="flex flex-row justify-start items-center gap-[15px] w-[100%]">
                     <button className="download-button w-[159px] text-[14px]">
                       <Download className="w-[16px] h-[16px]" />
